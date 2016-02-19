@@ -21,6 +21,10 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 pd.activities(activity_id='5362b5a064da150ef6f2526c')
 ```
 
+```csharp
+client.activities();
+```
+
 > Example to cancel an existing activity:
 
 ```shell
