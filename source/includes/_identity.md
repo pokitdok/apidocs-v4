@@ -64,6 +64,10 @@ pd.create_identity({
 })
 ```
 
+```csharp
+client.createIdentity(ExampleRequests.CreateIdentityRequest);
+```
+
 > Example updating an identity resource
 
 ```shell
@@ -136,6 +140,11 @@ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://platform.pokitdok.com/
 ```python
 pd.identity("881bc095-2068-43cb-9783-cce630364122")
 ```
+
+```csharp
+client.identity("4d04d8dc-3d0b-4ea1-8add-4dbc9619e1ae");
+```
+
 
 > Query for one or more identity resources using parameters
 

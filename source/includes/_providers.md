@@ -9,6 +9,10 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 pd.providers(npi='1467560003')
 ```
 
+```csharp
+client.providers("1467560003");
+```
+
 > Example searching providers by zipcode and specialty:
 
 ```shell
@@ -18,6 +22,16 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 ```python
 pd.providers(zipcode='29307', specialty='rheumatology', radius='20mi')
 ```
+
+```csharp
+ client.providers(
+			new Dictionary<string, string> {
+				{ "zipcode", "29307" },
+				{ "specialty", "rheumatology" },
+				{ "radius", "20mi" }
+		});
+```
+
 
 *Available modes of operation: real-time only*
 

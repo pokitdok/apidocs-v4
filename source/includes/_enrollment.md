@@ -180,6 +180,88 @@ pd.enrollment({
     "trading_partner_id": "MOCKPAYER",
 })
 ```
+
+```csharp
+ client.enrollment(
+        new Dictionary<string, object> {
+        { "action", "Change"},
+         {"dependents", new List<string> { } },
+         {"master_policy_number", "ABCD012354"},
+         { "payer", new Dictionary<string, object> {
+                { "tax_id", "654456654" }
+             }
+         },
+         {   "purpose", "Original"},
+         {   "sponsor", new Dictionary<string, object> {
+                {"tax_id", "999888777" }
+         } },
+        { "subscriber", new Dictionary<string, object> {
+                { "address", new Dictionary<string, object> {
+                { "city", "CAMP HILL"},
+                { "county", "CUMBERLAND"},
+                { "line", "100 MARKET ST"},
+                { "line2", "APT 3G"},
+                { "postal_code", "17011"},
+                { "state", "PA" }
+                }},
+                { "benefit_status", "Active"},
+                { "benefits", new List<Dictionary<string, object>> {
+                                new Dictionary<string, object> {
+                                    { "begin_date", "2015-01-01"},
+                                    { "benefit_type", "Health"},
+                                    { "coordination_of_benefits", new List<Dictionary<string, object>> {
+                                        new Dictionary<string, object> {
+                                                { "group_or_policy_number", "890111"},
+                                                { "payer_responsibility", "Primary"},
+                                                { "status", "Unknown" }
+                                            }
+                                        }
+                                    },
+                                    { "late_enrollment", false},
+                                    { "maintenance_type", "Addition" }
+                                }, // benefits[0]
+                                new Dictionary<string, object> {
+                                    { "begin_date", "2015-01-01"},
+                                    { "benefit_type", "Dental"},
+                                    { "late_enrollment", false},
+                                    { "maintenance_type", "Addition" }
+                                    },
+                                new Dictionary<string, object> {
+                                    { "begin_date", "2015-01-01"},
+                                    { "benefit_type", "Vision"},
+                                    { "late_enrollment", false},
+                                    { "maintenance_type", "Addition" }
+                                    }} // End list
+                    },
+                    { "birth_date", "1940-01-01"},
+                    { "contacts", new List<Dictionary<string, object>> {
+                            new Dictionary<string, object> {
+                                { "communication_number2", "7172341240"},
+                                { "communication_type2", "Work Phone Number"},
+                                { "primary_communication_number", "7172343334"},
+                                { "primary_communication_type", "Home Phone Number" }
+                                }
+                    } },
+                    { "eligibility_begin_date", "2014-01-01"},
+                    { "employment_status", "Full-time"},
+                    { "first_name", "JOHN"},
+                    { "gender", "Male"},
+                    { "group_or_policy_number", "123456001"},
+                    { "handicapped", false},
+                    { "last_name", "DOE"},
+                    { "maintenance_reason", "Active"},
+                    { "maintenance_type", "Addition"},
+                    { "member_id", "123456789"},
+                    { "middle_name", "P"},
+                    { "relationship", "Self"},
+                    { "ssn", "123456789"},
+                    { "subscriber_number", "123456789"},
+                    { "substance_abuse", false},
+                    { "tobacco_use", false
+                }} },
+                { "trading_partner_id", "MOCKPAYER" }
+        });
+```
 >Example change request to add a dependent due to a qualifying life event. (Health)
 
 ```shell

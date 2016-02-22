@@ -90,6 +90,50 @@ pd.authorizations({
     "trading_partner_id": "MOCKPAYER"
 })
 ```
+
+```csharp
+client.authorizations(
+			new Dictionary<string, object> {
+				{"event", new Dictionary<string, object> {
+					{"category", "health_services_review"},
+					{"certification_type", "initial"},
+					{"delivery", new Dictionary<string, object> {
+						{"quantity", 1},
+						{"quantity_qualifier", "visits"}
+							}},
+						{"diagnoses", new Dictionary<string, object>[] {
+							new Dictionary<string, object> {
+								{"code", "789.00"},
+								{"date", "2014-10-01"}
+							}}},
+					{"place_of_service", "office"},
+					{"provider", new Dictionary<string, object> {
+							{"organization_name", "KELLY ULTRASOUND CENTER, LLC"},
+							{"npi", "1760779011"},
+							{"phone", "8642341234"}
+						}},
+					{"services", new Dictionary<string, object>[] {
+						new Dictionary<string, object> {
+							{"cpt_code", "76700"},
+							{"measurement", "unit"},
+							{"quantity", 1}
+						}}},
+					{"type", "diagnostic_imaging"}
+					}},
+				{"patient", new Dictionary<string, object> {
+						{"birth_date", "1970-01-01"},
+						{"first_name", "JANE"},
+						{"last_name", "DOE"},
+						{"id", "1234567890"}
+					}},
+				{"provider", new Dictionary<string, object> {
+						{"first_name", "JEROME"},
+						{"npi", "1467560003"},
+						{"last_name", "AYA-AY"}
+				}},
+				{"trading_partner_id", "MOCKPAYER"}
+			});
+```
 > Example authorizations response when the trading partner has authorized the request:
 
 ```

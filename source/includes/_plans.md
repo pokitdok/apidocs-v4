@@ -9,6 +9,11 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 pd.plans()
 ```
 
+```csharp
+client.plans();
+```
+
+
 > example fetching information for plans in Texas:
 
 ```shell
@@ -19,6 +24,14 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 pd.plans(state='TX')
 ```
 
+```csharp
+client.plans(
+			new Dictionary<string, string> {
+				{ "state", "TX" }
+			}
+		);
+```
+
 > example fetching information for PPO plans in South Carolina:
 
 ```shell
@@ -27,6 +40,15 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 
 ```python
 pd.plans(state='SC', plan_type='PPO')
+```
+
+```csharp
+client.plans(
+			new Dictionary<string, string> {
+				{ "state", "TX" },
+				{ "plan_type", "PPO" }
+			}
+		);
 ```
 *Available modes of operation: real-time*
 

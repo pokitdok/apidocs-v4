@@ -80,6 +80,45 @@ pd.referrals({
 })
 ```
 
+```csharp
+ client.referrals(
+			new Dictionary<string, object> {
+				{"event", new Dictionary<string, object> {
+						{"category", "specialty_care_review"},
+						{"certification_type", "initial"},
+						{"delivery", new Dictionary<string, object> {
+							{"quantity", 1},
+							{"quantity_qualifier", "visits"}
+							}},
+						{"diagnoses", new Dictionary<string, string>[] {
+							new Dictionary<string, string> {
+								{"code", "384.20"},
+								{"date", "2014-09-30"}
+							}}},
+						{"place_of_service", "office"},
+						{"provider", new Dictionary<string, string> {
+							{"first_name", "JOHN"},
+							{"npi", "1154387751"},
+							{"last_name", "FOSTER"},
+							{"phone", "8645822900"}
+							}},
+						{"type", "consultation"},
+					}},
+				{"patient", new Dictionary<string, string> {
+						{"birth_date", "1970-01-01"},
+						{"first_name", "JANE"},
+						{"last_name", "DOE"},
+						{"id", "1234567890"}
+					}},
+				{"provider", new Dictionary<string, string> {
+						{"first_name", "CHRISTINA"},
+						{"last_name", "BERTOLAMI"},
+						{"npi", "1619131232"}
+					}},
+				{"trading_partner_id", "MOCKPAYER"}
+			});
+```
+
 > Example referrals response when the trading partner has authorized the request:
 
 ```

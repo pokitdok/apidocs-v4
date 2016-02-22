@@ -1,5 +1,33 @@
 # Common To All Endpoints
 
+## Client generic request handlers
+To guarantee clients have reliable access to the newest PokitDok endpoints,
+a generic request handler is built into most clients. This allows for the sending
+of files and JSON payloads to any PokitDok endpoint for any given CRUD operation.
+
+> Example calls using the generic request handler
+
+
+```csharp
+client.request("/eligibility/", "POST", ExampleRequests.EligibilityRequest);
+```
+
+```csharp
+client.request("/identity/4d04d8dc-3d0b-4ea1-8add-4dbc9619e1ae", "PUT", ExampleRequests.CreateIdentityRequest);
+```
+
+> Example call sending a file using the generic request handler
+
+```csharp
+ client.request(
+            "/enrollment/snapshot",
+            "../../tests/files/acme_inc_add_subscriber.834",
+            "file",
+            "application/EDI-X12",
+            postData
+            );
+```
+
 ## Collection Parameters
 The below query parameters can be added to collection requests from endpoints
 to limit and page through the returned list of results. Singular endpoint
@@ -269,3 +297,5 @@ limit period to renew and then make the API call again.
 ### Required information missing or invalid
 You may encounter errors like this when required information is omitted from an
 API call. Simply supply the appropriate information on the next API call to resolve.
+
+>

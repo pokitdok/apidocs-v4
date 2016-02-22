@@ -98,6 +98,51 @@ pd.claims({
     }
 })
 ```
+
+```csharp
+client.claims (
+			new Dictionary<string, object> {
+				{"transaction_code", "chargeable"},
+				{"trading_partner_id", "MOCKPAYER"},
+				{"billing_provider", new Dictionary<string, object> {
+						{"taxonomy_code", "207Q00000X"},
+						{"first_name", "Jerome"},
+						{"last_name", "Aya-Ay"},
+						{"npi", "1467560003"},
+						{"address", new Dictionary<string, object> {
+								{"address_lines", new string[] { "8311 WARREN H ABERNATHY HWY" }},
+								{"city", "SPARTANBURG"},
+								{"state", "SC"},
+								{"zipcode", "29301"}
+							}},
+						{"tax_id", "123456789"}
+					}},
+				{"subscriber", new Dictionary<string, object> {
+						{"first_name", "Jane"},
+						{"last_name", "Doe"},
+						{"member_id", "W000000000"},
+						{"address", new Dictionary<string, object> {
+								{"address_lines", new string[] { "123 N MAIN ST" }},
+								{"city", "SPARTANBURG"},
+								{"state", "SC"},
+								{"zipcode", "29301"}
+							}},
+						{"birth_date", "1970-01-01"},
+						{"gender", "female"}
+					}},
+				{"claim", new Dictionary<string, object> {
+						{"total_charge_amount", 60.0},
+						{"service_lines", new object[] {
+								new Dictionary<string, object> {
+									{"procedure_code", "99213"},
+									{"charge_amount", 60.0},
+									{"unit_count", 1.0},
+									{"diagnosis_codes", new string[] { "487.1" }},
+									{"service_date", "2014-06-01"}
+					}}}}}
+			});
+```
+
 > Sample Claims request where the patient is not the subscriber:
 
 ```shell

@@ -8,6 +8,15 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 ```python
 pd.cash_prices(zip_code='32218', cpt_code='87799')
 ```
+
+```csharp
+client.pricesCash(
+			new Dictionary<string, string> {
+				{ "zip_code", "30012" },
+				{ "cpt_code", "88142" }
+			});
+```
+
 *Available modes of operation: real-time*
 
 The Cash Prices endpoint allow access to our internal collection of pricing

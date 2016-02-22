@@ -9,6 +9,12 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 pd.trading_partners()
 ```
 
+```csharp
+client.tradingPartners();
+```
+
+
+
 > Example fetching information for a specific trading partner
 
 ```shell
@@ -18,6 +24,11 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 ```python
 pd.trading_partners('aetna')
 ```
+
+```csharp
+client.tradingPartners("MOCKPAYER");
+```
+
 *Available modes of operation: real-time*
 
 The Trading Partners endpoint provides access to the collection of PokitDok's trading

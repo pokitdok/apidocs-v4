@@ -11,6 +11,10 @@ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 pd.schedulers()
 ```
 
+```csharp
+client.schedulers();
+```
+
 > Response:
 
 ```
@@ -43,6 +47,11 @@ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://platform.pokitdok.com/
 pd.schedulers(scheduler_uuid='967d207f-b024-41cc-8cac-89575a1f6fef')
 ```
 
+```csharp
+client.schedulers("967d207f-b024-41cc-8cac-89575a1f6fef");
+```
+
+
 > Response:
 
 ```
@@ -63,6 +72,10 @@ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 
 ```python
 pd.appointment_types()
+```
+
+```csharp
+client.appointmentTypes();
 ```
 
 > Response:
@@ -96,6 +109,10 @@ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://platform.pokitdok.com/
 pd.appointment_types(appointment_type_uuid='ef987693-0a19-447f-814d-f8f3abbf4860')
 ```
 
+```csharp
+client.appointmentTypes("a3a45130-4adb-4d2c-9411-85a9d9ac4aa2");
+```
+
 > Response:
 
 ```
@@ -126,6 +143,18 @@ pd.post('/schedule/patient/', data={
     "pd_provider_uuid": "b691b7f9-bfa8-486d-a689-214ae47ea6f8",
     "location": [32.788110, -79.932364]
 })
+```
+
+```csharp
+ client.appointments(
+            new Dictionary<string, string> {
+                {"appointment_type", "SS1"},
+                {"start_date", "2015-01-14T08:00:00"},
+                {"end_date", "2015-01-16T17:00:00"},
+                {"patient_uuid", "8ae236ff-9ccc-44b0-8717-42653cd719d0"}
+            });
+```
+
 ```
 
 > Response:
@@ -164,6 +193,21 @@ pd.schedule_slots({
 })
 ```
 
+```csharp
+ client.bookAppointment(
+            "ef987691-0a19-447f-814d-f8f3abbf4859",
+            new Dictionary<string, object> {
+                {"patient", new Dictionary<string, object> {
+                    {"uuid", "500ef469-2767-4901-b705-425e9b6f7f83"},
+                    {"email", "john@johndoe.com"},
+                    {"phone", "800-555-1212"},
+                    {"birth_date", "1970-01-01"},
+                    {"first_name", "John"},
+                    {"last_name", "Doe"},
+                    {"member_id", "M000001"}}}
+            });
+```
+
 > Response:
 
 ```
@@ -199,6 +243,15 @@ pd.appointments(appointment_type='SS1', start_date='2015-01-14T08:00:00',
     end_date='2015-01-16T17:00:00', patient_uuid='8ae236ff-9ccc-44b0-8717-42653cd719d0')
 ```
 
+```csharp
+client.appointments(
+            new Dictionary<string, string> {
+                {"appointment_type", "SS1"},
+                {"start_date", "2015-01-14T08:00:00"},
+                {"end_date", "2015-01-16T17:00:00"},
+                {"patient_uuid", "8ae236ff-9ccc-44b0-8717-42653cd719d0"}
+            });
+```
 > Response:
 
 ```
@@ -232,6 +285,10 @@ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" "https://platform.pokitdok.com/
 
 ```python
 pd.appointments(appointment_uuid='ef987691-0a19-447f-814d-f8f3abbf4859')
+```
+
+```csharp
+client.appointments("bf8440b1-fd20-4994-bb28-e3981833e796");
 ```
 
 > Response:
@@ -347,6 +404,21 @@ curl -i -XDELETE -H "Authorization: Bearer $ACCESS_TOKEN"  "https://platform.pok
 pd.cancel_appointment('ef987691-0a19-447f-814d-f8f3abbf4859')
 ```
 
+```csharp
+client.cancelAppointment("ef987691-0a19-447f-814d-f8f3abbf4859");
+```
+
+> Example updating an appointment with a given uuid
+
+```csharp
+ client.updateAppointment(
+            "ef987691-0a19-447f-814d-f8f3abbf4859",
+            new Dictionary<string, object> {
+                {"description", "Welcome to M0d3rN Healthcare"}
+            });
+```
+
+
 *Available modes of operation: real-time*
 
 The PokitDok Scheduling API performs schedule aggregation to multiple third party scheduling
@@ -424,6 +496,7 @@ Available Scheduling Endpoints:
 | Endpoint                                     | HTTP Method | Description                     | Scope         |
 |:---------------------------------------------|:------------|:--------------------------------|:--------------|
 | /schedule/appointments/{pd_appointment_uuid} | PUT         | Update appointment description. | user_schedule |
+
 
 | Field                                        | Type   | Description                                         | Scope         |
 |:---------------------------------------------|:-------|:----------------------------------------------------|:--------------|

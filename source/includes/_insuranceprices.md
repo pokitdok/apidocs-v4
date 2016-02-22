@@ -10,6 +10,14 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 pd.insurance_prices(zip_code='32218', cpt_code='87799')
 ```
 
+```csharp
+client.pricesInsurance(
+			new Dictionary<string, string> {
+				{ "zip_code", "32218" },
+				{ "cpt_code", "87799" }
+			});
+```
+
 *Available modes of operation: real-time*
 
 The Insurance Prices endpoint allows access to our collection of insurance

@@ -9,6 +9,11 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 pd.mpc(code='99213')
 ```
 
+```csharp
+client.medicalProcedureCode("99211");
+```
+
+
 > curl example searching medical procedure information by consumer friendly name
 
 ```shell
@@ -17,6 +22,13 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/a
 
 ```python
 pd.mpc(name='office')
+```
+
+```csharp
+client.medicalProcedureCode(
+            new Dictionary<string, string> {
+                {"name", "Established patient office or other outpatient visit, typically 15 minutes"}
+            });
 ```
 
 *Available modes of operation: real-time only*
