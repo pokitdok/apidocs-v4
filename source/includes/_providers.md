@@ -63,6 +63,8 @@ The /providers/ endpoint accepts the following search parameters:
 | zipcode           | {string} | Geographic center point in which to search for providers (e.g. "94401")                                                                             |
 | sort              | {string} | Accepted values include 'distance' (default) or 'rank'.  'distance' sort requires city & state or zipcode parameters otherwise sort will be 'rank'. |
 
+For a complete reference to all possible provider specialties,
+see our [provider specialties reference](provider_specialties.html).
 
 The response from the /providers/ endpoints contain the following fields:
 
