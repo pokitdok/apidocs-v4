@@ -28,7 +28,7 @@ class S3_Deployer():
 		# Backup from bucket to backup directory
 		file_paths = []
 		bucket_objects = self.client.list_objects(Bucket=self.bucket)
-		if not bucket_objects.has_key('Contents'): 
+		if not bucket_objects.has_key('Contents'):
 			self.empty_bucket = True
 			print "Empty Bucket.\n"
 			return
@@ -60,7 +60,7 @@ class S3_Deployer():
 		# Deploy from directory to bucket
 		# use bucket_subdir to deploy to bucket subdirectory of same name
 		print "Uploading to " + self.bucket + " from " + self.directory + "..."
-		errors = 1
+		errors = 0
 		for local_path in self.get_file_paths(self.directory):
 			remote_path = bucket_subdir + local_path.replace(self.directory, "")
 			try:
