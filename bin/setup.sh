@@ -8,6 +8,7 @@ fi
 
 # python aws accessor for deployment
 sudo pip install boto3 --ignore-installed six
+sudo pip install requests
 
 # install bundler if need be
 which_bundle=$(which bundle)
