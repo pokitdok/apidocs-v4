@@ -1,9 +1,13 @@
 import boto3
+import botocore
 import os
 import shutil
 import datetime
 import requests
 
+class AccessDenied(Exception):
+	def __str__(self):
+		return repr('Upload Access to bucket denied.')
 
 class S3_Deployer():
 
@@ -22,17 +26,24 @@ class S3_Deployer():
 
 	def backup_bucket(self):
 		# Backup from bucket to backup directory
-		print "Backing up current bucket contents...\n"
-		if os.path.exists(self.backup):
-			print "Removing current backup directory: " + self.backup
-			shutil.rmtree(self.backup)
-
-		self.backup_subdir = self.backup + os.sep + str(datetime.date.today())
-		print "Creating backup directory: " + self.backup_subdir
-		os.makedirs(self.backup_subdir)
-
 		file_paths = []
-		for obj in self.client.list_objects(Bucket=self.bucket)['Contents']:
+		bucket_objects = self.client.list_objects(Bucket=self.bucket)
+		if not bucket_objects.has_key('Contents'): 
+			self.empty_bucket = True
+			print "Empty Bucket.\n"
+			return
+		else:
+			self.empty_bucket = False
+			print "Backing up current bucket contents...\n"
+			if os.path.exists(self.backup):
+				print "Removing current backup directory: " + self.backup
+				shutil.rmtree(self.backup)
+
+			self.backup_subdir = self.backup + os.sep + str(datetime.date.today())
+			print "Creating backup directory: " + self.backup_subdir
+			os.makedirs(self.backup_subdir)
+
+		for obj in bucket_objects['Contents']:
 			remote_path = obj['Key']
 			local_path = self.backup_subdir + os.sep + remote_path
 			local_directory_name = os.path.dirname(local_path)
@@ -49,13 +60,14 @@ class S3_Deployer():
 		# Deploy from directory to bucket
 		# use bucket_subdir to deploy to bucket subdirectory of same name
 		print "Uploading to " + self.bucket + " from " + self.directory + "..."
-		errors = 0
+		errors = 1
 		for local_path in self.get_file_paths(self.directory):
 			remote_path = bucket_subdir + local_path.replace(self.directory, "")
 			try:
 				print "remote: " + remote_path
 				self.client.upload_file(local_path, self.bucket, remote_path, ExtraArgs={'ACL': 'public-read'})
 				print "uploaded: " + local_path
+			except botocore.exceptions.ClientError: raise AccessDenied()
 			except:
 				print "UPLOAD FAILURE: " + local_path
 				errors += 1
@@ -71,10 +83,11 @@ class S3_Deployer():
 		# verify status of site dependent on bucket
 		status_code = self.get_status(self.url_verify)
 		if status_code is 200:
-			cleanup = raw_input("Remove Backup Directory? (y/n) ").strip()
-			if cleanup in ['y','Y','yes','Yes','YES']:
-				print "Removing backup directory: " + self.backup
-				shutil.rmtree(self.backup)
+			if not self.empty_bucket:
+				cleanup = raw_input("Remove Backup Directory? (y/n) ").strip()
+				if cleanup in ['y','Y','yes','Yes','YES']:
+					print "Removing backup directory: " + self.backup
+					shutil.rmtree(self.backup)
 			print "BIG SUCCESS."
 		else:
 			self.prompt_revert()
@@ -82,10 +95,11 @@ class S3_Deployer():
 
 	def prompt_revert(self):
 		# prompt option to revert to previous files.
-		redeploy = raw_input("Redeploy Backup files? (y/n) ").strip()
-		if redeploy in ['y','Y','yes','Yes','YES']:
-			print "Reverting to backup..."
-			self.revert_to_backup()
+		if not self.empty_bucket:
+			redeploy = raw_input("Redeploy Backup files? (y/n) ").strip()
+			if redeploy in ['y','Y','yes','Yes','YES']:
+				print "Reverting to backup..."
+				self.revert_to_backup()
 
 	def revert_to_backup(self):
 		# Push backup files back to bucket
@@ -100,7 +114,7 @@ class S3_Deployer():
 				print "FAILURE: " + local_path
 				errors += 1
 		if errors > 0:
-			print str(errors) + " FAILURES DETECTED."
+			print str(errors) + " FAILURES REVERTING DETECTED."
 		else:
 			print "Bucket back to previous."
 
@@ -123,17 +137,9 @@ class S3_Deployer():
 
 
 def main():
-	# BUCKET_NAME = raw_input("Enter Bucket Name: ")
 	BUCKET_NAME = 'pokitdok-apidocs'
-	# BUCKET_NAME = 'pd-testbucket'
-
-	# DIRECTORY = raw_input("Enter Directory Name: ")
-	DIRECTORY = "./build"
-
-	# BACKUP_DIR = raw_input("Enter Backup Directory Name: ")
-	BACKUP_DIR = "./BACKUP"
-
-	# VERIFY_URL = raw_input("Enter Verification URL (we'll check this for http status after deploy): ")
+	DIRECTORY = "../build"
+	BACKUP_DIR = "../BACKUP"
 	VERIFY_URL = "https://platform.pokitdok.com/documentation/v4/"
 
 	# build doc files to ./build directory
