@@ -1858,14 +1858,14 @@ Full list of possible authorization_required values returned (or not) in an elig
 <a name="reject-reason"></a>
 Full list of possible reject_reasons on the eligibility response with description:
 
-| reject_reason                   | Description                                                               |
-|:--------------------------------|:--------------------------------------------------------------------------|
-| invalid_provider_id             | submitting provider (NPI) is not valid, please submit with a valid NPI    |
-| provider_not_on_file            | submitting provider (NPI) is not valid, please submit with a valid NPI    |
-| invalid_subscriber_id           | subscriber id not found                                                   |
-| dob_mismatch                    | birth date does not match member found                                    |
-| invalid_subscriber_insured_name | member not found                                                          |
-| subscriber_insured_not_found    | member id/name not found                                                  |
-| invalid_subscriber_insured_id   | member id not valid                                                       |
-| invalid_subscriber_insured_name | member not found                                                          |
-| unable_to_respond_now           | trading partner is experiencing downtime and not able to complete request |
+| reject_reason                   | Description                                                                                                                                            |
+|:--------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| invalid_provider_id             | submitting provider (NPI) is not valid, please submit with a valid NPI                                                                                 |
+| provider_not_on_file            | submitting provider (NPI) is not valid, please submit with a valid NPI                                                                                 |
+| invalid_subscriber_id           | subscriber id not found                                                                                                                                |
+| dob_mismatch                    | birth date does not match member found                                                                                                                 |
+| invalid_subscriber_insured_name | member not found                                                                                                                                       |
+| subscriber_insured_not_found    | member id/name not found                                                                                                                               |
+| invalid_subscriber_insured_id   | member id not valid                                                                                                                                    |
+| invalid_subscriber_insured_name | member not found                                                                                                                                       |
+| unable_to_respond_now           | trading partner is experiencing downtime and not able to complete request.  if this is a known outage the response meta section and platform API [status page](https://platform.pokitdok.com/status#/) will have more details.|
