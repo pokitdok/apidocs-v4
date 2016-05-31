@@ -47,7 +47,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
 ```
 
 ```python
-pd.authorizations({
+client.authorizations({
     "event": {
         "category": "health_services_review",
         "certification_type": "initial",
@@ -92,7 +92,7 @@ pd.authorizations({
 ```
 
 ```ruby
-pd.authorizations({
+client.authorizations({
     "event": {
         "category": "health_services_review",
         "certification_type": "initial",
@@ -228,7 +228,7 @@ buf.append("    \"trading_partner_id\": \"MOCKPAYER\"");
 buf.append("}");
 
 JSONObject query = (JSONObject) JSONValue.parse(buf.toString());
-pd.authorizations(query);
+client.authorizations(query);
 ```
 
 > Example authorizations response when the trading partner has authorized the request:
