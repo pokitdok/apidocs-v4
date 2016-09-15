@@ -3426,6 +3426,12 @@ The /claims/ response contains an activity and thus returns the same object as t
 | receiver.id                                     | The unique id of the receiver.                                                                                    |
 | receiver.organization_name                      | The organization name of the receiver.                                                                            |
 | receiver.email                                  | The email of the receiver.                                                                                        |
+| payer.id                                        | The id of the payer.
+                                             |
+payer.name                                        | The name of the payer.
+                                             |
+| payer.date_received                             | The date the payer received the claim. In ISO8601 format (YYYY-MM-DD).                                |
+| payer.date_processed                             | The date the payer processed the claim. In ISO8601 format (YYYY-MM-DD).                                |
 
 <a name="claims-subscriber-object"></a>
 ###Subscriber object:
