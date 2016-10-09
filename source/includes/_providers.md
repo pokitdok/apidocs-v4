@@ -399,6 +399,8 @@ The /providers/ endpoint accepts the following search parameters:
 | zipcode           | {string} | Geographic center point in which to search for providers (e.g. "94401")                                                                             |
 | sort              | {string} | Accepted values include 'distance' (default) or 'rank'.  'distance' sort requires city & state or zipcode parameters otherwise sort will be 'rank'. |
 | entity_types      | {string} | The desired provider entity type(s), as a comma-separated string.  Possibilities are 'individual', 'organization', and 'individual,organization'.   |
+| facility_names    | {string} | Name(s) of provider facilities.  Providers having facilities.organization_name matching this name will be boosted in the results.  Only facility_names or facility_npis may be specified not both. |
+| facility_npis     | {string} | NPIs of provider facilities.  Providers having facilities.npi matching these NPIs will be boosted in the results.  The string argument should be a comma-separated list of NPIs.  Only facility_name or facility_npis may be specified not both. |
 
 The response from the /providers/ endpoints contain the following fields:
 
