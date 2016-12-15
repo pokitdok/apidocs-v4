@@ -1,145 +1,190 @@
-{
-	"sitemap": [{
-		"slug": "overview",
-		"content": "includes/_overview.md",
-		"title": "Overview"
-	}, {
-		"slug": "clientlibraries",
-		"content": "includes/_clientlibraries.md",
-		"title": "Client Libraries"
-	}, {
-		"slug": "available-endpoints",
-		"content": "includes/_endpoints.md",
-		"title": "Available API Endpoints",
-		"sublinks": [{
-			"slug": "available-endpoints/activities",
-			"content": "includes/_activities.md",
-			"title": "Activities"
-		}, {
-			"slug": "available-endpoints/authorizations",
-			"content": "includes/_authorizations.md",
-			"title": "Authorizations"
-		}, {
-			"slug": "available-endpoints/cashprices",
-			"content": "includes/_cashprices.md",
-			"title": "Cash Prices"
-		}, {
-			"slug": "available-endpoints/claims",
-			"content": "includes/_claims.md",
-			"title": "Claims"
-		}, {
-			"slug": "available-endpoints/claimsconvert",
-			"content": "includes/_claimsconvert.md",
-			"title": "Claims Convert"
-		}, {
-			"slug": "available-endpoints/claimstatus",
-			"content": "includes/_claimstatus.md",
-			"title": "Claims Status"
-		}, {
-			"slug": "available-endpoints/eligibility",
-			"content": "includes/_eligibility.md",
-			"title": "Eligibility"
-		}, {
-			"slug": "available-endpoints/enrollment",
-			"content": "includes/_enrollment.md",
-			"title": "Enrollment"
-		}, {
-			"slug": "available-endpoints/enrollmentsnapshot",
-			"content": "includes/_enrollmentsnapshot.md",
-			"title": "Enrollment Snapshot"
-		}, {
-			"slug": "available-endpoints/icdconvert",
-			"content": "includes/_icdconvert.md",
-			"title": "ICD Convert"
-		}, {
-			"slug": "available-endpoints/identity",
-			"content": "includes/_identity.md",
-			"title": "Identity Management"
-		}, {
-			"slug": "available-endpoints/insuranceprices",
-			"content": "includes/_insuranceprices.md",
-			"title": "Insurance Prices"
-		}, {
-			"slug": "available-endpoints/mpc",
-			"content": "includes/_mpc.md",
-			"title": "Medical Prodedure Code"
-		}, {
-			"slug": "available-endpoints/oop_insurance",
-			"content": "includes/_oop_insurance.md",
-			"title": "OOP Price Estimate"
-		}, {
-			"slug": "available-endpoints/payers",
-			"content": "includes/_payers.md",
-			"title": "Payers"
-		}, {
-			"slug": "available-endpoints/pharmacy_formulary",
-			"content": "includes/_pharmacy_formulary.md",
-			"title": "Pharmacy Formulary"
-		}, {
-			"slug": "available-endpoints/pharmacy_network",
-			"content": "includes/_pharmacy_network.md",
-			"title": "Pharmacy Network"
-		}, {
-			"slug": "available-endpoints/pharmacy_plans",
-			"content": "includes/_pharmacy_plans.md",
-			"title": "Pharmacy Plans"
-		}, {
-			"slug": "available-endpoints/plans",
-			"content": "includes/_plans.md",
-			"title": "Plans"
-		}, {
-			"slug": "available-endpoints/providers",
-			"content": "includes/_providers.md",
-			"title": "Providers"
-		}, {
-			"slug": "available-endpoints/referrals",
-			"content": "includes/_referrals.md",
-			"title": "Referrals"
-		}, {
-			"slug": "available-endpoints/scheduling",
-			"content": "includes/_scheduling.md",
-			"title": "Scheduling"
-		}, {
-			"slug": "available-endpoints/tradingpartners",
-			"content": "includes/_tradingpartners.md",
-			"title": "Trading Partners"
-		}]
-	}, {
-		"slug": "security-and-authentication",
-		"content": "includes/_authentication.md",
-		"title": "Security and Authentication"
-	}, {
-		"slug": "common",
-		"content": "includes/_common.md",
-		"title": "Common to All Endpoints"
-	}, {
-		"slug": "apicallbacks",
-		"content": "includes/_apicallbacks.md",
-		"title": "API Callbacks"
-	}, {
-		"slug": "apidashboard",
-		"content": "includes/_apidashboard.md",
-		"title": "API Dashboard"
-	}, {
-		"slug": "dropin",
-		"content": "includes/_dropin.md",
-		"title": "Drop In"
-	}, {
-		"slug": "raw-x12-support",
-		"content": "includes/_raw_x12_support.md",
-		"title": "Raw X12 Support",
-		"sublinks": [{
-			"link": "#supported-content-type-and-accept-header-values",
-			"title": "Supported Content-Type and Accept header values"
-		}, {
-			"link": "#mixing-mime-types",
-			"title": "Mixing mime types"
-		}, {
-			"link": "#examples",
-			"title": "Examples"
-		}, {
-			"link": "#trading-partners",
-			"title": "Trading Partners"
-		}]
-	}]
+{  
+   "sitemap":[  
+      {  
+         "slug":"overview",
+         "content":"includes/_overview.md",
+         "title":"Overview",
+         "order":"0"
+      },
+      {  
+         "slug":"clientlibraries",
+         "content":"includes/_clientlibraries.md",
+         "title":"Client Libraries",
+         "order":"1"
+      },
+      {  
+         "slug":"available-endpoints",
+         "content":"includes/_endpoints.md",
+         "title":"Available API Endpoints",
+         "order":"2"
+      },
+      {  
+         "slug":"available-endpoints/activities",
+         "content":"includes/_activities.md",
+         "title":"Activities"
+      },
+      {  
+         "slug":"available-endpoints/authorizations",
+         "content":"includes/_authorizations.md",
+         "title":"Authorizations"
+      },
+      {  
+         "slug":"available-endpoints/cashprices",
+         "content":"includes/_cashprices.md",
+         "title":"Cash Prices"
+      },
+      {  
+         "slug":"available-endpoints/claims",
+         "content":"includes/_claims.md",
+         "title":"Claims"
+      },
+      {  
+         "slug":"available-endpoints/claimsconvert",
+         "content":"includes/_claimsconvert.md",
+         "title":"Claims Convert"
+      },
+      {  
+         "slug":"available-endpoints/claimstatus",
+         "content":"includes/_claimstatus.md",
+         "title":"Claims Status"
+      },
+      {  
+         "slug":"available-endpoints/eligibility",
+         "content":"includes/_eligibility.md",
+         "title":"Eligibility"
+      },
+      {  
+         "slug":"available-endpoints/enrollment",
+         "content":"includes/_enrollment.md",
+         "title":"Enrollment"
+      },
+      {  
+         "slug":"available-endpoints/enrollmentsnapshot",
+         "content":"includes/_enrollmentsnapshot.md",
+         "title":"Enrollment Snapshot"
+      },
+      {  
+         "slug":"available-endpoints/icdconvert",
+         "content":"includes/_icdconvert.md",
+         "title":"ICD Convert"
+      },
+      {  
+         "slug":"available-endpoints/identity",
+         "content":"includes/_identity.md",
+         "title":"Identity Management"
+      },
+      {  
+         "slug":"available-endpoints/insuranceprices",
+         "content":"includes/_insuranceprices.md",
+         "title":"Insurance Prices"
+      },
+      {  
+         "slug":"available-endpoints/mpc",
+         "content":"includes/_mpc.md",
+         "title":"Medical Prodedure Code"
+      },
+      {  
+         "slug":"available-endpoints/oop_insurance",
+         "content":"includes/_oop_insurance.md",
+         "title":"OOP Price Estimate"
+      },
+      {  
+         "slug":"available-endpoints/payers",
+         "content":"includes/_payers.md",
+         "title":"Payers"
+      },
+      {  
+         "slug":"available-endpoints/pharmacy_formulary",
+         "content":"includes/_pharmacy_formulary.md",
+         "title":"Pharmacy Formulary"
+      },
+      {  
+         "slug":"available-endpoints/pharmacy_network",
+         "content":"includes/_pharmacy_network.md",
+         "title":"Pharmacy Network"
+      },
+      {  
+         "slug":"available-endpoints/pharmacy_plans",
+         "content":"includes/_pharmacy_plans.md",
+         "title":"Pharmacy Plans"
+      },
+      {  
+         "slug":"available-endpoints/plans",
+         "content":"includes/_plans.md",
+         "title":"Plans"
+      },
+      {  
+         "slug":"available-endpoints/providers",
+         "content":"includes/_providers.md",
+         "title":"Providers"
+      },
+      {  
+         "slug":"available-endpoints/referrals",
+         "content":"includes/_referrals.md",
+         "title":"Referrals"
+      },
+      {  
+         "slug":"available-endpoints/scheduling",
+         "content":"includes/_scheduling.md",
+         "title":"Scheduling"
+      },
+      {  
+         "slug":"available-endpoints/tradingpartners",
+         "content":"includes/_tradingpartners.md",
+         "title":"Trading Partners"
+      },
+      {  
+         "slug":"security-and-authentication",
+         "content":"includes/_authentication.md",
+         "title":"Security and Authentication"
+      },
+      {  
+         "slug":"common",
+         "content":"includes/_common.md",
+         "title":"Common to All Endpoints",
+         "order":"4"
+      },
+      {  
+         "slug":"apicallbacks",
+         "content":"includes/_apicallbacks.md",
+         "title":"API Callbacks",
+         "order":"5"
+      },
+      {  
+         "slug":"apidashboard",
+         "content":"includes/_apidashboard.md",
+         "title":"API Dashboard",
+         "order":"6"
+      },
+      {  
+         "slug":"dropin",
+         "content":"includes/_dropin.md",
+         "title":"Drop In",
+         "order":"7"
+      },
+      {  
+         "slug":"raw-x12-support",
+         "content":"includes/_raw_x12_support.md",
+         "title":"Raw X12 Support",
+         "order":"8"
+      },
+      {  
+         "slug":"benefits-enrollment-overview",
+         "content":"benefits_enrollment.md",
+         "title":"Benefits Enrollment Overview",
+         "order":"9"
+      },
+      {  
+         "slug":"claims-payment-overview",
+         "content":"claim_payment.md",
+         "title":"Claim Payment Overview",
+         "order":"10"
+      },
+      {  
+         "slug":"provider-specialties",
+         "content":"provider_specialties.md",
+         "title":"Provider Specialties",
+         "order":"11"
+      }
+   ]
 }
