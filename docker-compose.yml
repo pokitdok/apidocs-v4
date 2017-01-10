@@ -1,0 +1,9 @@
+version: '2'
+services:
+  docs:
+    image: ruby:2.3
+    command: /app/serve.sh
+    ports:
+      - '8080:4567'
+    volumes:
+      - "./:/app"
