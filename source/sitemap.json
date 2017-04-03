@@ -99,6 +99,11 @@
          "title":"Pharmacy Plans"
       },
       {
+         "slug":"apis/pharmacy_coverage",
+         "content":"includes/_pharmacy_coverage.md",
+         "title":"Pharmacy Coverage"
+      },
+      {
          "slug":"apis/plans",
          "content":"includes/_plans.md",
          "title":"Plans"
