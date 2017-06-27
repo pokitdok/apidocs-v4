@@ -651,7 +651,7 @@ The `/oop/insurance-load-price` endpoint may also be used to retrieve pricing da
 Sending a request that includes only the trading_partner_id and cpt_bundle parameters will either return the currently loaded price or, if no price has been loaded, return an error response.
 
 
-### Parameters
+### `/oop/insurance-load-price`
 
 The `/oop/insurance-load-price` POST endpoint accepts the following parameters:
 
@@ -669,6 +669,32 @@ The `/oop/insurance-load-price` POST endpoint accepts the following parameters:
 The `/oop/insurance-load-price` POST response contains the aforementioned fields and activity tracking meta data.
 The `/oop/insurance-load-price` POST response also contains a "uuid" field that can be passed to the `/oop/insurance-load-price/{price_uuid}` DELETE endpoint as the {price_uuid} in order to remove that loaded pricing data.
 The `/oop/insurance-load-price/{price_uuid}` DELETE endpoint may be used to delete previously loaded pricing data.
+
+### `/oop/insurance-estimate`
+Customer-specific procedure prices must be first loaded into the PokitDok platform by calling the Insurance Price Load API endpoint (`/oop/insurance-load-price POST`). 
+The Insurance Estimate API endpoint (`/oop/insurance-estimate POST`) may then be called to request an estimate. The following describes how the estimate is calculated. 
+
+When the Insurance Estimate API endpoint is called, an eligibility request is made, allowing Pokitdok to retrieve the patient's deductible, max out of pocket, and coinsurance information.
+This data is then used to generate an estimate of what the patient can expect to pay out of pocket. Sometimes the coinsurance information provided in the eligibility response contains multiple coinsurances; 
+in these cases our Insurance Estimate API will filter the coinsurance options and use them to generate and return multiple estimates according to the following:
+
+* Coinsurances that are in network ( “in_plan_network” : “yes” ) pass through the filter.
+
+* If no coinsurances are in network ( “in_plan_network” : “no” ), then coinsurances where network is not applicable ( “in_plan_network” : “not_applicable” ) pass through the filter.
+
+* If service type codes are passed in, only coinsurances that have the same set of service type codes pass through the filter.
+
+The following logic is then applied for each filtered coinsurance to calculate estimates: 
+
+* If the deductible is greater than or equal to the customer-specific procedure price, then the estimate is returned as the procedure price.
+
+* If the deductible is less than the procedure price and a coinsurance is specified, the price after coinsurance is then calculated as (procedure price - deductible) *x* coinsurance.
+    * If the (deductible + price after coinsurance) is less than the max out of pocket, then the estimate is returned as the (deductible + price after coinsurance)
+    * If (deductible + price after coinsurance) is greater than the max out of pocket, then the estimate is returned as the max out of pocket.
+
+* If coinsurance is not specified,
+    * If the procedure price is less than the max out of pocket, then the estimate is returned as the procedure price.
+    * If the procedure price is greater than or equal to the max out of pocket, then the estimate is returned as the max out of pocket. 
 
 The `/oop/insurance-estimate` endpoint accepts the following parameters:
 
