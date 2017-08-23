@@ -24,11 +24,6 @@
          "title":"Activities"
       },
       {
-         "slug":"apis/authorizations",
-         "content":"includes/_authorizations.md",
-         "title":"Authorizations"
-      },
-      {
          "slug":"apis/cashprices",
          "content":"includes/_cashprices.md",
          "title":"Cash Prices"
@@ -107,11 +102,6 @@
          "slug":"apis/providers",
          "content":"includes/_providers.md",
          "title":"Providers"
-      },
-      {
-         "slug":"apis/referrals",
-         "content":"includes/_referrals.md",
-         "title":"Referrals"
       },
       {
          "slug":"apis/scheduling",

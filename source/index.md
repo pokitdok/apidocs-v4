@@ -21,7 +21,6 @@ includes:
   - clientlibraries
   - endpoints
   - activities
-  - authorizations
   - cashprices
   - claims
   - claimsconvert
@@ -39,7 +38,6 @@ includes:
   - pharmacy_plans
   - plans
   - providers
-  - referrals
   - scheduling
   - tradingpartners
   - authentication
