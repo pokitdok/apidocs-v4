@@ -5088,10 +5088,9 @@ Full list of possible values that can be returned in the `subscriber.payer_respo
 <a name="mockpayer-claims-testing"></a>
 ### MOCKPAYER Additional Details
 
-The `MOCKPAYER` trading partner id supports a few different testing scenarios to help API client applications
+The `MOCKPAYER` trading partner id supports a couple different testing scenarios to help API client applications
 verify their handling of different `claims` activity results.  Similar to some payment processors, special
-member id values and diagnosis code values may be used in a MOCKPAYER claims API request to simulate a rejection
-for that claim.
+member id values may be used in a MOCKPAYER claims API request to simulate a rejection for that claim.
 
 The `00001234` member id value may be used to simulate a claim being rejected due to an invalid date of service.
 This will often happen when a claim is submitted for a date of service prior to the date that member became
@@ -5100,13 +5099,6 @@ active for coverage.
 The `00009999` member id value may be used to simulate a claim being rejected due to an invalid date of birth
 for the subscriber/patient.  This can often happen if the eligiblity API is not utilized prior to submitting
 a claims API request to verify the member's information with the trading partner.
-
-The `I69.91` diagnosis code may be used to simulate a claim being rejected due to not enough specificity
-on the diagnosis code.   This happens sometimes when a diagnosis code is submitted that's not to be used
-for billing purporses.
-
-The `I11.945` diagnosis code may be used to simulate a claim being rejected for an invalid date of service.
-Some diagnosis codes are only approved for use prior to or after a specific date.
 
 When `MOCKPAYER` claims requests are submitted for processing, they'll enter a `scheduled` state if they're
 valid claims requests.   About 5 minutes or so after submission, those `MOCKPAYER` claims will be processed.
