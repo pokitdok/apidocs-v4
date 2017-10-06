@@ -57,7 +57,11 @@ under the License.
       </span>
     </a>
     <div class="tocify-wrapper">
-      <%= image_tag "logo.png" %>
+    <div id="logo">
+        <div class="logo-row">
+            <%= current_page.data.logo_custom || image_tag("logo.png") %>
+        </div>
+    </div>
       <% if language_tabs %>
         <div class="lang-selector">
           <% language_tabs.each do |lang| %>

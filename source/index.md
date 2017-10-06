@@ -1,6 +1,8 @@
 ---
 title: PokitDok API Reference
 
+logo_custom: <img class="logo" src="images/logo-new.png" /> <span id="documentation">Documentation</span>
+
 language_tabs:
   - shell: cURL
   - python: Python
@@ -13,8 +15,8 @@ language_tabs:
   - swift: Swift
 
 toc_footers:
-  - <a href='https://platform.pokitdok.com/signup' target='_blank'>Sign Up for a Free API Key</a>
-  - <a href='https://pokitdok.com/faq/#developers' target='_blank'>FAQ</a>
+  - <a href="https://platform.pokitdok.com/signup" target="_blank">Sign Up for a Free API Key</a>
+  - <a href="https://pokitdok.com/support-category/application-development/" target="_blank">Application Development FAQ</a>
 
 includes:
   - overview
