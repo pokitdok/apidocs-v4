@@ -92,8 +92,25 @@ html, body {
   }
 
   // This is the logo at the top of the ToC
-  &>img {
-    display: block;
+  #logo {
+      display:table;
+      padding:10px;
+      .logo-row {
+          display:table-row;
+          height:40px;
+          width:100%;
+          img.logo {
+              display:table-cell;
+              width:auto;
+              height:40px;
+          }
+          span#documentation {
+              display:table-cell;
+              vertical-align:bottom;
+              font-size:18px;
+              padding-left:10px;
+          }
+      }
   }
 
   &>.search {
