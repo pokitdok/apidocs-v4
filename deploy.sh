@@ -1,16 +1,8 @@
 #!/bin/bash
-
 # This program follows the deployment process for API Documentation
-
 set -e
 
-DEPLOY_IMAGE=pokitdok.com/pd-api-docs-deploy:0.0.1
-
-if [[ -z $(docker images -q $DEPLOY_IMAGE) ]]
-then
-  docker build -t $DEPLOY_IMAGE -f Dockerfile.deployer .
-fi
-
+# Make sure we're on the right branch and up to date
 git checkout dev
 git pull origin dev
 
@@ -29,17 +21,9 @@ echo "Building docs..."
 docker run -t -v "$PWD:/app" ruby:2.3 /app/build.sh
 
 echo "Deploying to staging..."
-docker run --rm \
-	-v "$PWD:/host" \
-	-v "$HOME/.boto:/root/.boto" \
-       	$DEPLOY_IMAGE \
-python /host/deployer.py \
-  --bucket "$staging" \
-  --dir /host/build \
-  --backup /host/backup \
-  --verify-url "https://s3.amazonaws.com/$staging/index.html"
+aws s3 sync $PWD/build/ s3://$staging/ --acl public-read
 
-python -mwebbrowser "https://s3.amazonaws.com/$staging/index.html"
+python -m webbrowser "https://s3.amazonaws.com/$staging/index.html"
 echo "Deployed to staging. Please verify correctness by typing (Y/N), followed by [ENTER]: "
 read staging_ok
 
@@ -50,21 +34,15 @@ if [ "$staging_ok" == "Y" ]; then
 	echo "Enter production bucket name, followed by [ENTER]: "
 	read production
 
-	echo "Building docs..."
-	docker run -t -v "$PWD:/app" ruby:2.3 /app/build.sh
-	
+	DATE=`date +%F_%s`
+	echo "Backing up $production to $PWD/backup/$DATE..."
+	aws s3 sync s3://$production/ $PWD/backup/$DATE/
+
 	echo "Deploying to production..."
-        docker run --rm \
-	    -v "$PWD:/host" \
-	    -v "$HOME/.boto:/root/.boto" \
-	    $DEPLOY_IMAGE \
-	python /host/deployer.py \
-           --bucket "$production" \
-           --dir /host/build \
-           --backup /host/backup \
-           --verify-url https://platform.pokitdok.com/documentation/v4/
+	aws s3 sync $PWD/build/ s3://$production/ --acl public-read
+
 	echo "Deployed to production, check it out:"
-	python -mwebbrowser "https://platform.pokitdok.com/documentation/v4/"
+	python -m webbrowser "https://platform.pokitdok.com/documentation/v4/"
 
 	git tag "DOCS-$tag_name"
 	git push origin master --tags
