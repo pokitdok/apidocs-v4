@@ -21,20 +21,6 @@ You can now see the project at <http://localhost:4567>. Great success!
 
 #### When you're done editing, send us a pull request.
 
- ---
- ### Deprecated Instructions: Use At Your Own Risk ###
-    If you do not have a docker host setup already:
-    1. Use setup script to create docker-machine: `sh setup-osx.sh`
-    2. Look at your docker-machine IP: `docker-machine ip apidocs`
-
-    If you are on Mac:
-    1. Run `docker-machine env apidocs` to verify the environment variables created by `sh setup-osx.sh`.
-    2. Run the commented out command from sdout to finish configuring your shell (should look something like `eval $(docker-machine env apidocs)`)
-    3. Start local server: `docker run -it -p 8080:4567 -v $PWD:/app ruby:2.3 /app/serve.sh`
-    4. Using the IP address of your local docker-machine and port 8080, you can now see the docs at `http://(docker-machine ip):8080`.
-
-Otherwise, you can see the docs at <http://localhost:4567>
-
 ---
 
 [Handy reference guide for editing slate markdown.](https://github.com/tripit/slate/wiki/Markdown-Syntax)
