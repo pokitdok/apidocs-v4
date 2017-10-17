@@ -321,6 +321,7 @@ The `/activities/` response includes the following fields:
 | transition_path | {array} | The list of state transitions that will be used for this Activity. |
 | units_of_work | {int} | The number of 'units of work' that the activity is operating on. This will typically be 1 for real-time requests like /eligibility/. |
 | tracking_description | {string} | A value that summarizes the tracking/outcome of long running transactions like claims.  It's currently only supported on claims activities.  Possible values that may be present on claims activities include: submitting, waiting, acknowledged, rejected, denied, adjudicated, paid and paid_in_full. |
+| payment_id | {string} | A unique identifier used to reference payment details associated with the Platform Activity. This value is supported on claims activities where claim payments, or ERAs,  are processed. The payment_id may be used to lookup payment details using the /payments API.
 
 <!--- end of table -->
 
