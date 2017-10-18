@@ -16,7 +16,7 @@ from those batch files will be streamed into the platform as activities and asso
 
 ## Supported Content-Type and Accept header values
 
-The X12 APIs currently support three different mime type values that may be provided in the Content-Type and Accept
+The X12 APIs currently support four different mime type values that may be provided in the Content-Type and Accept
 header values to control the input and output data format.
 
 ### application/json
@@ -53,6 +53,202 @@ Example Response:
     "rate_limit_cap": 5000,
     "rate_limit_reset": 1477423058
   }
+}
+```
+
+### application/vnd.pokitdok.v4+x12-segments-json
+
+This value can be used when you would like to receive the full x12 data back but not in the raw X12 format.
+
+Example Request data `POST`ed to an X12-based API:
+```
+ISA*00*          *00*          *30*042064683      *30*453504565      *140424*1652*^*00501*000000015*0*T*:~
+GS*HN*042064683*453504565*20140424*1652*15*X*005010X212~
+ST*277*0001*005010X212~
+BHT*0010*08*69c8aaca-584f-4513-8c13-e22026dd4a39*20140424*16521192*DG~
+HL*1**20*1~
+NM1*PR*2*PAYERA*****PI*60054~
+HL*2*1*21*1~
+NM1*41*1*KNOX*STEPHEN****46*1255439345~
+HL*3*2*19*1~
+NM1*1P*1*KNOX*STEPHEN****XX*1255439345~
+HL*4*3*22*0~
+NM1*IL*1*DOE*JANE****MI*ABC1234567~
+TRN*2*E1TWCYYMF~
+STC*E0:21*20160308**0*0*****E0:0*E0:1~
+STC*F1:107*20140424**150*125*20140321**20140409*08608-035632423~
+REF*1K*E1TWCYYMF00~
+DTP*472*RD8*20140305-20140305~
+SVC*HC:99214*150*125****1~
+STC*F1:107*20140424~
+DTP*472*RD8*20140305-20140305~
+SE*18*0001~
+GE*1*15~
+```
+
+Example Response:
+```
+{
+    "x12_segments": [
+        {
+            "data": {
+                "hierarchical_structure_code": "0010", 
+                "reference_identification": "69c8aaca-584f-4513-8c13-e22026dd4a39", 
+                "transaction_set_creation_date": "20140424", 
+                "transaction_set_creation_time": "16521192", 
+                "transaction_set_purpose_code": "08", 
+                "transaction_type_code": "DG"
+            }, 
+            "segment_id": "BHT"
+        }, 
+        {
+            "data": {
+                "hierarchical_child_code": "1", 
+                "hierarchical_id_number": "1", 
+                "hierarchical_level_code": "20"
+            }, 
+            "segment_id": "HL"
+        }, 
+        {
+            "data": {
+                "entity_identifier_code": "PR", 
+                "entity_type_qualifier": "2", 
+                "identification_code_qualifier": "PI", 
+                "last_or_organization_name": "PAYERA", 
+                "primary_identifier": "60054"
+            }, 
+            "segment_id": "NM1"
+        }, 
+        {
+            "data": {
+                "hierarchical_child_code": "1", 
+                "hierarchical_id_number": "2", 
+                "hierarchical_level_code": "21", 
+                "hierarchical_parent_id": "1"
+            }, 
+            "segment_id": "HL"
+        }, 
+        {
+            "data": {
+                "entity_identifier_code": "41", 
+                "entity_type_qualifier": "1", 
+                "first_name": "STEPHEN", 
+                "identification_code_qualifier": "46", 
+                "last_or_organization_name": "KNOX", 
+                "primary_identifier": "1255439345"
+            }, 
+            "segment_id": "NM1"
+        }, 
+        {
+            "data": {
+                "hierarchical_child_code": "1", 
+                "hierarchical_id_number": "3", 
+                "hierarchical_level_code": "19", 
+                "hierarchical_parent_id": "2"
+            }, 
+            "segment_id": "HL"
+        }, 
+        {
+            "data": {
+                "entity_identifier_code": "1P", 
+                "entity_type_qualifier": "1", 
+                "first_name": "STEPHEN", 
+                "identification_code_qualifier": "XX", 
+                "last_or_organization_name": "KNOX", 
+                "primary_identifier": "1255439345"
+            }, 
+            "segment_id": "NM1"
+        }, 
+        {
+            "data": {
+                "hierarchical_child_code": "0", 
+                "hierarchical_id_number": "4", 
+                "hierarchical_level_code": "22", 
+                "hierarchical_parent_id": "3"
+            }, 
+            "segment_id": "HL"
+        }, 
+        {
+            "data": {
+                "entity_identifier_code": "IL", 
+                "entity_type_qualifier": "1", 
+                "first_name": "JANE", 
+                "identification_code_qualifier": "MI", 
+                "last_or_organization_name": "DOE", 
+                "primary_identifier": "ABC1234567"
+            }, 
+            "segment_id": "NM1"
+        }, 
+        {
+            "data": {
+                "trace_number": "E1TWCYYMF", 
+                "trace_type_code": "2"
+            }, 
+            "segment_id": "TRN"
+        }, 
+        {
+            "data": {
+                "claim_payment_amount": "0", 
+                "health_care_claim_status": "E0:21", 
+                "health_care_claim_status_2": "E0:0", 
+                "health_care_claim_status_3": "E0:1", 
+                "status_information_effective_date": "20160308", 
+                "total_claim_charge_amount": "0"
+            }, 
+            "segment_id": "STC"
+        }, 
+        {
+            "data": {
+                "adjudication_finalized_date": "20140321", 
+                "claim_payment_amount": "125", 
+                "health_care_claim_status": "F1:107", 
+                "remittance_date": "20140409", 
+                "remittance_trace_number": "08608-035632423", 
+                "status_information_effective_date": "20140424", 
+                "total_claim_charge_amount": "150"
+            }, 
+            "segment_id": "STC"
+        }, 
+        {
+            "data": {
+                "reference_identification": "E1TWCYYMF00", 
+                "reference_identification_qualifier": "1K"
+            }, 
+            "segment_id": "REF"
+        }, 
+        {
+            "data": {
+                "date_time_period": "20140305-20140305", 
+                "date_time_period_format_qualifier": "RD8", 
+                "date_time_qualifier": "472"
+            }, 
+            "segment_id": "DTP"
+        }, 
+        {
+            "data": {
+                "composite_medical_procedure_identifier": "HC:99214", 
+                "line_item_charge_amount": "150", 
+                "line_item_provider_payment_amount": "125", 
+                "original_units_of_service_count": "1"
+            }, 
+            "segment_id": "SVC"
+        }, 
+        {
+            "data": {
+                "health_care_claim_status": "F1:107", 
+                "status_information_effective_date": "20140424"
+            }, 
+            "segment_id": "STC"
+        }, 
+        {
+            "data": {
+                "date_time_period": "20140305-20140305", 
+                "date_time_period_format_qualifier": "RD8", 
+                "date_time_qualifier": "472"
+            }, 
+            "segment_id": "DTP"
+        }
+    ]
 }
 ```
 
