@@ -17,9 +17,9 @@ from those batch files will be streamed into the platform as activities and asso
 ## Supported Content-Type and Accept header values
 
 The X12 APIs currently support three different mime type values that may be provided in the Content-Type and Accept
-header values to control the input and output data format.
+header values to control the input and output data format. A fourth `Accept` header value of `application/vnd.pokitdok.v4+x12-segments-json` 
+is also available to control the output data format.
 
-An additional Accept header value to control the output data format is `application/vnd.pokitdok.v4+x12-segments-json`.
 
 ### application/json
 
@@ -58,11 +58,27 @@ Example Response:
 }
 ```
 
+### application/edi-x12
+
+Use this value when you wish to send and receive raw X12 with no extra wrapping or information.
+This mime type is most useful for systems that don't have good JSON support and wish to send and receive
+X12 transactions directly.
+
+Example Request data `POST`ed to an X12-based API:
+```
+ISA*...IEA*1*000000001~
+```
+
+Example Response:
+```
+ISA*...IEA*1*000000001~
+```
+
 ### application/vnd.pokitdok.v4+x12-segments-json
 
-This value can be used when you would like to receive the full x12 data back but not in the raw X12 format.
+Use this value as your `Accept` header when you would like to receive the full X12 data in your response as transliterated JSON rather than raw X12.
 
-Here's an example full X12 response that you might see from the eligibility API when `application/vnd.pokitdok.v4+x12-segments-json` is requested via the `Accept` header:
+Example response from the eligibility API when `application/vnd.pokitdok.v4+x12-segments-json` is requested via the `Accept` header:
 ```
 {
     "x12_segments": [
@@ -228,21 +244,6 @@ Here's an example full X12 response that you might see from the eligibility API 
 }
 ```
 
-### application/edi-x12
-
-Use this value when you wish to send and receive raw X12 with no extra wrapping or information.
-This mime type is most useful for systems that don't have good JSON support and wish to send and receive
-X12 transactions directly.
-
-Example Request data `POST`ed to an X12-based API:
-```
-ISA*...IEA*1*000000001~
-```
-
-Example Response:
-```
-ISA*...IEA*1*000000001~
-```
 
 ## Mixing mime types
 
