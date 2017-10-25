@@ -17,7 +17,9 @@ from those batch files will be streamed into the platform as activities and asso
 ## Supported Content-Type and Accept header values
 
 The X12 APIs currently support three different mime type values that may be provided in the Content-Type and Accept
-header values to control the input and output data format.
+header values to control the input and output data format. A fourth `Accept` header value of `application/vnd.pokitdok.v4+x12-segments-json` 
+is also available to control the output data format.
+
 
 ### application/json
 
@@ -71,6 +73,177 @@ Example Response:
 ```
 ISA*...IEA*1*000000001~
 ```
+
+### application/vnd.pokitdok.v4+x12-segments-json
+
+Use this value as your `Accept` header when you would like to receive the full X12 data in your response as transliterated JSON rather than raw X12.
+
+Example response from the eligibility API when `application/vnd.pokitdok.v4+x12-segments-json` is requested via the `Accept` header:
+```
+{
+    "x12_segments": [
+        {
+            "data": {
+                "hierarchical_structure_code": "0010", 
+                "reference_identification": "69c8aaca-584f-4513-8c13-e22026dd4a39", 
+                "transaction_set_creation_date": "20140424", 
+                "transaction_set_creation_time": "16521192", 
+                "transaction_set_purpose_code": "08", 
+                "transaction_type_code": "DG"
+            }, 
+            "segment_id": "BHT"
+        }, 
+        {
+            "data": {
+                "hierarchical_child_code": "1", 
+                "hierarchical_id_number": "1", 
+                "hierarchical_level_code": "20"
+            }, 
+            "segment_id": "HL"
+        }, 
+        {
+            "data": {
+                "entity_identifier_code": "PR", 
+                "entity_type_qualifier": "2", 
+                "identification_code_qualifier": "PI", 
+                "last_or_organization_name": "PAYERA", 
+                "primary_identifier": "60054"
+            }, 
+            "segment_id": "NM1"
+        }, 
+        {
+            "data": {
+                "hierarchical_child_code": "1", 
+                "hierarchical_id_number": "2", 
+                "hierarchical_level_code": "21", 
+                "hierarchical_parent_id": "1"
+            }, 
+            "segment_id": "HL"
+        }, 
+        {
+            "data": {
+                "entity_identifier_code": "41", 
+                "entity_type_qualifier": "1", 
+                "first_name": "STEPHEN", 
+                "identification_code_qualifier": "46", 
+                "last_or_organization_name": "KNOX", 
+                "primary_identifier": "1255439345"
+            }, 
+            "segment_id": "NM1"
+        }, 
+        {
+            "data": {
+                "hierarchical_child_code": "1", 
+                "hierarchical_id_number": "3", 
+                "hierarchical_level_code": "19", 
+                "hierarchical_parent_id": "2"
+            }, 
+            "segment_id": "HL"
+        }, 
+        {
+            "data": {
+                "entity_identifier_code": "1P", 
+                "entity_type_qualifier": "1", 
+                "first_name": "STEPHEN", 
+                "identification_code_qualifier": "XX", 
+                "last_or_organization_name": "KNOX", 
+                "primary_identifier": "1255439345"
+            }, 
+            "segment_id": "NM1"
+        }, 
+        {
+            "data": {
+                "hierarchical_child_code": "0", 
+                "hierarchical_id_number": "4", 
+                "hierarchical_level_code": "22", 
+                "hierarchical_parent_id": "3"
+            }, 
+            "segment_id": "HL"
+        }, 
+        {
+            "data": {
+                "entity_identifier_code": "IL", 
+                "entity_type_qualifier": "1", 
+                "first_name": "JANE", 
+                "identification_code_qualifier": "MI", 
+                "last_or_organization_name": "DOE", 
+                "primary_identifier": "ABC1234567"
+            }, 
+            "segment_id": "NM1"
+        }, 
+        {
+            "data": {
+                "trace_number": "E1TWCYYMF", 
+                "trace_type_code": "2"
+            }, 
+            "segment_id": "TRN"
+        }, 
+        {
+            "data": {
+                "claim_payment_amount": "0", 
+                "health_care_claim_status": "E0:21", 
+                "health_care_claim_status_2": "E0:0", 
+                "health_care_claim_status_3": "E0:1", 
+                "status_information_effective_date": "20160308", 
+                "total_claim_charge_amount": "0"
+            }, 
+            "segment_id": "STC"
+        }, 
+        {
+            "data": {
+                "adjudication_finalized_date": "20140321", 
+                "claim_payment_amount": "125", 
+                "health_care_claim_status": "F1:107", 
+                "remittance_date": "20140409", 
+                "remittance_trace_number": "08608-035632423", 
+                "status_information_effective_date": "20140424", 
+                "total_claim_charge_amount": "150"
+            }, 
+            "segment_id": "STC"
+        }, 
+        {
+            "data": {
+                "reference_identification": "E1TWCYYMF00", 
+                "reference_identification_qualifier": "1K"
+            }, 
+            "segment_id": "REF"
+        }, 
+        {
+            "data": {
+                "date_time_period": "20140305-20140305", 
+                "date_time_period_format_qualifier": "RD8", 
+                "date_time_qualifier": "472"
+            }, 
+            "segment_id": "DTP"
+        }, 
+        {
+            "data": {
+                "composite_medical_procedure_identifier": "HC:99214", 
+                "line_item_charge_amount": "150", 
+                "line_item_provider_payment_amount": "125", 
+                "original_units_of_service_count": "1"
+            }, 
+            "segment_id": "SVC"
+        }, 
+        {
+            "data": {
+                "health_care_claim_status": "F1:107", 
+                "status_information_effective_date": "20140424"
+            }, 
+            "segment_id": "STC"
+        }, 
+        {
+            "data": {
+                "date_time_period": "20140305-20140305", 
+                "date_time_period_format_qualifier": "RD8", 
+                "date_time_qualifier": "472"
+            }, 
+            "segment_id": "DTP"
+        }
+    ]
+}
+```
+
 
 ## Mixing mime types
 
