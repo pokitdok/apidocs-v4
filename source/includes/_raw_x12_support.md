@@ -16,8 +16,10 @@ from those batch files will be streamed into the platform as activities and asso
 
 ## Supported Content-Type and Accept header values
 
-The X12 APIs currently support four different mime type values that may be provided in the Content-Type and Accept
+The X12 APIs currently support three different mime type values that may be provided in the Content-Type and Accept
 header values to control the input and output data format.
+
+An additional Accept header value to control the output data format is `application/vnd.pokitdok.v4+x12-segments-json`.
 
 ### application/json
 
@@ -60,33 +62,7 @@ Example Response:
 
 This value can be used when you would like to receive the full x12 data back but not in the raw X12 format.
 
-Example Request data `POST`ed to an X12-based API:
-```
-ISA*00*          *00*          *30*042064683      *30*453504565      *140424*1652*^*00501*000000015*0*T*:~
-GS*HN*042064683*453504565*20140424*1652*15*X*005010X212~
-ST*277*0001*005010X212~
-BHT*0010*08*69c8aaca-584f-4513-8c13-e22026dd4a39*20140424*16521192*DG~
-HL*1**20*1~
-NM1*PR*2*PAYERA*****PI*60054~
-HL*2*1*21*1~
-NM1*41*1*KNOX*STEPHEN****46*1255439345~
-HL*3*2*19*1~
-NM1*1P*1*KNOX*STEPHEN****XX*1255439345~
-HL*4*3*22*0~
-NM1*IL*1*DOE*JANE****MI*ABC1234567~
-TRN*2*E1TWCYYMF~
-STC*E0:21*20160308**0*0*****E0:0*E0:1~
-STC*F1:107*20140424**150*125*20140321**20140409*08608-035632423~
-REF*1K*E1TWCYYMF00~
-DTP*472*RD8*20140305-20140305~
-SVC*HC:99214*150*125****1~
-STC*F1:107*20140424~
-DTP*472*RD8*20140305-20140305~
-SE*18*0001~
-GE*1*15~
-```
-
-Example Response:
+Here's an example full X12 response that you might see from the eligibility API when `application/vnd.pokitdok.v4+x12-segments-json` is requested via the `Accept` header:
 ```
 {
     "x12_segments": [
