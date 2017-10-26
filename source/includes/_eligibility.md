@@ -966,6 +966,129 @@ let data = [
 try client.eligibility(params: data)
 ```
 
+> Example medicare_national eligibility request including HCPCS code:
+
+```shell
+curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json" -XPOST -d '{
+    "member": {
+        "birth_date": "1970-01-25",
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "id": "W000000000"
+    },
+    "provider": {
+        "first_name": "JEROME",
+        "last_name": "AYA-AY",
+        "npi": "1467560003"
+    },
+    "procedure_id": "G0120",
+    "procedure_id_qualifier": "hcpcs",
+    "trading_partner_id": "medicare_national"
+}' https://platform.pokitdok.com/api/v4/eligibility/
+```
+
+```python
+client.eligibility({
+    "member": {
+        "birth_date": "1970-01-25",
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "id": "W000000000"
+    },
+    "provider": {
+        "first_name": "JEROME",
+        "last_name": "AYA-AY",
+        "npi": "1467560003"
+    },
+    "procedure_id": "G0120",
+    "procedure_id_qualifier": "hcpcs",
+    "trading_partner_id": "medicare_national"
+})
+```
+
+```csharp
+ client.eligibility (
+			new Dictionary<string, object> {
+			 	{"member", new Dictionary<string, object> {
+					{"id", "W000000000"},
+					{"birth_date", "1970-01-25"},
+					{"first_name", "Jane"},
+					{"last_name", "Doe"}
+					}},
+				{"provider", new Dictionary<string, object> {
+					{"npi", "1467560003"},
+					{"last_name", "AYA-AY"},
+					{"first_name", "JEROME"}
+					}},
+				{"procedure_id", "G0120"},
+				{"procedure_id_qualifier", "hcpcs"},
+				{"trading_partner_id", "medicare_national"}
+		});
+```
+
+```ruby
+client.eligibility({
+    member: {
+        birth_date: "1970-01-25",
+        first_name: "Jane",
+        last_name: "Doe",
+        id: "W000000000"
+    },
+    provider: {
+        first_name: "JEROME",
+        last_name: "AYA-AY",
+        npi: "1467560003"
+    },
+    procedure_id: "G0120",
+    procedure_id_qualifier: "hcpcs",
+    trading_partner_id: "medicare_national"
+})
+```
+
+```java
+StringBuffer buf = new StringBuffer();
+
+buf.append("{");
+buf.append("    \"member\": {");
+buf.append("        \"birth_date\": \"1970-01-25\",");
+buf.append("        \"first_name\": \"Jane\",");
+buf.append("        \"last_name\": \"Doe\",");
+buf.append("        \"id\": \"W000000000\"");
+buf.append("    },");
+buf.append("    \"provider\": {");
+buf.append("        \"first_name\": \"JEROME\",");
+buf.append("        \"last_name\": \"AYA-AY\",");
+buf.append("        \"npi\": \"1467560003\"");
+buf.append("    },");
+buf.append("    \"procedure_id\": \"G0120\",");
+buf.append("    \"procedure_id_qualifier\": \"hcpcs\",");
+buf.append("    \"trading_partner_id\": \"medicare_national\"");
+buf.append("}");
+
+JSONObject query = (JSONObject) JSONValue.parse(buf.toString());
+Map<String, Object> results = client.eligibility(query);
+```
+
+```swift
+let data = [
+    "member": [
+        "birth_date": "1970-01-25",
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "id": "W000000000"
+    ],
+    "provider": [
+        "first_name": "JEROME",
+        "last_name": "AYA-AY",
+        "npi": "1467560003"
+    ],
+    "procedure_id": "G0120",
+    "procedure_id_qualifier": "hcpcs",
+    "trading_partner_id": "medicare_national"
+] as [String:Any]
+try client.eligibility(params: data)
+```
+
 > Example eligibility request using custom application data for easy handling of asynchronous responses:
 
 ```shell
@@ -2242,6 +2365,7 @@ The `/eligibility/` response contains the following fields:
 | coverage.added_date                                 | Date coverage was added. |
 | coverage.coverage_details                           | Additional information relating to the coverage.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | coverage.benefit_begin_date                           | The date benefits begin for the member.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| coverage.benefit_begin                          | The date benefits begin for the member.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | coverage.benefit_end_date                           | The date benefits end for the member.                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | coverage.coverage_details.status                    | The status of the coverage.  Often used when member is in an Individual Exchange Grace Period.  Possible values include active_pending_investigation, inactive_pending_investigation and inactive_pending_eligibility_update.                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | coverage.coverage_details.period_start_date            | The start date for the coverage period. Often used when member is in an Individual Exchange Grace Period.                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
@@ -2254,6 +2378,7 @@ The `/eligibility/` response contains the following fields:
 | coverage.coverage_details.service_types             | The service type(s) returned by the trading partner.  A full listing of possible service_types values is included [below](#service-type).                                                                                                                                                                                                                                                                                      |
 | coverage.coverage_details.service_type_codes        | The numerical value for the service type codes returned by the trading partner. A full listing of possible service_type_codes values is included [below](#service-type).                                                                                                                                                                                                                                                                                                                        |
 | coverage.plan_benefit_description                   | Description for the plan benefits.                                                                                                                                                                                                                                                                                                                                                                                                                      				|
+| coverage.plan_benefit_description.benefit_begin                  | The date plan benefits begin for the member.                                                                                                                                                                                                                                                                                                                                                                                                                     				|
 | coverage.plan_benefit_description.messages.message  | Messages associated with the plan benefits.                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | coverage.plan_benefit_description.coverage_level    | The coverage level that applies to the plan benefits. Possible values include: employee_only, employee_and_spouse, employee_and_children, family, individual                                                                                                                                                                                                                                                                                                               |
 | coverage.plan_benefit_description.service_types     | The service type(s) returned by the trading partner. A full listing of possible service_types values is included [below](#service-type).                                                                                                                                                                                                                                                                                      |
