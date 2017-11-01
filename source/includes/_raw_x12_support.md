@@ -17,7 +17,7 @@ from those batch files will be streamed into the platform as activities and asso
 ## Supported Content-Type and Accept header values
 
 The X12 APIs currently support three different mime type values that may be provided in the Content-Type and Accept
-header values to control the input and output data format. A fourth `Accept` header value of `application/vnd.pokitdok.v4+x12-segments-json` 
+header values to control the input and output data format. A fourth `Accept` header value of `application/vnd.pokitdok.v4+full-x12-json` 
 is also available to control the output data format.
 
 
