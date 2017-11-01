@@ -74,7 +74,7 @@ Example Response:
 ISA*...IEA*1*000000001~
 ```
 
-### application/vnd.pokitdok.v4+x12-segments-json
+### application/vnd.pokitdok.v4+x12-full-json
 
 Use this value as your `Accept` header when you would like to receive the full X12 data in your response as transliterated JSON rather than raw X12.
 
