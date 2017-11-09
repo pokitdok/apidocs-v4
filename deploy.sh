@@ -21,7 +21,7 @@ echo "Building docs..."
 docker run -t -v "$PWD:/app" ruby:2.3 /app/build.sh
 
 echo "Deploying to staging..."
-aws s3 sync $PWD/build/ s3://$staging/ --acl public-read
+aws s3 sync $PWD/build/ s3://$staging/ --acl public-read --delete
 
 python -m webbrowser "https://s3.amazonaws.com/$staging/index.html"
 echo "Deployed to staging. Please verify correctness by typing (Y/N), followed by [ENTER]: "
@@ -39,7 +39,7 @@ if [ "$staging_ok" == "Y" ]; then
 	aws s3 sync s3://$production/ $PWD/backup/$DATE/
 
 	echo "Deploying to production..."
-	aws s3 sync $PWD/build/ s3://$production/ --acl public-read
+	aws s3 sync $PWD/build/ s3://$production/ --acl public-read --delete
 
 	echo "Deployed to production, check it out:"
 	python -m webbrowser "https://platform.pokitdok.com/documentation/v4/"
