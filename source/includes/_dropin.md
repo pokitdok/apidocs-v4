@@ -13,8 +13,8 @@ The PokitDok Drop-in UI enables anyone to add functionality like eligibility che
 please <a href="https://pokitdok.com/contact/">contact us</a> in order to enable the Drop-in UI on your PokitDok Platform account
 </aside>
 
-First you will need to <a href='https://platform.pokitdok.com/signup' target='_blank'>sign up for a PokitDok Platform account</a>
-and generate a `Drop-In Token` from the Platform dashboard <a href='https://platform.pokitdok.com/dashboard#/dropins' target='_blank'>Drop-In UI</a> page. You will need
+First you will need to <a href='https://platform.pokitdok.com/signup' target='\_blank'\>sign up for a PokitDok Platform account</a>
+and generate a `Drop-In Token` from the Platform dashboard <a href='https://platform.pokitdok.com/dashboard#/dropins' target='\_blank'\>Drop-In UI</a> page. You will need
 to provide the hostname of the website where you'll be using the drop-in UI, as well as select the type of drop-in UI widget you'll be using. For hostname,
 provide the base URL of the site that you intend on embedding the widget (i.e.- `https://pokitdok.com` not `https://pokitdok.com/page/with/widget`).
 
@@ -40,9 +40,9 @@ Add an HTML container with a specific ID that will house your drop-in UI.
 ## 4. Initialize Drop-in
 
 ```javascript
-pokitdok.dropin('INSERT YOUR DROP-IN TOKEN HERE', {
-   container: 'dropin-ui'
-   type: 'eligibility'
+pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
+   container: "dropin-ui"
+   type: "eligibility"
 })
 ```
 
@@ -51,44 +51,44 @@ Call the `pokitdok.dropin` function, using your PokitDok Platform `Drop-In Token
 The drop-in UI form will auto-populate in the HTML container that you specified.
 
 ## Types
-There are two types of drop-in UIs to choose from:
+There are three types of drop-in UIs to choose from:
 
 ### Eligibility
 
 > Eligibility example with minimum required options:
 
 ```javascript
-pokitdok.dropin('INSERT YOUR DROP-IN TOKEN HERE', {
-    container: 'dropin-ui',
-    type: 'eligibility'
+pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
+    container: "dropin-ui",
+    type: "eligibility"
 }
 ```
 
-Displays a form that requires first & last name, birth date, insurance provider, and member id.
+Displays a form that requires First & Last Name, Birth Date, Insurance Provider, and Member ID.
 Returns eligibility information in an easy to read format with detailed info including deductible status and co-pays.
 
 ### Calculator
 
 <aside class="warning">
-an array of 'procedures' is required for the drop-in UI calculator to work.
+procedures are required
 </aside>
 
 > Calculator example with minimum required options:
 
 ```javascript
-pokitdok.dropin('INSERT YOUR DROP-IN TOKEN HERE', {
-    container: 'dropin-ui',
-    type: 'calculator',
+pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
+    container: "dropin-ui",
+    type: "calculator",
     procedures: [
         {
-            'name': 'Test Procedure',
-            'cpt_code': 'xxxxx'
+            "name": "Test Procedure",
+            "cpt_code": "xxxxx"
         }
     ]
 }
 ```
 
-Displays a form that requires all the same fields as the eligibility type, with an added required procedure field and geolocation functionality
+Displays a form that requires all the same fields as the Eligibility type, with an added required procedure field and geolocation functionality
 for closest possible price estimation. Returns an out of pocket cost estimation based on average insurance prices and location information for the procedure that was selected, as well as
 eligibility. Displays in an easy to read format with detailed info including deductible status and co-pays.
 
@@ -104,24 +104,95 @@ showPriceRange          | Boolean                 | False    | Show insurance pr
 showCalculatorMessages  | Boolean                 | False    | Show a message below the out-of-pocket results explaining how calculation was made
 eligibilityResultsFirst | Boolean                 | False    | On results page, show eligibility results first and out-of-pocket results below that
 
+### Pharmacy Coverage
+
+<aside class="warning">
+pharmacy_npi and prescriber are required
+</aside>
+
+> Pharmacy coverage example with minimum required options:
+
+```javascript
+pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
+    container: "dropin-ui",
+    type: "pharmacy-coverage",
+    values: {
+        "pharmacy_npi": "xxxxxxxx",
+        "prescriber": {
+            "npi": "xxxxxxxx",
+            "last_name": "xxxxxxxx"
+        }
+    }
+}
+```
+
+> Pharmacy coverage example with type specific options:
+
+```javascript
+pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
+    container: "dropin-ui",
+    type: "pharmacy-coverage",
+    labels: [
+        {"name": "patient_header", "label": "Custom patient information header"},
+        {"name": "search_header", "label": "Custom search bar header"}
+    ],
+    values: {
+        "drugs": [
+            "11111111111"
+        ]
+        "pharmacy_npi": "xxxxxxxx",
+        "prescriber": {
+            "npi": "xxxxxxxx",
+            "last_name": "xxxxxxxx"
+        },
+        "insurance": {
+            "cardholder_id": "123",
+            "group_id": "456",
+            "bin_number": "123",
+            "pcn": "PCN"
+        }
+    }
+}
+```
+
+Displays a form that requires First & Last Name, Gender, Birth Date, and Insurance (Member ID, RxBIN, RxGroup, and RxPCN) on the first step. Once that's submitted it allows the user to enter multiple
+drug NDCs to search and compare prices, restrictions, and other comparison points in an easy to read table.
+
+#### Pharmacy Coverage Specific Options:
+
+Name                           | Type                    | Default                                 | Description
+-------------------------------|-------------------------|-----------------------------------------|--------------------------------------------------------------------------------------
+values.pharmacy_npi            | String                  | Null                                    | Pharmacy NPI that is registered with PokitDok, used when making pharmacy-coverage API calls
+values.prescriber              | Object                  | Null                                    | Prescriber information to use when making pharmacy-coverage API calls; `npi` and `last_name` are required
+values.prescriber.npi          | String                  | Null                                    | Prescriber NPI
+values.prescriber.last_name    | String                  | Null                                    | Prescriber last name
+labels.patient_header          | String                  | 'Enter patient information'             | Change the form header on patient information form, enter blank string to remove header
+labels.search_header           | String                  | 'Enter drug NDCs to search and compare' | Change the form header on drug search form, enter blank string to remove header
+values.drugs                   | Array                   | Null                                    | An array of drug NDCs to pre-populate the drug NDC search bar with
+values.insurance               | Object                  | Null                                    | Pre-populate the patient insurance information
+values.insurance.cardholder_id | String                  | Null                                    | Pre-populate the patient insurance member id
+values.insurance.group_id      | String                  | Null                                    | Pre-populate the patient insurance RxGroup
+values.insurance.bin_number    | String                  | Null                                    | Pre-populate the patient insurance RxBIN
+values.insurance.pcn           | String                  | Null                                    | Pre-populate the patient insurance RxPCN
+
 ## Options
 
 > Example with options:
 
 ```javascript
-pokitdok.dropin('INSERT YOUR DROP-IN TOKEN HERE', {
-    container: 'dropin-ui',
-    type: 'eligibility',
-    styles: 'http://www.example.com/styles.css',
+pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
+    container: "dropin-ui",
+    type: "eligibility",
+    styles: "http://www.example.com/styles.css",
     values: {
-        'trading_partner_id': 'MOCKPAYER'
+        "trading_partner_id": "MOCKPAYER"
     },
     labels: [
-        {'name': 'first_name', 'label': 'CUSTOM LABEL'},
+        {"name": "first_name", "label": "CUSTOM LABEL"},
     ]
     pieChartColors: {
-        'fill': '#000000',
-        'background': '#333333'
+        "fill": "#000000",
+        "background": "#333333"
     },
     autoSubmit: true,
     resetButton: true,
