@@ -163,15 +163,13 @@ try client.appointmentTypes(appointmentTypeUuid: "a3a45130-4adb-4d2c-9411-85a9d9
 > Response:
 
 ```json
-[
-    {
-      "type": "OV1",
-      "appointment_type_uuid": "ef987693-0a19-447f-814d-f8f3abbf4860",
-      "description": "Office Visit",
-      "scheduler_uuid": "967d207f-b024-41cc-8cac-89575a1f6fef",
-      "duration": 35
-    }
-]
+{
+  "type": "OV1",
+  "appointment_type_uuid": "ef987693-0a19-447f-814d-f8f3abbf4860",
+  "description": "Office Visit",
+  "scheduler_uuid": "967d207f-b024-41cc-8cac-89575a1f6fef",
+  "duration": 35
+}
 ```
 
 > Example scheduling request which registers an existing patient with a provider's scheduling system:
