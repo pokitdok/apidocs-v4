@@ -78,7 +78,7 @@ ISA*...IEA*1*000000001~
 
 Use this value as your `Accept` header when you would like to receive the full X12 data in your response as transliterated JSON rather than raw X12.
 
-Example response from the eligibility API when `application/vnd.pokitdok.v4+x12-segments-json` is requested via the `Accept` header:
+Example response from the eligibility API when `application/vnd.pokitdok.v4+full-x12-json` is requested via the `Accept` header:
 ```
 {
     "x12_segments": [
