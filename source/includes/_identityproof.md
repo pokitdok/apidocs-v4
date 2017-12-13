@@ -245,24 +245,28 @@ Request (IPR) json document defined below.
 
 | Parameter                 | Type     | Description                                                                       | Required |
 |---------------------------|----------|-----------------------------------------------------------------------------------|----------|
-| first_name                | {string} | Patient's legal first name.                                                       | Yes      |
-| middle_name               | {string} | Patient's legal middle name.                                                      | No       |
-| last_name                 | {string} | Patient's legal surname.                                                          | Yes      |
-| ssn                       | {string} | Patient's social security number.                                                 | Yes      |
-| birth_date.year           | {string} | The year the patient was born. (ISO 4-digit form, e.g. 1987)                      | Yes      |
-| birth_date.month          | {string} | The month the patient was born. (Unpadded numeric form, e.g. 1)                   | Yes      |
-| birth_date.day            | {string} | The day of the month the patient was born (Unpadded numeric form, e.g. 1)         | Yes      |
-| address.street1           | {string} | The first line of the patient's street address.                                   | Yes      |
-| address.street2           | {string} | The second line of the patient's street address.                                  | No       |
-| address.city              | {string} | The city/town of the patient's street address.                                    | Yes      |
-| address.state_or_province | {string} | The two-letter state abbreviation code of the patient's street address. (e.g. SC) | Yes      |
-| address.postal_code       | {string} | The zip or postal code of the patient's address. (e.g. 29414)                     | Yes      |
-| address.country_code      | {string} | The country code of the patient's address. (e.g. USA)                             | Yes      |
-| phone_number              | {string} | The patient's phone number.                                                       | No       |
-| email                     | {string} | The patient's email address.                                                      | No       |
-| ip_address                | {string} | The ip address the patient is using to connect to the provider system.            | No       |
+| first_name                | {string} | Person's legal first name.                                                        | Yes      |
+| middle_name               | {string} | Person's legal middle name.                                                       | No       |
+| last_name                 | {string} | Person's legal surname.                                                           | Yes      |
+| ssn                       | {string} | Person's social security number. (Full or last 4 digits)                          | Depends  |
+| drivers_license_number    | {string} | Person's driver's license number.                                                 | Depends  |
+| birth_date.year           | {string} | The year the person was born. (ISO 4-digit form, e.g. 1987)                       | Yes      |
+| birth_date.month          | {string} | The month the person was born. (Unpadded numeric form, e.g. 1)                    | Yes      |
+| birth_date.day            | {string} | The day of the month the person was born (Unpadded numeric form, e.g. 1)          | Yes      |
+| address.street1           | {string} | The first line of the person's street address.                                    | No       |
+| address.street2           | {string} | The second line of the person's street address.                                   | No       |
+| address.city              | {string} | The city/town of the person's street address.                                     | No       |
+| address.state_or_province | {string} | The two-letter state abbreviation code of the person's street address. (e.g. SC)  | No       |
+| address.postal_code       | {string} | The zip or postal code of the person's address. (e.g. 29414)                      | No       |
+| address.country_code      | {string} | The country code of the person's address. (e.g. US)                               | No       |
+| phone_number              | {string} | The person's phone number.                                                        | No       |
+| email                     | {string} | The person's email address.                                                       | No       |
+| ip_address                | {string} | The ip address the person is using to connect to the provider system.             | No       |
 
 <!--- end of table -->
+
+One of ssn or drivers_license_number is required. If using drivers_license_number then ideally address fields are 
+also provided but not required.
 
 It is worth noting that validation will always be run as part of verification, so providers do not need to hit the
 `/identity/proof/valid/` endpoint prior to a `/identity/proof/questions/generate/` call.
