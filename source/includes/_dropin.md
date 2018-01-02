@@ -22,16 +22,24 @@ provide the base URL of the site that you intend on embedding the widget (i.e.- 
 ## 2. Include JS File
 
 ```html
-<script src="https://platform.pokitdok.com/sdk/dropin.min.js"></script>
+<body>
+    ...
+    <script src="https://platform.pokitdok.com/sdk/dropin.min.js"></script>
+    ...
+</body>
 ```
 
-Include the `dropin.min.js` file in your website.
+Include the `dropin.min.js` file inside the `<body>` of your website.
 
 
 ## 3. Add HTML Container
 
 ```html
-<div id="dropin-ui"></div>
+<body>
+    ...
+    <div id="dropin-ui"></div>
+    ...
+</body>
 ```
 
 Add an HTML container with a specific ID that will house your drop-in UI.
@@ -39,14 +47,18 @@ Add an HTML container with a specific ID that will house your drop-in UI.
 
 ## 4. Initialize Drop-in
 
-```javascript
-pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
-   container: "dropin-ui",
-   type: "eligibility"
-})
+```html
+<script>
+    ...
+    pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
+       container: "dropin-ui",
+       type: "eligibility"
+    })
+    ...
+</script>
 ```
 
-Call the `pokitdok.dropin` function, using your PokitDok Platform `Drop-In Token` and <a href='/#options'>options</a>.
+Using javascript, call the `pokitdok.dropin` function, using your PokitDok Platform `Drop-In Token` and <a href='/#options'>options</a>.
 
 The drop-in UI form will auto-populate in the HTML container that you specified.
 
@@ -251,7 +263,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
 Name                      | Type                | Default  | Description
 --------------------------|---------------------|----------|--------------------------------------------------------------------------------------
 container                 | String              | Null     | The id of the HTML container that the drop-in UI will be housed in
-type                      | String              | Null     | Set the desired functionality of the drop-in; either `eligibility` or `calculator`
+type                      | String              | Null     | Set the desired functionality of the drop-in; either `eligibility`, `calculator`, or `pharmacy-coverage`
 styles                    | String (url)        | Null     | URL pointing to a css file to overwrite styles
 pieChartColors            | Object              | Null     | Change the colors of the pie chart in the eligibility results
 pieChartColors.fill       | String (hex color)  | Null     | Color of the filled-in section of the pie chart on the eligibility results
