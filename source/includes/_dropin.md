@@ -53,7 +53,7 @@ Add an HTML container with a specific ID that will house your drop-in UI.
     pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
        container: "dropin-ui",
        type: "eligibility"
-    })
+    });
     ...
 </script>
 ```
@@ -73,7 +73,7 @@ There are three types of drop-in UIs to choose from:
 pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
     container: "dropin-ui",
     type: "eligibility"
-}
+});
 ```
 
 Displays a form that requires First & Last Name, Birth Date, Insurance Provider, and Member ID.
@@ -97,7 +97,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
             "cpt_code": "xxxxx"
         }
     ]
-}
+});
 ```
 
 Displays a form that requires all the same fields as the Eligibility type, with an added required procedure field and geolocation functionality
@@ -135,7 +135,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
             "last_name": "xxxxxxxx"
         }
     }
-}
+});
 ```
 
 > Pharmacy coverage example with type specific options:
@@ -164,7 +164,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
             "pcn": "PCN"
         }
     }
-}
+});
 ```
 
 Displays a form that requires First & Last Name, Gender, Birth Date, and Insurance (Member ID, RxBIN, RxGroup, and RxPCN) on the first step. Once that's submitted it allows the user to enter multiple
@@ -214,7 +214,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
     onFormLoad: function() {
         // do stuff here
     }
-}
+});
 ```
 
 > Example of all fields pre-populated using `values` option:
