@@ -5,6 +5,7 @@ The PokitDok Drop-in UI enables anyone to add functionality like eligibility che
 * All major insurance carriers
 * Detailed eligibility info including deductible status and co-pays
 * Out-of-pocket cost estimation based on location and eligibility information
+* Compare pharmacy drug prices, restrictions, and other comparison points
 
 
 ## 1. Get Drop-in Token
@@ -22,16 +23,24 @@ provide the base URL of the site that you intend on embedding the widget (i.e.- 
 ## 2. Include JS File
 
 ```html
-<script src="https://platform.pokitdok.com/sdk/dropin.min.js"></script>
+<body>
+    ...
+    <script src="https://platform.pokitdok.com/sdk/dropin.min.js"></script>
+    ...
+</body>
 ```
 
-Include the `dropin.min.js` file in your website.
+Include the `dropin.min.js` file inside the `<body>` of your website.
 
 
 ## 3. Add HTML Container
 
 ```html
-<div id="dropin-ui"></div>
+<body>
+    ...
+    <div id="dropin-ui"></div>
+    ...
+</body>
 ```
 
 Add an HTML container with a specific ID that will house your drop-in UI.
@@ -39,14 +48,18 @@ Add an HTML container with a specific ID that will house your drop-in UI.
 
 ## 4. Initialize Drop-in
 
-```javascript
-pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
-   container: "dropin-ui"
-   type: "eligibility"
-})
+```html
+<script>
+    ...
+    pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
+       container: "dropin-ui",
+       type: "eligibility"
+    });
+    ...
+</script>
 ```
 
-Call the `pokitdok.dropin` function, using your PokitDok Platform `Drop-In Token` and <a href='/#options'>options</a>.
+Using javascript, call the `pokitdok.dropin` function, using your PokitDok Platform `Drop-In Token` and <a href='/#options'>options</a>.
 
 The drop-in UI form will auto-populate in the HTML container that you specified.
 
@@ -61,7 +74,7 @@ There are three types of drop-in UIs to choose from:
 pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
     container: "dropin-ui",
     type: "eligibility"
-}
+});
 ```
 
 Displays a form that requires First & Last Name, Birth Date, Insurance Provider, and Member ID.
@@ -85,7 +98,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
             "cpt_code": "xxxxx"
         }
     ]
-}
+});
 ```
 
 Displays a form that requires all the same fields as the Eligibility type, with an added required procedure field and geolocation functionality
@@ -123,7 +136,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
             "last_name": "xxxxxxxx"
         }
     }
-}
+});
 ```
 
 > Pharmacy coverage example with type specific options:
@@ -152,7 +165,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
             "pcn": "PCN"
         }
     }
-}
+});
 ```
 
 Displays a form that requires First & Last Name, Gender, Birth Date, and Insurance (Member ID, RxBIN, RxGroup, and RxPCN) on the first step. Once that's submitted it allows the user to enter multiple
@@ -189,7 +202,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
     },
     labels: [
         {"name": "first_name", "label": "CUSTOM LABEL"},
-    ]
+    ],
     pieChartColors: {
         "fill": "#000000",
         "background": "#333333"
@@ -202,7 +215,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
     onFormLoad: function() {
         // do stuff here
     }
-}
+});
 ```
 
 > Example of all fields pre-populated using `values` option:
@@ -251,7 +264,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
 Name                      | Type                | Default  | Description
 --------------------------|---------------------|----------|--------------------------------------------------------------------------------------
 container                 | String              | Null     | The id of the HTML container that the drop-in UI will be housed in
-type                      | String              | Null     | Set the desired functionality of the drop-in; either `eligibility` or `calculator`
+type                      | String              | Null     | Set the desired functionality of the drop-in; either `eligibility`, `calculator`, or `pharmacy-coverage`
 styles                    | String (url)        | Null     | URL pointing to a css file to overwrite styles
 pieChartColors            | Object              | Null     | Change the colors of the pie chart in the eligibility results
 pieChartColors.fill       | String (hex color)  | Null     | Color of the filled-in section of the pie chart on the eligibility results
