@@ -5,6 +5,7 @@ The PokitDok Drop-in UI enables anyone to add functionality like eligibility che
 * All major insurance carriers
 * Detailed eligibility info including deductible status and co-pays
 * Out-of-pocket cost estimation based on location and eligibility information
+* Compare pharmacy drug prices, restrictions, and other comparison points
 
 
 ## 1. Get Drop-in Token
