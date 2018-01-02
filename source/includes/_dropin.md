@@ -41,7 +41,7 @@ Add an HTML container with a specific ID that will house your drop-in UI.
 
 ```javascript
 pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
-   container: "dropin-ui"
+   container: "dropin-ui",
    type: "eligibility"
 })
 ```
@@ -189,7 +189,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
     },
     labels: [
         {"name": "first_name", "label": "CUSTOM LABEL"},
-    ]
+    ],
     pieChartColors: {
         "fill": "#000000",
         "background": "#333333"
