@@ -20,7 +20,18 @@
 
 ### Parameters
 
-The `/claims/drafts/` and `/claims/validate/` endpoint accepts the same parameters as the Claims endpoint [here](#claims).
+The `/claims/validate/` endpoint accepts the same parameters as the Claims endpoint [here](#claims).
+
+The `/claims/drafts` endpoint accepts the folowing parameter:
+
+
+<!--- beginning of table -->
+
+| Parameter | Description | 
+|:---------|:-----------|
+| draft | The claim draft. |
+
+<!--- end of table -->
 
 ### Response
 
