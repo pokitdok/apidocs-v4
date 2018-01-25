@@ -27,6 +27,7 @@ includes:
   - claims
   - claimsconvert
   - claimstatus
+  - claimsdrafts
   - eligibility
   - icdconvert
   - identityproof
