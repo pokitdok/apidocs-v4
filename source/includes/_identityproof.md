@@ -233,6 +233,8 @@ protected while still allowing them convenient access to their own healthcare in
 | /identity/proof/questions/generate/ | POST        | Generates a new KBA questionnaire.                      |
 | /identity/proof/questions/score/    | POST        | Scores the patient's response to a KBA question.        |
 | /identity/proof/valid/              | POST        | Validate's the identity fields provided by the patient. |
+| /identity/proof/report              | GET         | Generate report on prior KBA questionnaire activities. |
+
 
 <!--- end of table -->
 
@@ -282,6 +284,24 @@ the following parameters:
 | questionnaire_id | {string} | The KBA Questionnaire's uuid.                  |
 | question_id      | {string} | The question id.                               |
 | answer           | {string} | The answer_id of the choice the user selected. |
+
+<!--- end of table -->
+
+The `/identity/proof/report` endpoint generates reports on prior KBA questionnaire activities, with a record for each call to `/identity/proof/questions/generate` and the subsequent calls to `/identity/proof/questions/score`.
+If no parameters are given to `/identity/proof/report` it will return a JSON-formatted report for all questionnaires that were initiated in the previous 24 hours.
+CSV-formatted reports are also available, but the JSON report includes more details about the activities that comprise questionnaires.
+The endpoint accepts the following `GET` request parameters:
+
+
+<!--- beginning of table -->
+
+| Parameter       |  Type     |  Description
+|-----------------|-------------|------------------------------------------------|
+|start_dt          |  {datetime} |  ISO8601 date or datetime string for the start of a time-range report; defaults to (end_dt - 24hrs).|
+|end_dt            |  {datetime} |  ISO8601 date or datetime string for the end of a time-range report; defaults to now.|
+|questionnaire_id  |  {string}   |  Generate report for a specific questionnaire_id; start_dt and end_dt are ignored.|
+|activity_id       |  {string}   |  Generate report for a specific questionnaire involving the activity_id (where the activity_id was assigned to any `generate` or `score` call); `start_dt` and `end_dt` are ignored.|
+|csv               |  {boolean}  |  Generate a CSV-formatted response instead of JSON; defaults to false.|
 
 <!--- end of table -->
 
@@ -361,3 +381,46 @@ they are.
 
 In this case the scoring of the question did not grant us enough information to pass or fail the customer. Instead,
 we return the next question associated with that questionnaire.
+
+
+The `/identity/proof/report` endpoint can return a JSON or CSV report.
+The JSON report will have richer data concerning the individual activities that comprise KBA questionnaires, including the `activity_id`, timestamp and response status code for each.
+The CSV report lacks those complete details but does return the `activity_id` and status code for the originating call to `/identity/proof/questions/generate`.
+
+The JSON report is a list of objects, one for each KBA questionnaire covered. The following fields may be present in each object:
+
+
+<!--- beginning of table -->
+|Field                |  Type       |  Description |
+|---------------------|-------------|--------------|
+| start_dt             |  {datetime} |  Timestamp questionnaire was initiated.|
+| end_dt               |  {datetime} |  Timestamp questionnaire was completed; not present if questionnaire was not completed.|
+| questionnaire_id     |  {string}   |  Questionnaire's ID.|
+| verification_result  |  {string}   |  Verification result, if questionnaire was completed (`SUCCESS` or `FAILURE`).|
+| activities           |  {list}     |  List of metadata objects for each activity comprising the questionnaire, including `activity_id`, `timestamp`, and `status_code`.|
+| id_fields            |  {list}     |  List of identity field names (not the values) supplied to the initial `generate` call.|
+| is_valid             |  {boolean}  |  Whether the supplied identity is valid.|.|
+| is_verifiable        |  {boolean}  |  Whether the supplied is verifiable.|
+| n_questions          |  {int}      |  Number of questions asked.|
+
+<!--- end of table -->
+
+The CSV report includes a header line followed by a line for each questionnaire covered.
+The CSV report is still encapsulated by a JSON response payload, but the `data` field contains the CSV string rather than a list of objects, as with the JSON report.
+The following fields are returned for each CSV row:
+
+<!--- beginning of table -->
+| Field                |  Type       |  Description |
+|---------------------|--------------|-----------|
+| start_dt             |  {datetime} |  Timestamp questionnaire was initiated.|
+| end_dt               |  {datetime} |  Timestamp questionnaire was completed; empty if questionnaire was not completed.|
+| questionnaire_id     |  {string}   |  Questionnaire's ID.|
+| verification_result  |  {string}   |  Verification result, if questionnaire was completed (`SUCCESS` or `FAILURE`).|
+| generate_activity_id |  {string}   |  `activity_id` for the initial `generate` call.|
+| generate_status      |  {int}      |  Response status code for the initial `generate` call.|
+| id_fields            |  {string}   |  Comma-delimited list of identity field names (not the values) supplied to the initial generate call.|
+| is_valid             |  {boolean}  |  Whether the supplied identity is valid.|
+| is_verifiable        |  {boolean}  |  Whether the supplied is verifiable.|
+| n_questions          |  {int}      |  Number of questions asked.|
+
+<!--- end of table -->
