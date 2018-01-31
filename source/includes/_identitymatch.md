@@ -166,6 +166,7 @@ try client.request(path: path, method: "GET")
 }
 ```
 
+-> Example request for a specific canonical_id document from the MatchConfig specified by `<algorithm_id>`, using a direct uuid lookup.
 
 ```shell
 curl -i -H "Authorization: Bearer $ACCESS_TOKEN" https://platform.pokitdok.com/api/v4/identity/match/algorithm_id/canonical_id
