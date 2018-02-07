@@ -12,7 +12,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
     "provider": {
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     },
     "service_date": "2014-01-25",
     "trading_partner_id": "MOCKPAYER"
@@ -30,7 +30,7 @@ client.claims_status({
     "provider": {
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     },
     "service_date": "2014-01-25",
     "trading_partner_id": "MOCKPAYER"
@@ -47,7 +47,7 @@ client.claimsStatus(
 						{"last_name", "Doe"}
 					}},
 				{"provider", new Dictionary<string, object> {
-						{"npi", "12345678901"},
+						{"npi", "1234567893"},
 						{"last_name", "BLACKWELL"},
 						{"first_name", "ELIZABETH"}
 					}},
@@ -67,7 +67,7 @@ client.claims_status({
     provider: {
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901"
+        npi: "1234567893"
     },
     service_date: "2014-01-25",
     trading_partner_id: "MOCKPAYER"
@@ -87,7 +87,7 @@ buf.append("    },");
 buf.append("    \"provider\": {");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\"");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"service_date\": \"2014-01-25\",");
 buf.append("    \"trading_partner_id\": \"MOCKPAYER\"");
@@ -108,7 +108,7 @@ let data = [
     "provider": [
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     ],
     "service_date": "2014-01-25",
     "trading_partner_id": "MOCKPAYER"
@@ -129,7 +129,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
     "provider": {
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     },
     "service_date": "2014-01-25",
     "subscriber": {
@@ -153,7 +153,7 @@ client.claims_status({
     "provider": {
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     },
     "service_date": "2014-01-25",
     "subscriber": {
@@ -177,7 +177,7 @@ client.claimsStatus(new Dictionary<string, object> {
     {"provider", new Dictionary<string, string> {
         {"first_name", "Elizabeth"},
         {"last_name", "Blackwell"},
-        {"npi", "12345678901"}
+        {"npi", "1234567893"}
     }},
     {"service_date", "2014-01-25"},
     {"subscriber", new Dictionary<string, string> {
@@ -202,7 +202,7 @@ client.claims_status({
     provider: {
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901"
+        npi: "1234567893"
     },
     service_date: "2014-01-25",
     subscriber: {
@@ -228,7 +228,7 @@ buf.append("    },");
 buf.append("    \"provider\": {");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\"");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"service_date\": \"2014-01-25\",");
 buf.append("    \"subscriber\": {");
@@ -255,7 +255,7 @@ let data = [
     "provider": [
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     ],
     "service_date": "2014-01-25",
     "subscriber": [
@@ -282,7 +282,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
     "provider": {
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     },
     "service_date": "2014-01-25",
     "service_end_date": "2014-01-25",
@@ -301,7 +301,7 @@ client.claims_status({
     "provider": {
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     },
     "service_date": "2014-01-25",
     "service_end_date": "2014-01-25",
@@ -320,7 +320,7 @@ client.claimsStatus(new Dictionary<string, object> {
         {"provider", new Dictionary<string, string> {
         {"first_name", "Elizabeth"},
         {"last_name", "Blackwell"},
-        {"npi", "12345678901"}
+        {"npi", "1234567893"}
     }},
     {"service_date", "2014-01-25"},
     {"service_end_date", "2014-01-25"},
@@ -339,7 +339,7 @@ client.claims_status({
     provider: {
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901"
+        npi: "1234567893"
     },
     service_date: "2014-01-25",
     service_end_date: "2014-01-25",
@@ -360,7 +360,7 @@ buf.append("    },");
 buf.append("    \"provider\": {");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\"");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"service_date\": \"2014-01-25\",");
 buf.append("    \"service_end_date\": \"2014-01-25\",");
@@ -382,7 +382,7 @@ let data = [
     "provider": [
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     ],
     "service_date": "2014-01-25",
     "service_end_date": "2014-01-25",
@@ -404,7 +404,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
     "provider": {
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     },
     "service_date": "2014-01-25",
     "tracking_id": "ABC12345",
@@ -423,7 +423,7 @@ client.claims_status({
     "provider": {
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     },
     "service_date": "2014-01-25",
     "tracking_id": "ABC12345",
@@ -442,7 +442,7 @@ client.claimsStatus(new Dictionary<string, object> {
     {"provider", new Dictionary<string, string> {
         {"first_name", "Elizabeth"},
         {"last_name", "Blackwell"},
-        {"npi", "12345678901"}
+        {"npi", "1234567893"}
     }},
     {"service_date", "2014-01-25"},
     {"tracking_id", "ABC12345"},
@@ -461,7 +461,7 @@ client.claims_status({
     provider: {
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901"
+        npi: "1234567893"
     },
     service_date: "2014-01-25",
     tracking_id: "ABC12345",
@@ -482,7 +482,7 @@ buf.append("    },");
 buf.append("    \"provider\": {");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\"");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"service_date\": \"2014-01-25\",");
 buf.append("    \"tracking_id\": \"ABC12345\",");
@@ -504,7 +504,7 @@ let data = [
     "provider": [
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901"
+        "npi": "1234567893"
     ],
     "service_date": "2014-01-25",
     "tracking_id": "ABC12345",
@@ -566,12 +566,12 @@ any matching claims:
         {
             "first_name": "Elizabeth",
             "last_name": "Blackwell",
-            "npi": "12345678901"
+            "npi": "1234567893"
         }
     ],
     "submitter": {
         "first_name": "Elizabeth",
-        "id": "12345678901",
+        "id": "1234567893",
         "last_name": "Blackwell"
     },
     "trading_partner_id": "MOCKPAYER"

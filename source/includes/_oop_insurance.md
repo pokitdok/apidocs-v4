@@ -80,7 +80,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
            "provider": {
                 "first_name": "ELIZABETH",
                 "last_name": "BLACKWELL",
-                "npi": "12345678901"
+                "npi": "1234567893"
            },
            "member": {
                "birth_date": "1970-01-25",
@@ -101,7 +101,7 @@ client.request('/oop/insurance-estimate', method='post', data={
            "provider": {
                 "first_name": "ELIZABETH",
                 "last_name": "BLACKWELL",
-                "npi": "12345678901"
+                "npi": "1234567893"
            },
            "member": {
                "birth_date": "1970-01-25",
@@ -125,7 +125,7 @@ Dictionary<string, object> data = new Dictionary<string, object> {
                         {"last_name", "Doe"}
                         }},
                     {"provider", new Dictionary<string, object> {
-                        {"npi", "12345678901"},
+                        {"npi", "1234567893"},
                         {"last_name", "BLACKWELL"},
                         {"first_name", "ELIZABETH"}
                         }}
@@ -146,7 +146,7 @@ client.request('/oop/insurance-estimate', method='post', params={
            provider: {
                 first_name: "ELIZABETH",
                 last_name: "BLACKWELL",
-                npi: "12345678901"
+                npi: "1234567893"
            },
            member: {
                birth_date: "1970-01-25",
@@ -170,7 +170,7 @@ let data = [
            "provider": [
                 "first_name": "ELIZABETH",
                 "last_name": "BLACKWELL",
-                "npi": "12345678901"
+                "npi": "1234567893"
            ],
            "member": [
                "birth_date": "1970-01-25",
@@ -599,7 +599,7 @@ try client.oopEstimate(params: data)
         "provider": {
             "first_name": "ELIZABETH",
             "last_name": "BLACKWELL",
-            "npi": "12345678901"
+            "npi": "1234567893"
         },
         "service_type_codes": [
             "98"

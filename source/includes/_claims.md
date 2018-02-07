@@ -9,7 +9,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -58,7 +58,7 @@ client.claims({
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -107,7 +107,7 @@ client.claims({
         taxonomy_code: "207Q00000X",
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901",
+        npi: "1234567893",
         address: {
             address_lines: [
                 "8311 WARREN H ABERNATHY HWY"
@@ -157,7 +157,7 @@ client.claims(
             {"taxonomy_code", "207Q00000X"},
             {"first_name", "Elizabeth"},
             {"last_name", "Blackwell"},
-            {"npi", "12345678901"},
+            {"npi", "1234567893"},
             {"address", new Dictionary<string, object> {
                 {"address_lines", new string[] {"8311 WARREN H ABERNATHY HWY"}},
                 {"city", "SPARTANBURG"},
@@ -201,7 +201,7 @@ buf.append("    \"billing_provider\": {");
 buf.append("        \"taxonomy_code\": \"207Q00000X\",");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\",");
+buf.append("        \"npi\": \"1234567893\",");
 buf.append("        \"address\": {");
 buf.append("            \"address_lines\": [");
 buf.append("                \"8311 WARREN H ABERNATHY HWY\"");
@@ -253,7 +253,7 @@ let data = [
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": [
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -323,7 +323,7 @@ try client.claims(params: data)
       },
       "first_name": "Elizabeth",
       "last_name": "Blackwell",
-      "npi": "12345678901",
+      "npi": "1234567893",
       "tax_id": "123456789",
       "taxonomy_code": "207Q00000X"
     },
@@ -450,7 +450,7 @@ try client.claims(params: data)
         {
              "first_name": "Elizabeth",
              "last_name": "Blackwell",
-             "npi": "12345678901",
+             "npi": "1234567893",
              "tax_id": "123456789",
              "trace_number": "0",
              "accepted_quantity": "1",
@@ -635,7 +635,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -699,7 +699,7 @@ client.claims({
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -763,7 +763,7 @@ client.claims({
         taxonomy_code: "207Q00000X",
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901",
+        npi: "1234567893",
         address: {
             address_lines: [
                 "8311 WARREN H ABERNATHY HWY"
@@ -828,7 +828,7 @@ client.claims(
             {"taxonomy_code", "207Q00000X"},
             {"first_name", "Elizabeth"},
             {"last_name", "Blackwell"},
-            {"npi", "12345678901"},
+            {"npi", "1234567893"},
             {"address", new Dictionary<string, object> {
                 {"address_lines", new string[] {"8311 WARREN H ABERNATHY HWY"}},
                 {"city", "SPARTANBURG"},
@@ -886,7 +886,7 @@ buf.append("    \"billing_provider\": {");
 buf.append("        \"taxonomy_code\": \"207Q00000X\",");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\",");
+buf.append("        \"npi\": \"1234567893\",");
 buf.append("        \"address\": {");
 buf.append("            \"address_lines\": [");
 buf.append("                \"8311 WARREN H ABERNATHY HWY\"");
@@ -953,7 +953,7 @@ let data = [
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": [
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -1026,7 +1026,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -1088,7 +1088,7 @@ client.claims({
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -1150,7 +1150,7 @@ client.claims({
         taxonomy_code: "207Q00000X",
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901",
+        npi: "1234567893",
         address: {
             address_lines: [
                 "8311 WARREN H ABERNATHY HWY"
@@ -1205,7 +1205,7 @@ client.claims(
             {"taxonomy_code", "207Q00000X"},
             {"first_name", "Elizabeth"},
             {"last_name", "Blackwell"},
-            {"npi", "12345678901"},
+            {"npi", "1234567893"},
             {"address", new Dictionary<string, object> {
                 {"address_lines", new string[] {"8311 WARREN H ABERNATHY HWY"}},
                 {"city", "SPARTANBURG"},
@@ -1254,7 +1254,7 @@ buf.append("    \"billing_provider\": {");
 buf.append("        \"taxonomy_code\": \"207Q00000X\",");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\",");
+buf.append("        \"npi\": \"1234567893\",");
 buf.append("        \"address\": {");
 buf.append("            \"address_lines\": [");
 buf.append("                \"8311 WARREN H ABERNATHY HWY\"");
@@ -1310,7 +1310,7 @@ let data = [
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": [
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -1363,7 +1363,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "1703 John B White Blvd, Unit A"
@@ -1414,7 +1414,7 @@ client.claims({
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "1703 John B White Blvd, Unit A"
@@ -1465,7 +1465,7 @@ client.claims({
         taxonomy_code: "207Q00000X",
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901",
+        npi: "1234567893",
         address: {
             address_lines: [
                 "1703 John B White Blvd, Unit A"
@@ -1517,7 +1517,7 @@ client.claims(
             {"taxonomy_code", "207Q00000X"},
             {"first_name", "Elizabeth"},
             {"last_name", "Blackwell"},
-            {"npi", "12345678901"},
+            {"npi", "1234567893"},
             {"address", new Dictionary<string, object> {
                 {"address_lines", new string[] {"1703 John B White Blvd, Unit A"}},
                 {"city", "SPARTANBURG"},
@@ -1563,7 +1563,7 @@ buf.append("    \"billing_provider\": {");
 buf.append("        \"taxonomy_code\": \"207Q00000X\",");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\",");
+buf.append("        \"npi\": \"1234567893\",");
 buf.append("        \"address\": {");
 buf.append("            \"address_lines\": [");
 buf.append("                \"1703 John B White Blvd, Unit A\"");
@@ -1617,7 +1617,7 @@ let data = [
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": [
             "address_lines": [
                 "1703 John B White Blvd, Unit A"
@@ -1673,7 +1673,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -1723,7 +1723,7 @@ client.claims({
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -1773,7 +1773,7 @@ client.claims({
         taxonomy_code: "207Q00000X",
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901",
+        npi: "1234567893",
         address: {
             address_lines: [
                 "8311 WARREN H ABERNATHY HWY"
@@ -1824,7 +1824,7 @@ client.claims(
             {"taxonomy_code", "207Q00000X"},
             {"first_name", "Elizabeth"},
             {"last_name", "Blackwell"},
-            {"npi", "12345678901"},
+            {"npi", "1234567893"},
             {"address", new Dictionary<string, object> {
                 {"address_lines", new string[] {"8311 WARREN H ABERNATHY HWY"}},
                 {"city", "SPARTANBURG"},
@@ -1869,7 +1869,7 @@ buf.append("    \"billing_provider\": {");
 buf.append("        \"taxonomy_code\": \"207Q00000X\",");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\",");
+buf.append("        \"npi\": \"1234567893\",");
 buf.append("        \"address\": {");
 buf.append("            \"address_lines\": [");
 buf.append("                \"8311 WARREN H ABERNATHY HWY\"");
@@ -1921,7 +1921,7 @@ let data = [
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": [
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -1975,7 +1975,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2025,7 +2025,7 @@ client.claims({
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2075,7 +2075,7 @@ client.claims({
         taxonomy_code: "207Q00000X",
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901",
+        npi: "1234567893",
         address: {
             address_lines: [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2126,7 +2126,7 @@ client.claims(
             {"taxonomy_code", "207Q00000X"},
             {"first_name", "Elizabeth"},
             {"last_name", "Blackwell"},
-            {"npi", "12345678901"},
+            {"npi", "1234567893"},
             {"address", new Dictionary<string, object> {
                 {"address_lines", new string[] {"8311 WARREN H ABERNATHY HWY"}},
                 {"city", "SPARTANBURG"},
@@ -2171,7 +2171,7 @@ buf.append("    \"billing_provider\": {");
 buf.append("        \"taxonomy_code\": \"207Q00000X\",");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\",");
+buf.append("        \"npi\": \"1234567893\",");
 buf.append("        \"address\": {");
 buf.append("            \"address_lines\": [");
 buf.append("                \"8311 WARREN H ABERNATHY HWY\"");
@@ -2224,7 +2224,7 @@ let data = [
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": [
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2284,7 +2284,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2337,7 +2337,7 @@ client.claims({
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2390,7 +2390,7 @@ client.claims({
         taxonomy_code: "207Q00000X",
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901",
+        npi: "1234567893",
         address: {
             address_lines: [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2444,7 +2444,7 @@ client.claims(
             {"taxonomy_code", "207Q00000X"},
             {"first_name", "Elizabeth"},
             {"last_name", "Blackwell"},
-            {"npi", "12345678901"},
+            {"npi", "1234567893"},
             {"address", new Dictionary<string, object> {
                 {"address_lines", new string[] {"8311 WARREN H ABERNATHY HWY"}},
                 {"city", "SPARTANBURG"},
@@ -2492,7 +2492,7 @@ buf.append("    \"billing_provider\": {");
 buf.append("        \"taxonomy_code\": \"207Q00000X\",");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\",");
+buf.append("        \"npi\": \"1234567893\",");
 buf.append("        \"address\": {");
 buf.append("            \"address_lines\": [");
 buf.append("                \"8311 WARREN H ABERNATHY HWY\"");
@@ -2548,7 +2548,7 @@ let data = [
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": [
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2600,7 +2600,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2627,7 +2627,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
     "claim": {
         "total_charge_amount": 60.0,
         "rendering_provider": {
-              "npi": "12345678901",
+              "npi": "1234567893",
               "first_name": "JANE",
               "last_name": "DOE",
               "taxonomy_code": "207N00000X"
@@ -2656,7 +2656,7 @@ client.claims({
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2683,7 +2683,7 @@ client.claims({
     "claim": {
         "total_charge_amount": 60.0,
         "rendering_provider": {
-              "npi": "12345678901",
+              "npi": "1234567893",
               "first_name": "JANE",
               "last_name": "DOE",
               "taxonomy_code": "207N00000X"
@@ -2712,7 +2712,7 @@ client.claims({
         taxonomy_code: "207Q00000X",
         first_name: "Elizabeth",
         last_name: "Blackwell",
-        npi: "12345678901",
+        npi: "1234567893",
         address: {
             address_lines: [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2739,7 +2739,7 @@ client.claims({
     claim: {
         total_charge_amount: 60.0,
         rendering_provider: {
-              npi: "12345678901",
+              npi: "1234567893",
               first_name: "JANE",
               last_name: "DOE",
               taxonomy_code: "207N00000X"
@@ -2769,7 +2769,7 @@ client.claims(
             {"taxonomy_code", "207Q00000X"},
             {"first_name", "Elizabeth"},
             {"last_name", "Blackwell"},
-            {"npi", "12345678901"},
+            {"npi", "1234567893"},
             {"address", new Dictionary<string, object> {
                 {"address_lines", new string[] {"8311 WARREN H ABERNATHY HWY"}},
                 {"city", "SPARTANBURG"},
@@ -2794,7 +2794,7 @@ client.claims(
         {"claim", new Dictionary<string, object> {
             {"total_charge_amount", 60.0},
             {"rendering_provider", new Dictionary<string, string> {
-                {"npi", "12345678901"},
+                {"npi", "1234567893"},
                 {"first_name", "JANE"},
                 {"last_name", "DOE"},
                 {"taxonomy_code", "207N00000X"}
@@ -2819,7 +2819,7 @@ buf.append("    \"billing_provider\": {");
 buf.append("        \"taxonomy_code\": \"207Q00000X\",");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\",");
+buf.append("        \"npi\": \"1234567893\",");
 buf.append("        \"address\": {");
 buf.append("            \"address_lines\": [");
 buf.append("                \"8311 WARREN H ABERNATHY HWY\"");
@@ -2846,7 +2846,7 @@ buf.append("    },");
 buf.append("    \"claim\": {");
 buf.append("        \"total_charge_amount\": 60.0,");
 buf.append("        \"rendering_provider\": {");
-buf.append("              \"npi\": \"12345678901\",");
+buf.append("              \"npi\": \"1234567893\",");
 buf.append("              \"first_name\": \"JANE\",");
 buf.append("              \"last_name\": \"DOE\",");
 buf.append("              \"taxonomy_code\": \"207N00000X\"");
@@ -2878,7 +2878,7 @@ let data = [
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": [
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2905,7 +2905,7 @@ let data = [
     "claim": [
         "total_charge_amount": 60.0,
         "rendering_provider": [
-              "npi": "12345678901",
+              "npi": "1234567893",
               "first_name": "JANE",
               "last_name": "DOE",
               "taxonomy_code": "207N00000X"
@@ -2937,7 +2937,7 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "taxonomy_code": "207Q00000X",
         "first_name": "Elizabeth",
         "last_name": "Blackwell",
-        "npi": "12345678901",
+        "npi": "1234567893",
         "address": {
             "address_lines": [
                 "8311 WARREN H ABERNATHY HWY"
@@ -2998,7 +2998,7 @@ client.claims({
     "taxonomy_code": "207Q00000X",
     "first_name": "Elizabeth",
     "last_name": "Blackwell",
-    "npi": "12345678901",
+    "npi": "1234567893",
     "address": {
       "address_lines": [
         "8311 WARREN H ABERNATHY HWY"
@@ -3057,7 +3057,7 @@ client.claims({
     taxonomy_code: "207Q00000X",
     first_name: "Elizabeth",
     last_name: "Blackwell",
-    npi: "12345678901",
+    npi: "1234567893",
     address: {
       address_lines: [
         "8311 WARREN H ABERNATHY HWY"
@@ -3110,7 +3110,7 @@ client.claims(
                 {"taxonomy_code", "207Q00000X"},
                 {"first_name", "Elizabeth"},
                 {"last_name", "Blackwell"},
-                {"npi", "12345678901"},
+                {"npi", "1234567893"},
                 {"address", new Dictionary<string, object> {
                         {"address_lines", new string[] {"8311 WARREN H ABERNATHY HWY"}},
                         {"city", "SPARTANBURG"},
@@ -3157,7 +3157,7 @@ buf.append("    \"billing_provider\": {");
 buf.append("        \"taxonomy_code\": \"207Q00000X\",");
 buf.append("        \"first_name\": \"Elizabeth\",");
 buf.append("        \"last_name\": \"Blackwell\",");
-buf.append("        \"npi\": \"12345678901\",");
+buf.append("        \"npi\": \"1234567893\",");
 buf.append("        \"address\": {");
 buf.append("            \"address_lines\": [");
 buf.append("                \"8311 WARREN H ABERNATHY HWY\"");
@@ -3210,7 +3210,7 @@ let data = [
     "taxonomy_code": "207Q00000X",
     "first_name": "Elizabeth",
     "last_name": "Blackwell",
-    "npi": "12345678901",
+    "npi": "1234567893",
     "address": [
       "address_lines": [
         "8311 WARREN H ABERNATHY HWY"
