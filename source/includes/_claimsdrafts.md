@@ -5,6 +5,8 @@
 
 ### Endpoint Description
 
+The drafts endpoint allows a user to create and upload claims that are not ready for submission or are intended to be submitted at a later date. Once the drafts are uploaded, Claims Management App users can view the drafts in their app and submit them as 837 claims once they are complete. Since a draft that is uploaded to our system does not pass through our 837 validation, the draft can be submitted while it is still in an incomplete state. The Claims Drafts API is only available to Claims Management App users. For more information about the Claims Management App, please visit our product page: https://pokitdok.com/business/claims-management/ or contact your local biz-dev representative: https://pokitdok.com/contact/
+
 <!--- beginning of table -->
 
 | Endpoint | HTTP Method | Description                                      |
