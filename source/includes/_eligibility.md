@@ -10,9 +10,9 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 }' https://platform.pokitdok.com/api/v4/eligibility/
@@ -27,9 +27,9 @@ client.eligibility({
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 })
@@ -45,9 +45,9 @@ client.eligibility({
 					{"last_name", "Doe"}
 					}},
 				{"provider", new Dictionary<string, object> {
-					{"npi", "1467560003"},
-					{"last_name", "AYA-AY"},
-					{"first_name", "JEROME"}
+					{"npi", "1234567893"},
+					{"last_name", "BLACKWELL"},
+					{"first_name", "ELIZABETH"}
 					}},
 				{"service_types", new string[] { "health_benefit_plan_coverage" }},
 				{"trading_partner_id", "MOCKPAYER"}
@@ -63,9 +63,9 @@ client.eligibility({
         id: "W000000000"
     },
     provider: {
-        first_name: "JEROME",
-        last_name: "AYA-AY",
-        npi: "1467560003"
+        first_name: "ELIZABETH",
+        last_name: "BLACKWELL",
+        npi: "1234567893"
     },
     trading_partner_id: "MOCKPAYER"
 })
@@ -82,9 +82,9 @@ buf.append("        \"last_name\": \"Doe\",");
 buf.append("        \"id\": \"W000000000\"");
 buf.append("    },");
 buf.append("    \"provider\": {");
-buf.append("        \"first_name\": \"JEROME\",");
-buf.append("        \"last_name\": \"AYA-AY\",");
-buf.append("        \"npi\": \"1467560003\"");
+buf.append("        \"first_name\": \"ELIZABETH\",");
+buf.append("        \"last_name\": \"BLACKWELL\",");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"trading_partner_id\": \"MOCKPAYER\"");
 buf.append("}");
@@ -102,9 +102,9 @@ let data = [
         "id": "W000000000"
     ],
     "provider": [
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     ],
     "trading_partner_id": "MOCKPAYER"
 ] as [String:Any]
@@ -121,9 +121,9 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 }' https://platform.pokitdok.com/api/v4/eligibility/
@@ -137,9 +137,9 @@ client.eligibility({
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 })
@@ -154,9 +154,9 @@ client.eligibility({
 					{"last_name", "Doe"}
 					}},
 				{"provider", new Dictionary<string, object> {
-					{"npi", "1467560003"},
-					{"last_name", "AYA-AY"},
-					{"first_name", "JEROME"}
+					{"npi", "1234567893"},
+					{"last_name", "BLACKWELL"},
+					{"first_name", "ELIZABETH"}
 					}},
 				{"service_types", new string[] { "health_benefit_plan_coverage" }},
 				{"trading_partner_id", "MOCKPAYER"}
@@ -171,9 +171,9 @@ client.eligibility({
         id: "W000000000"
     },
     provider: {
-        first_name: "JEROME",
-        last_name: "AYA-AY",
-        npi: "1467560003"
+        first_name: "ELIZABETH",
+        last_name: "BLACKWELL",
+        npi: "1234567893"
     },
     trading_partner_id: "MOCKPAYER"
 })
@@ -189,9 +189,9 @@ buf.append("        \"last_name\": \"Doe\",");
 buf.append("        \"id\": \"W000000000\"");
 buf.append("    },");
 buf.append("    \"provider\": {");
-buf.append("        \"first_name\": \"JEROME\",");
-buf.append("        \"last_name\": \"AYA-AY\",");
-buf.append("        \"npi\": \"1467560003\"");
+buf.append("        \"first_name\": \"ELIZABETH\",");
+buf.append("        \"last_name\": \"BLACKWELL\",");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"trading_partner_id\": \"MOCKPAYER\"");
 buf.append("}");
@@ -208,9 +208,9 @@ let data = [
         "id": "W000000000"
     ],
     "provider": [
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     ],
     "trading_partner_id": "MOCKPAYER"
 ] as [String:Any]
@@ -227,9 +227,9 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 }' https://platform.pokitdok.com/api/v4/eligibility/
@@ -243,9 +243,9 @@ client.eligibility({
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 })
@@ -260,9 +260,9 @@ client.eligibility({
 					{"last_name", "Doe"}
 					}},
 				{"provider", new Dictionary<string, object> {
-					{"npi", "1467560003"},
-					{"last_name", "AYA-AY"},
-					{"first_name", "JEROME"}
+					{"npi", "1234567893"},
+					{"last_name", "BLACKWELL"},
+					{"first_name", "ELIZABETH"}
 					}},
 				{"service_types", new string[] { "health_benefit_plan_coverage" }},
 				{"trading_partner_id", "MOCKPAYER"}
@@ -277,9 +277,9 @@ client.eligibility({
         id: "W000000000"
     },
     provider: {
-        first_name: "JEROME",
-        last_name: "AYA-AY",
-        npi: "1467560003"
+        first_name: "ELIZABETH",
+        last_name: "BLACKWELL",
+        npi: "1234567893"
     },
     trading_partner_id: "MOCKPAYER"
 })
@@ -295,9 +295,9 @@ buf.append("        \"last_name\": \"Doe\",");
 buf.append("        \"id\": \"W000000000\"");
 buf.append("    },");
 buf.append("    \"provider\": {");
-buf.append("        \"first_name\": \"JEROME\",");
-buf.append("        \"last_name\": \"AYA-AY\",");
-buf.append("        \"npi\": \"1467560003\"");
+buf.append("        \"first_name\": \"ELIZABETH\",");
+buf.append("        \"last_name\": \"BLACKWELL\",");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"trading_partner_id\": \"MOCKPAYER\"");
 buf.append("}");
@@ -314,9 +314,9 @@ let data = [
         "id": "W000000000"
     ],
     "provider": [
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     ],
     "trading_partner_id": "MOCKPAYER"
 ] as [String:Any]
@@ -332,9 +332,9 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 }' https://platform.pokitdok.com/api/v4/eligibility/
@@ -347,9 +347,9 @@ client.eligibility({
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 })
@@ -363,9 +363,9 @@ client.eligibility({
 					{"birth_date", "1970-01-25"}
 					}},
 				{"provider", new Dictionary<string, object> {
-					{"npi", "1467560003"},
-					{"last_name", "AYA-AY"},
-					{"first_name", "JEROME"}
+					{"npi", "1234567893"},
+					{"last_name", "BLACKWELL"},
+					{"first_name", "ELIZABETH"}
 					}},
 				{"service_types", new string[] { "health_benefit_plan_coverage" }},
 				{"trading_partner_id", "MOCKPAYER"}
@@ -379,9 +379,9 @@ client.eligibility({
         id: "W000000000"
     },
     provider: {
-        first_name: "JEROME",
-        last_name: "AYA-AY",
-        npi: "1467560003"
+        first_name: "ELIZABETH",
+        last_name: "BLACKWELL",
+        npi: "1234567893"
     },
     trading_partner_id: "MOCKPAYER"
 })
@@ -396,9 +396,9 @@ buf.append("        \"birth_date\": \"1970-01-25\",");
 buf.append("        \"id\": \"W000000000\"");
 buf.append("    },");
 buf.append("    \"provider\": {");
-buf.append("        \"first_name\": \"JEROME\",");
-buf.append("        \"last_name\": \"AYA-AY\",");
-buf.append("        \"npi\": \"1467560003\"");
+buf.append("        \"first_name\": \"ELIZABETH\",");
+buf.append("        \"last_name\": \"BLACKWELL\",");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"trading_partner_id\": \"MOCKPAYER\"");
 buf.append("}");
@@ -414,9 +414,9 @@ let data = [
         "id": "W000000000"
     ],
     "provider": [
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     ],
     "trading_partner_id": "MOCKPAYER"
 ] as [String:Any]
@@ -433,9 +433,9 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "last_name": "Doe"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 }' https://platform.pokitdok.com/api/v4/eligibility/
@@ -449,9 +449,9 @@ client.eligibility({
         "last_name": "Doe"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 })
@@ -466,9 +466,9 @@ client.eligibility({
 					{"last_name", "Doe"}
 					}},
 				{"provider", new Dictionary<string, object> {
-					{"npi", "1467560003"},
-					{"last_name", "AYA-AY"},
-					{"first_name", "JEROME"}
+					{"npi", "1234567893"},
+					{"last_name", "BLACKWELL"},
+					{"first_name", "ELIZABETH"}
 					}},
 				{"service_types", new string[] { "health_benefit_plan_coverage" }},
 				{"trading_partner_id", "MOCKPAYER"}
@@ -483,9 +483,9 @@ client.eligibility({
         last_name: "Doe"
     },
     provider: {
-        first_name: "JEROME",
-        last_name: "AYA-AY",
-        npi: "1467560003"
+        first_name: "ELIZABETH",
+        last_name: "BLACKWELL",
+        npi: "1234567893"
     },
     trading_partner_id: "MOCKPAYER"
 })
@@ -501,9 +501,9 @@ buf.append("        \"first_name\": \"Jane\",");
 buf.append("        \"last_name\": \"Doe\"");
 buf.append("    },");
 buf.append("    \"provider\": {");
-buf.append("        \"first_name\": \"JEROME\",");
-buf.append("        \"last_name\": \"AYA-AY\",");
-buf.append("        \"npi\": \"1467560003\"");
+buf.append("        \"first_name\": \"ELIZABETH\",");
+buf.append("        \"last_name\": \"BLACKWELL\",");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"trading_partner_id\": \"MOCKPAYER\"");
 buf.append("}");
@@ -520,9 +520,9 @@ let data = [
         "last_name": "Doe"
     ],
     "provider": [
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     ],
     "trading_partner_id": "MOCKPAYER"
 ] as [String:Any]
@@ -541,9 +541,9 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "group_number": "123456"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 }' https://platform.pokitdok.com/api/v4/eligibility/
@@ -559,9 +559,9 @@ client.eligibility({
         "group_number": "123456"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER"
 })
@@ -577,9 +577,9 @@ client.eligibility({
         group_number: "123456"
     },
     provider: {
-        first_name: "JEROME",
-        last_name: "AYA-AY",
-        npi: "1467560003"
+        first_name: "ELIZABETH",
+        last_name: "BLACKWELL",
+        npi: "1234567893"
     },
     trading_partner_id: "MOCKPAYER"
 })
@@ -597,9 +597,9 @@ client.eligibility(
                 {"group_number", "123456"}
             }},
         {"provider", new Dictionary<string, string> {
-                {"first_name", "JEROME"},
-                {"last_name", "AYA-AY"},
-                {"npi", "1467560003"}
+                {"first_name", "ELIZABETH"},
+                {"last_name", "BLACKWELL"},
+                {"npi", "1234567893"}
             }},
         {"trading_partner_id", "MOCKPAYER"}
     }
@@ -618,9 +618,9 @@ buf.append("        \"id\": \"W000000000\",");
 buf.append("        \"group_number\": \"123456\"");
 buf.append("    },");
 buf.append("    \"provider\": {");
-buf.append("        \"first_name\": \"JEROME\",");
-buf.append("        \"last_name\": \"AYA-AY\",");
-buf.append("        \"npi\": \"1467560003\"");
+buf.append("        \"first_name\": \"ELIZABETH\",");
+buf.append("        \"last_name\": \"BLACKWELL\",");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"trading_partner_id\": \"MOCKPAYER\"");
 buf.append("}");
@@ -639,9 +639,9 @@ let data = [
         "group_number": "123456"
     ],
     "provider": [
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     ],
     "trading_partner_id": "MOCKPAYER"
 ] as [String:Any]
@@ -741,9 +741,9 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "service_types": [ "emergency_services" ],
     "trading_partner_id": "MOCKPAYER"
@@ -759,9 +759,9 @@ client.eligibility({
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "service_types": [ "emergency_services" ],
     "trading_partner_id": "MOCKPAYER"
@@ -778,9 +778,9 @@ client.eligibility(
                 {"id", "W000000000"}
             }},
         {"provider", new Dictionary<string, string> {
-                {"first_name", "JEROME"},
-                {"last_name", "AYA-AY"},
-                {"npi", "1467560003"}
+                {"first_name", "ELIZABETH"},
+                {"last_name", "BLACKWELL"},
+                {"npi", "1234567893"}
             }},
         {"service_types", new string[] { "emergency_services" }},
         {"trading_partner_id", "MOCKPAYER"}
@@ -797,9 +797,9 @@ client.eligibility({
         id: "W000000000"
     },
     provider: {
-        first_name: "JEROME",
-        last_name: "AYA-AY",
-        npi: "1467560003"
+        first_name: "ELIZABETH",
+        last_name: "BLACKWELL",
+        npi: "1234567893"
     },
     "service_types": [ "emergency_services" ],
     "trading_partner_id": "MOCKPAYER"
@@ -817,9 +817,9 @@ buf.append("        \"last_name\": \"Doe\",");
 buf.append("        \"id\": \"W000000000\"");
 buf.append("    },");
 buf.append("    \"provider\": {");
-buf.append("        \"first_name\": \"JEROME\",");
-buf.append("        \"last_name\": \"AYA-AY\",");
-buf.append("        \"npi\": \"1467560003\"");
+buf.append("        \"first_name\": \"ELIZABETH\",");
+buf.append("        \"last_name\": \"BLACKWELL\",");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"service_types\": [\"emergency_services\"],");
 buf.append("    \"trading_partner_id\": \"MOCKPAYER\"");
@@ -838,9 +838,9 @@ let data = [
         "id": "W000000000"
     ],
     "provider": [
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     ],
     "service_types": [ "emergency_services" ],
     "trading_partner_id": "MOCKPAYER"
@@ -859,9 +859,9 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "cpt_code": "81291",
     "trading_partner_id": "MOCKPAYER"
@@ -877,9 +877,9 @@ client.eligibility({
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "cpt_code": "81291",
     "trading_partner_id": "MOCKPAYER"
@@ -896,9 +896,9 @@ client.eligibility(
                 {"id", "W000000000"}
             }},
         {"provider", new Dictionary<string, string> {
-                {"first_name", "JEROME"},
-                {"last_name", "AYA-AY"},
-                {"npi", "1467560003"}
+                {"first_name", "ELIZABETH"},
+                {"last_name", "BLACKWELL"},
+                {"npi", "1234567893"}
             }},
         {"cpt_code", "81291"},
         {"trading_partner_id", "MOCKPAYER"}
@@ -915,9 +915,9 @@ client.eligibility({
         id: "W000000000"
     },
     provider: {
-        first_name: "JEROME",
-        last_name: "AYA-AY",
-        npi: "1467560003"
+        first_name: "ELIZABETH",
+        last_name: "BLACKWELL",
+        npi: "1234567893"
     },
     cpt_code: "81291",
     trading_partner_id: "MOCKPAYER"
@@ -935,9 +935,9 @@ buf.append("        \"last_name\": \"Doe\",");
 buf.append("        \"id\": \"W000000000\"");
 buf.append("    },");
 buf.append("    \"provider\": {");
-buf.append("        \"first_name\": \"JEROME\",");
-buf.append("        \"last_name\": \"AYA-AY\",");
-buf.append("        \"npi\": \"1467560003\"");
+buf.append("        \"first_name\": \"ELIZABETH\",");
+buf.append("        \"last_name\": \"BLACKWELL\",");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"cpt_code\": \"81291\",");
 buf.append("    \"trading_partner_id\": \"MOCKPAYER\"");
@@ -956,9 +956,9 @@ let data = [
         "id": "W000000000"
     ],
     "provider": [
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     ],
     "cpt_code": "81291",
     "trading_partner_id": "MOCKPAYER"
@@ -977,9 +977,9 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "procedure_id": "G0120",
     "procedure_id_qualifier": "hcpcs",
@@ -996,9 +996,9 @@ client.eligibility({
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "procedure_id": "G0120",
     "procedure_id_qualifier": "hcpcs",
@@ -1016,9 +1016,9 @@ client.eligibility({
 					{"last_name", "Doe"}
 					}},
 				{"provider", new Dictionary<string, object> {
-					{"npi", "1467560003"},
-					{"last_name", "AYA-AY"},
-					{"first_name", "JEROME"}
+					{"npi", "1234567893"},
+					{"last_name", "BLACKWELL"},
+					{"first_name", "ELIZABETH"}
 					}},
 				{"procedure_id", "G0120"},
 				{"procedure_id_qualifier", "hcpcs"},
@@ -1035,9 +1035,9 @@ client.eligibility({
         id: "W000000000"
     },
     provider: {
-        first_name: "JEROME",
-        last_name: "AYA-AY",
-        npi: "1467560003"
+        first_name: "ELIZABETH",
+        last_name: "BLACKWELL",
+        npi: "1234567893"
     },
     procedure_id: "G0120",
     procedure_id_qualifier: "hcpcs",
@@ -1056,9 +1056,9 @@ buf.append("        \"last_name\": \"Doe\",");
 buf.append("        \"id\": \"W000000000\"");
 buf.append("    },");
 buf.append("    \"provider\": {");
-buf.append("        \"first_name\": \"JEROME\",");
-buf.append("        \"last_name\": \"AYA-AY\",");
-buf.append("        \"npi\": \"1467560003\"");
+buf.append("        \"first_name\": \"ELIZABETH\",");
+buf.append("        \"last_name\": \"BLACKWELL\",");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"procedure_id\": \"G0120\",");
 buf.append("    \"procedure_id_qualifier\": \"hcpcs\",");
@@ -1078,9 +1078,9 @@ let data = [
         "id": "W000000000"
     ],
     "provider": [
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     ],
     "procedure_id": "G0120",
     "procedure_id_qualifier": "hcpcs",
@@ -1100,9 +1100,9 @@ curl -i -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER",
     "application_data": {
@@ -1122,9 +1122,9 @@ client.eligibility({
         "id": "W000000000"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "trading_partner_id": "MOCKPAYER",
     "application_data": {
@@ -1145,9 +1145,9 @@ client.eligibility(
                 {"id", "W000000000"}
             }},
         {"provider", new Dictionary<string, string> {
-                {"first_name", "JEROME"},
-                {"last_name", "AYA-AY"},
-                {"npi", "1467560003"}
+                {"first_name", "ELIZABETH"},
+                {"last_name", "BLACKWELL"},
+                {"npi", "1234567893"}
             }},
         {"trading_partner_id", "MOCKPAYER"},
         {"application_data", new Dictionary<string, object> {
@@ -1167,9 +1167,9 @@ client.eligiblity({
         id: "W000000000"
     },
     provider: {
-        first_name: "JEROME",
-        last_name: "AYA-AY",
-        npi: "1467560003"
+        first_name: "ELIZABETH",
+        last_name: "BLACKWELL",
+        npi: "1234567893"
     },
     trading_partner_id: "MOCKPAYER",
     application_data: {
@@ -1191,9 +1191,9 @@ buf.append("        \"last_name\": \"Doe\",");
 buf.append("        \"id\": \"W000000000\"");
 buf.append("    },");
 buf.append("    \"provider\": {");
-buf.append("        \"first_name\": \"JEROME\",");
-buf.append("        \"last_name\": \"AYA-AY\",");
-buf.append("        \"npi\": \"1467560003\"");
+buf.append("        \"first_name\": \"ELIZABETH\",");
+buf.append("        \"last_name\": \"BLACKWELL\",");
+buf.append("        \"npi\": \"1234567893\"");
 buf.append("    },");
 buf.append("    \"trading_partner_id\": \"MOCKPAYER\",");
 buf.append("    \"application_data\": {");
@@ -1216,9 +1216,9 @@ let data = [
         "id": "W000000000"
     ],
     "provider": [
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     ],
     "trading_partner_id": "MOCKPAYER",
     "application_data": [
@@ -1240,9 +1240,9 @@ try client.eligibility(params: data)
         },
     "follow_up_action": "resubmission_allowed",
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "reject_reason": "unable_to_respond_now",
     "subscriber": {
@@ -1268,9 +1268,9 @@ eligibility request:
     },
     "follow_up_action": "correct_and_resubmit",
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "reject_reason": "subscriber_insured_not_found",
     "subscriber": {
@@ -1294,9 +1294,9 @@ eligibility request:
     },
     "follow_up_action": "correct_and_resubmit",
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "reject_reason": "patient_birth_date_mismatch",
     "subscriber": {
@@ -1321,9 +1321,9 @@ a CPT code:
     },
     "follow_up_action": "resubmission_not_allowed",
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "reject_reason": "unable_to_respond_now",
     "subscriber": {
@@ -1831,9 +1831,9 @@ a CPT code:
         "name": "MOCK PAYER INC"
     },
     "provider": {
-        "first_name": "JEROME",
-        "last_name": "JEROME AYA-AY",
-        "npi": "1467560003"
+        "first_name": "ELIZABETH",
+        "last_name": "BLACKWELL",
+        "npi": "1234567893"
     },
     "service_type_codes": [
         "98"
