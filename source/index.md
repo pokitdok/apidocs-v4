@@ -17,6 +17,7 @@ language_tabs:
 toc_footers:
   - <a href="https://platform.pokitdok.com/signup" target="_blank">Sign Up for a Free API Key</a>
   - <a href="https://pokitdok.com/support-category/application-development/" target="_blank">Application Development FAQ</a>
+  - <a href="https://pokitdok.com" target="_blank">PokitDok.com</a>
 
 includes:
   - overview
