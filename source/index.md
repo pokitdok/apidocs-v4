@@ -27,6 +27,7 @@ includes:
   - clientlibraries
   - endpoints
   - activities
+  - appregistrations
   - cashprices
   - claims
   - claimsconvert
