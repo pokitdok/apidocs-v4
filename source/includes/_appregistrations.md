@@ -7,7 +7,7 @@ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "trading_partner_id": "MOCKPAYER",
         "trading_partner_set_name": "eligibility,
         "tax_id": ["123456789"],
-        "npi": "12345678903"
+        "npi": "1234567893"
     }' https://platform.pokitdok.com/api/v4/appregistrations
 ```
 
@@ -23,6 +23,38 @@ params = {
 response = pd.post('/appregistrations/', data=params)
 ```
 
+```csharp
+string endpoint = "/appregistrations/";
+string method - "POST";
+List<string> tax_id = new List<string>
+tax_id.Add("123456789")
+Dictionary<string, object> data = new Dictionary<string, object> {
+    {"trading_partner_id", "MOCKPAYER"},
+    {"transaction_set_name", "eligibility" },
+    {"tax_id", tax_id},
+    {"npi", "1234567893" }
+    };
+client.request(endpoint, method, data);
+```
+
+```ruby
+client.request('/appregistrations/', method='post', params={
+    trading_partner_id: "MOCKPAYER",
+    transaction_set_name: "eligibility",
+    tax_id: ["123456789"],
+    npi: "1234567893"
+})
+```
+
+```swift
+let data = [
+    "trading_partner_id": "MOCKPAYER",
+    "transaction_set_name": "eligibility",
+    "tax_id": ["123456789"],
+    "npi": "1234567893"
+] as [String:any]
+try client.request(path: "/appregistrations", method: "POST", params: data)
+```
 
 > Example response:
 
