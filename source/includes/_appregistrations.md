@@ -1,6 +1,17 @@
 ## App Registrations
 > Example POST request:
 
+```shell
+curl -s -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/json"
+    -XPOST -d '{
+        "trading_partner_id": "MOCKPAYER",
+        "trading_partner_set_name": "eligibility,
+        "tax_id": ["123456789"],
+        "npi": "12345678903"
+    }' https://platform.pokitdok.com/api/v4/appregistrations
+```
+
+
 ```python
 params = {
     'trading_partner_id': 'MOCKPAYER',
