@@ -89,7 +89,7 @@ Available Endpoints:
 | /appregistrations | POST | Create an app registration. |
 | /appregistrations/{uuid} | PUT | Edit the app registration with the given UUID. |
 | /appregistrations/{uuid} | DELETE | Delete the app registration with the given UUID. |
-| /appregistrations/{uuid}/undelete | POST |Undelete the app registration with the given UUID |
+| /appregistrations/{uuid}/undelete | POST |Undelete the app registration with the given UUID. |
 
 <!--- end of table -->
 
@@ -104,7 +104,7 @@ The POST `/appregistrations/` and PUT `/appregistrations/` endpoints accept the 
 | address_lines | {list} | List of strings representing the street address. (e.g. ["123 Main ST.", "Suite 4"]) | Required |
 | claims_roles | {list} | List of roles (e.g. 'billing' or 'rendering').| Required |
 | first_name | {string} | Patient's first name. | Required |
-| last_name| { string} | Patient's last name. | Required |
+| last_name | {string} | Patient's last name. | Required |
 | npi | {string} | The provider's NPI. | Required |
 | tax_id | {list} | List of  federal tax ids for the provider. For individual providers, this may be the tax id of the medical practice or organization where a provider works. | Required |
 | trading_partner_id| {string} | Unique ID for the intended trading partner, as specified by the [Trading Partners](#trading-partners) endpoint.| Required |
@@ -126,7 +126,7 @@ The `/appregistrations/` response contains the following fields:
 | claims_roles | {list} | List of roles (e.g. 'billing' or 'rendering').| Required |
 | client_id | {string} | The client ID of the app associated to the app registration. |
 | first_name | {string} | Patient's first name. |
-| last_name| { string} | Patient's last name. |
+| last_name | {string} | Patient's last name. |
 | npi | {string} | The provider's NPI. |
 | tax_id | {list} | List of  federal tax ids for the provider. For individual providers, this may be the tax id of the medical practice or organization where a provider works. |
 | trading_partner_id| {string} | Unique ID for the intended trading partner, as specified by the [Trading Partners](#trading-partners) endpoint.|
