@@ -13,7 +13,7 @@ curl -s -H "Authorization: Bearer $ACCESS_TOKEN" -H "Content-Type: application/j
         "state": "CA",
         "tax_id": ["123456789"],
         "trading_partner_id": "MOCKPAYER",
-        "trading_partner_set_name": "eligibility",
+        "transaction_set_name": "eligibility",
         "zipcode": "99401"
     }' https://platform.pokitdok.com/api/v4/appregistrations
 ```
@@ -30,7 +30,7 @@ params = {
     'state': 'CA',
     'tax_id': ['123456789'],
     'trading_partner_id': 'MOCKPAYER',
-    'trading_partner_set_name': 'eligibility',
+    'transaction_set_name': 'eligibility',
     'zipcode': '99401'
 }
 response = pd.post('/appregistrations/', data=params)
@@ -55,7 +55,7 @@ Dictionary<string, object> data = new Dictionary<string, object> {
     {"state": "CA"},
     {"tax_id": tax_id},
     {"trading_partner_id": "MOCKPAYER"},
-    {"trading_partner_set_name": "eligibility"},
+    {"transaction_set_name": "eligibility"},
     {"zipcode": "99401"}
     };
 client.request(endpoint, method, data);
@@ -72,7 +72,7 @@ client.request('/appregistrations/', method='post', params={
     state: 'CA',
     tax_id: ['123456789'],
     trading_partner_id: 'MOCKPAYER',
-    trading_partner_set_name: 'eligibility',
+    transaction_set_name: 'eligibility',
     zipcode: '99401'
 })
 ```
@@ -88,7 +88,7 @@ let data = [
     "state": "CA",
     "tax_id": ["123456789"],
     "trading_partner_id": "MOCKPAYER",
-    "trading_partner_set_name": "eligibility",
+    "transaction_set_name": "eligibility",
     "zipcode": "99401"
 ] as [String:any]
 try client.request(path: "/appregistrations", method: "POST", params: data)
@@ -146,18 +146,18 @@ The POST `/appregistrations/` and PUT `/appregistrations/` endpoints accept the 
 
 | Parameter | Type | Description | Presence |
 |:---|:---|:---|:--- |
-| address_lines | {list} | List of strings representing the street address. (e.g. ["123 Main ST.", "Suite 4"]) | Required |
+| address_lines | {list} | List of strings representing the street address (e.g. ["123 Main ST.", "Suite 4"]). | Required |
 | claims_roles | {list} | List of roles (e.g. 'billing' or 'rendering').| Required |
 | city | {string} | The city component of an address (e.g. 'SAN MATEO'). | Required |
-| first_name | {string} | Provider's first name. This field should be omitted when sending organization_name| Situational |
-| last_name | {string} | Provider's last name. This field should be omitted when sending organization_name| Situational |
+| first_name | {string} | Provider's first name. This field should be omitted when sending organization_name. | Situational |
+| last_name | {string} | Provider's last name. This field should be omitted when sending organization_name. | Situational |
 | npi | {string} | The provider's NPI. | Required |
-| organization_name | {string} | The provider's organization name. This field should be omitted when sending first_name and last_name | Situational |
+| organization_name | {string} | The provider's organization name. This field should be omitted when sending first_name and last_name. | Situational |
 | state | {string} | The state component of an address (e.g. 'CA'). | Required |
 | tax_id | {list} | List of  federal tax ids for the provider. For individual providers, this may be the tax id of the medical practice or organization where a provider works. | Required |
 | trading_partner_id| {string} | Unique ID for the intended trading partner, as specified by the [Trading Partners](#trading-partners) endpoint.| Required |
 | transaction_set_name | {string} | Transaction this app registration is to be used for (e.g. 'eligibility', 'claims', or 'claim_status'). | Required |
-| zipcode | {string} | The zip/postal code. (e.g. "94401") | Required |
+| zipcode | {string} | The zip/postal code (e.g. "94401"). | Required |
 
 <!--- end of table -->
 
@@ -169,7 +169,7 @@ The `/appregistrations/` response contains the following fields:
 | Field | Type | Description |
 |:---|:---|:---|
 | _uuid | {string} | The unique ID for this app registration.|
-| address_lines | {list} | List of strings representing the street address. (e.g. ["123 Main ST.", "Suite 4"]) | Required |
+| address_lines | {list} | List of strings representing the street address. (e.g. ["123 Main ST.", "Suite 4"]). | Required |
 | app_name | {string} | The name of the app associated to the app registration. |
 | claims_roles | {list} | List of roles (e.g. 'billing' or 'rendering').| Required |
 | city | {string} | The city component of an address (e.g. 'SAN MATEO'). | Required |
@@ -182,4 +182,4 @@ The `/appregistrations/` response contains the following fields:
 | tax_id | {list} | List of  federal tax ids for the provider. For individual providers, this may be the tax id of the medical practice or organization where a provider works. |
 | trading_partner_id| {string} | Unique ID for the intended trading partner, as specified by the [Trading Partners](#trading-partners) endpoint.|
 | transaction_set_name | {string} | Transaction this app registration is to be used for (e.g. 'eligibility', 'claims', or claim_status). |
-| zipcode | {string} | The zip/postal code. (e.g. "94401") | Required |
+| zipcode | {string} | The zip/postal code (e.g. "94401"). | Required |
