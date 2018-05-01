@@ -151,7 +151,7 @@ The POST `/appregistrations/` and PUT `/appregistrations/` endpoints accept the 
 | city | {string} | The city component of an address (e.g. 'SAN MATEO'). | Required |
 | first_name | {string} | Provider's first name. This field should be omitted when sending organization_name| Situational |
 | last_name | {string} | Provider's last name. This field should be omitted when sending organization_name| Situational |
-| npi | {string} | The provider's NPI. | Situational |
+| npi | {string} | The provider's NPI. | Required |
 | organization_name | {string} | The provider's organization name. This field should be omitted when sending first_name and last_name | Situational |
 | state | {string} | The state component of an address (e.g. 'CA'). | Required |
 | tax_id | {list} | List of  federal tax ids for the provider. For individual providers, this may be the tax id of the medical practice or organization where a provider works. | Required |
