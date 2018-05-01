@@ -103,9 +103,10 @@ The POST `/appregistrations/` and PUT `/appregistrations/` endpoints accept the 
 |:---|:---|:---|:--- |
 | address_lines | {list} | List of strings representing the street address. (e.g. ["123 Main ST.", "Suite 4"]) | Required |
 | claims_roles | {list} | List of roles (e.g. 'billing' or 'rendering').| Required |
-| first_name | {string} | Patient's first name. | Required |
-| last_name | {string} | Patient's last name. | Required |
-| npi | {string} | The provider's NPI. | Required |
+| first_name | {string} | Provider's first name. This field should be omitted when sending organization_name| Situational |
+| last_name | {string} | Provider's last name. This field should be omitted when sending organization_name| Situational |
+| npi | {string} | The provider's NPI. | Situational |
+| organization_name | {string} | The provider's organization name. This field should be omitted when sending first_name and last_name | Situational |
 | tax_id | {list} | List of  federal tax ids for the provider. For individual providers, this may be the tax id of the medical practice or organization where a provider works. | Required |
 | trading_partner_id| {string} | Unique ID for the intended trading partner, as specified by the [Trading Partners](#trading-partners) endpoint.| Required |
 | transaction_set_name | {string} | Transaction this app registration is to be used for (e.g. 'eligibility', 'claims', or 'claim_status'). | Required |
@@ -125,9 +126,10 @@ The `/appregistrations/` response contains the following fields:
 | app_name | {string} | The name of the app associated to the app registration. |
 | claims_roles | {list} | List of roles (e.g. 'billing' or 'rendering').| Required |
 | client_id | {string} | The client ID of the app associated to the app registration. |
-| first_name | {string} | Patient's first name. |
-| last_name | {string} | Patient's last name. |
+| first_name | {string} | Provider's first name. |
+| last_name | {string} | Provider's last name. |
 | npi | {string} | The provider's NPI. |
+| organization_name | {string} | The provider's organization name. |
 | tax_id | {list} | List of  federal tax ids for the provider. For individual providers, this may be the tax id of the medical practice or organization where a provider works. |
 | trading_partner_id| {string} | Unique ID for the intended trading partner, as specified by the [Trading Partners](#trading-partners) endpoint.|
 | transaction_set_name | {string} | Transaction this app registration is to be used for (e.g. 'eligibility', 'claims', or claim_status). |
