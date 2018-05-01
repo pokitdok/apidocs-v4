@@ -75,7 +75,7 @@ try client.request(path: "/appregistrations", method: "POST", params: data)
 }
 ```
 
-The App Regisrations endpoint allows users to to manage their app registrations. These endpoints can be used to create, edit, and delete app registrations.
+The App Registrations endpoint allows user to manage the NPI registrations associated with their account. These endpoints can be used to create, edit, and delete registrations.
 
 ### Endpoint Description
 
@@ -87,7 +87,6 @@ Available Endpoints:
 | /appregistrations | GET | List current app registrations. |
 | /appregistrations/{uuid} | GET | Retrieve the app registration with the given UUID. |
 | /appregistrations | POST | Create an app registration. |
-| /appregistrations/csv | POST | Create app registrations based on the CSV file. |
 | /appregistrations/{uuid} | PUT | Edit the app registration with the given UUID. |
 | /appregistrations/{uuid} | DELETE | Delete the app registration with the given UUID. |
 | /appregistrations/{uuid}/undelete | POST |Undelete the app registration with the given UUID |
@@ -102,10 +101,15 @@ The POST `/appregistrations/` and PUT `/appregistrations/` endpoints accept the 
 
 | Parameter | Type | Description | Presence |
 |:---|:---|:---|:--- |
-|trading_partner_id| {string} | Unique ID for the intended trading partner, as specified by the [Trading Partners](#trading-partners) endpoint.| Required |
-| transaction_set_name | {string} | Transaction this app registration is to be used for (e.g. 'eligibility' or 'claims'). | Required |
-| tax_id | {list} | List of  federal tax ids for the provider. For individual providers, this may be the tax id of the medical practice or organization where a provider works. | Required |
+| address_lines | {list} | List of strings representing the street address. (e.g. ["123 Main ST.", "Suite 4"]) | Required |
+| claims_roles | {list} | List of roles (e.g. 'billing' or 'rendering').| Required |
+| first_name | {string} | Patient's first name. | Required |
+| last_name| { string} | Patient's last name. | Required |
 | npi | {string} | The provider's NPI. | Required |
+| tax_id | {list} | List of  federal tax ids for the provider. For individual providers, this may be the tax id of the medical practice or organization where a provider works. | Required |
+| trading_partner_id| {string} | Unique ID for the intended trading partner, as specified by the [Trading Partners](#trading-partners) endpoint.| Required |
+| transaction_set_name | {string} | Transaction this app registration is to be used for (e.g. 'eligibility', 'claims', or 'claim_status'). | Required |
+| zipcode | {string} | The zip/postal code. (e.g. "94401") | Required |
 
 <!--- end of table -->
 
@@ -117,9 +121,14 @@ The `/appregistrations/` response contains the following fields:
 | Field | Type | Description |
 |:---|:---|:---|
 | _uuid | {string} | The unique ID for this app registration.|
+| address_lines | {list} | List of strings representing the street address. (e.g. ["123 Main ST.", "Suite 4"]) | Required |
 | app_name | {string} | The name of the app associated to the app registration. |
+| claims_roles | {list} | List of roles (e.g. 'billing' or 'rendering').| Required |
 | client_id | {string} | The client ID of the app associated to the app registration. |
-|trading_partner_id| {string} | Unique ID for the intended trading partner, as specified by the [Trading Partners](#trading-partners) endpoint.|
-| transaction_set_name | {string} | Transaction this app registration is to be used for (e.g. 'eligibility' or 'claims'). |
-| tax_id | {list} | List of  federal tax ids for the provider. For individual providers, this may be the tax id of the medical practice or organization where a provider works. |
+| first_name | {string} | Patient's first name. |
+| last_name| { string} | Patient's last name. |
 | npi | {string} | The provider's NPI. |
+| tax_id | {list} | List of  federal tax ids for the provider. For individual providers, this may be the tax id of the medical practice or organization where a provider works. |
+| trading_partner_id| {string} | Unique ID for the intended trading partner, as specified by the [Trading Partners](#trading-partners) endpoint.|
+| transaction_set_name | {string} | Transaction this app registration is to be used for (e.g. 'eligibility', 'claims', or claim_status). |
+| zipcode | {string} | The zip/postal code. (e.g. "94401") | Required |
