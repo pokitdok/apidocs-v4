@@ -1,5 +1,5 @@
 # Drop-in UI
-The PokitDok Drop-in UI enables anyone to add functionality like eligibility checks or out-of-pocket cost estimation to their own website with a fully styled and functional UI.
+The PokitDok Drop-in UI enables anyone to add functionality like eligibility checks, out-of-pocket cost estimation, or pharmacy drug price comparisons to their own website with a fully styled and functional UI.
 
 * One simple drop-in with full customization
 * All major insurance carriers
@@ -48,15 +48,11 @@ Add an HTML container with a specific ID that will house your drop-in UI.
 
 ## 4. Initialize Drop-in
 
-```html
-<script>
-    ...
-    pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
-       container: "dropin-ui",
-       type: "eligibility"
-    });
-    ...
-</script>
+```javascript
+pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
+   container: "dropin-ui",
+   type: "eligibility"
+});
 ```
 
 Using javascript, call the `pokitdok.dropin` function, using your PokitDok Platform `Drop-In Token` and <a href='/#options'>options</a>.
@@ -83,7 +79,7 @@ Returns eligibility information in an easy to read format with detailed info inc
 ### Calculator
 
 <aside class="warning">
-procedures are required
+<strong>procedures</strong> are required
 </aside>
 
 > Calculator example with minimum required options:
@@ -120,10 +116,10 @@ eligibilityResultsFirst | Boolean                 | False    | On results page, 
 ### Pharmacy Coverage
 
 <aside class="warning">
-pharmacy_npi and prescriber are required
+<strong>pharmacy_npi</strong> is required. <strong>prescriber</strong> is required, unless you set <strong>enablePrescriberFields</strong> to <strong>true</strong>
 </aside>
 
-> Pharmacy coverage example with minimum required options:
+> Pharmacy coverage example with preset prescriber information:
 
 ```javascript
 pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
@@ -135,6 +131,19 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
             "npi": "xxxxxxxx",
             "last_name": "xxxxxxxx"
         }
+    }
+});
+```
+
+> Pharmacy coverage example with prescriber information editable in the UI:
+
+```javascript
+pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
+    container: "dropin-ui",
+    type: "pharmacy-coverage",
+    enablePrescriberFields: true,
+    values: {
+        "pharmacy_npi": "xxxxxxxx"
     }
 });
 ```
@@ -175,12 +184,13 @@ drug NDCs to search and compare prices, restrictions, and other comparison point
 
 Name                           | Type                    | Default                                 | Description
 -------------------------------|-------------------------|-----------------------------------------|--------------------------------------------------------------------------------------
+enablePrescriberFields         | Boolean                 | False                                   | Enable entering prescriber NPI and Last Name in the UI rather than `values.prescriber` object
+labels.patient_header          | String                  | 'Enter patient information'             | Change the form header on patient information form, enter blank string to remove header
+labels.search_header           | String                  | 'Enter drug NDCs to search and compare' | Change the form header on drug search form, enter blank string to remove header
 values.pharmacy_npi            | String                  | Null                                    | Pharmacy NPI that is registered with PokitDok, used when making pharmacy-coverage API calls
 values.prescriber              | Object                  | Null                                    | Prescriber information to use when making pharmacy-coverage API calls; `npi` and `last_name` are required
 values.prescriber.npi          | String                  | Null                                    | Prescriber NPI
 values.prescriber.last_name    | String                  | Null                                    | Prescriber last name
-labels.patient_header          | String                  | 'Enter patient information'             | Change the form header on patient information form, enter blank string to remove header
-labels.search_header           | String                  | 'Enter drug NDCs to search and compare' | Change the form header on drug search form, enter blank string to remove header
 values.drugs                   | Array                   | Null                                    | An array of drug NDCs to pre-populate the drug NDC search bar with
 values.insurance               | Object                  | Null                                    | Pre-populate the patient insurance information
 values.insurance.cardholder_id | String                  | Null                                    | Pre-populate the patient insurance member id
@@ -218,7 +228,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
 });
 ```
 
-> Example of all fields pre-populated using `values` option:
+> Example of some fields pre-populated using `values` option:
 
 ```json
 
@@ -240,7 +250,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
 }
 ```
 
-> Example of all input labels changed using `values` option:
+> Example of some input labels changed using `labels` option:
 
 ```json
 
@@ -257,8 +267,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
 ```
 
 <aside class="warning">
-'container' and 'type' are required options for the drop-in UI to work.<BR>
-'procedures' is required for the calculator type drop-in.
+<strong>container</strong> and <strong>type</strong> are required options for any drop-in UI to work
 </aside>
 
 Name                      | Type                | Default  | Description
