@@ -640,9 +640,11 @@ Available OOP Insurance Endpoints:
 
 | Endpoint                                  | HTTP Method | Description                                                                                     |
 |:------------------------------------------|:------------|:------------------------------------------------------------------------------------------------|
-| /oop/insurance-load-price                 | POST        | Loads procedure prices for a specific trading partner                                           |
-| /oop/insurance-load-price/{price_uuid}    | DELETE      | Removes a previously loaded procedure price from the system                                     |
-| /oop/insurance-estimate                   | POST        | Returns estimated out of pocket cost and eligibility information for a given procedure          |
+| /oop/insurance-load-price                 | POST        | Loads procedure prices for a specific trading partner.                                          |
+| /oop/insurance-load-price                 | GET         | Returns a list of loaded prices.                                                                |
+| /oop/insurance-load-price/{price_uuid}    | GET         | Returns the loaded price with the given UUID.                                                    |
+| /oop/insurance-load-price/{price_uuid}    | DELETE      | Removes a previously loaded procedure price from the system.                                    |
+| /oop/insurance-estimate                   | POST        | Returns estimated out of pocket cost and eligibility information for a given procedure.         |
 
 <!--- end of table -->
 
@@ -727,5 +729,21 @@ The `/oop/insurance-estimate` response contains the following fields:
 | calculation.service_type_codes                        | Collection of collections of service type codes that correspond to coinsurance and estimate collections                                                                         | Required |
 | calculation.upper_estimate                            | Collection of out of pocket cost estimates based on high_price.amount                                                                                                           | Required |
 | eligibility                                           | Full eligibility response from eligibility endpoint. See [eligibility documentation](#eligibility) above for more information                                                                   | Required |
+
+
+<!--- end of table -->
+
+The `oop/insurance-load-price` response contains the following fields:
+
+<!--- beginning of table -->
+
+| Field  | Type | Description |
+| :--- | :--- | :--- |
+| uuid | {string} | The UUID of the loaded price. |
+| trading_partner_id | {string} | Unique ID for the intended trading partner, as specified by the [Trading Partners](#trading-partners) endpoint. |
+| cpt_bundle | {list} | List of string CPT codes. |
+| price.amount | {string} | The price of the bundle of procedures in the cpt_bundle. |
+| price.currency | {string} | The denomination of the currency of the price.amount. Defaults to 'USD'|
+
 
 <!--- end of table -->
