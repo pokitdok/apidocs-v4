@@ -733,7 +733,7 @@ The `/oop/insurance-estimate` response contains the following fields:
 
 <!--- end of table -->
 
-The `oop/insurance-load-price` response contains the following fields:
+The `/oop/insurance-load-price` response contains the following fields:
 
 <!--- beginning of table -->
 
