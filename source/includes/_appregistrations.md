@@ -38,7 +38,7 @@ response = pd.post('/appregistrations/', data=params)
 
 ```csharp
 string endpoint = "/appregistrations/";
-string method - "POST";
+string method = "POST";
 List<string> tax_id = new List<string>;
 tax_id.Add("123456789");
 List<string> address_lines = new List<string>;

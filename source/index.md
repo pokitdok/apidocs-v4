@@ -34,6 +34,7 @@ includes:
   - claimstatus
   - claimsdrafts
   - eligibility
+  - consumerhco
   - icdconvert
   - identityproof
   - identitymatch
