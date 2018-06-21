@@ -413,15 +413,16 @@ The `/providers/` endpoint accepts the following search parameters:
 | first_name        | {string} | The provider's first name                                                                                                                           |
 | middle_name       | {string} | The provider's middle name                                                                                                                          |
 | last_name         | {string} | The provider's last name                                                                                                                            |
+| lat_lon           | {string} | Latitude and longitude, as a comma-separated string (e.g. "37.563546, -122.325181").  When lat_lon is provided results will be sorted from this location. |
 | gender            | {string} | The provider's gender                                                                                                                               |
 | organization_name | {string} | The business practice name                                                                                                                          |
 | name              | {string} | Queries against the provider's full name (first, middle, last) for individuals, organization and other organization names for organizations. For best results, do not pass individual name properties (first, middle, last names and organization_name) when using this field.  The name field also uses fuzzy matching and may not return exact matches.|
 | radius            | {string} | Search distance from geographic centerpoint, with unit (e.g. "1mi")                                                                                 |
 | specialty         | {string} | The provider's specialty name (e.g. "rheumatology").  Partial name-prefixes may be specified (e.g. "rheum")                                         |
-| state             | {string} | Name of U.S. state in which to search for providers (e.g. "CA" or "SC")                                                                             |
-| zipcode           | {string} | Geographic center point in which to search for providers (e.g. "94401")                                                                             |
-| sort              | {string} | Accepted values include 'distance' (default) or 'rank'.  'distance' sort requires city & state or zipcode parameters otherwise sort will be 'rank'. |
-| entity_types      | {string} | The desired provider entity type(s), as a comma-separated string.  Possibilities are 'individual', 'organization', and 'individual,organization'.   |
+| state             | {string} | The provider's U.S. state code (e.g. "CA")                                                                                                          |
+| zipcode           | {string} | The provider's zip or postal code (e.g. "94401")                                                                                                    |
+| sort              | {string} | Accepted values include 'distance' (default) or 'rank'.  'distance' sort requires lat_lon, city & state, or zipcode parameters otherwise sort will be 'rank'. |
+| entity_types      | {string} | The provider's entity type(s), as a comma-separated string.  Possibilities are 'individual', 'organization', and 'individual,organization'.   |
 
 <!--- end of table -->
 
