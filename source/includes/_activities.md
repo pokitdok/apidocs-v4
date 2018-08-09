@@ -320,7 +320,7 @@ The `/activities/` response includes the following fields:
 | state | {dict} | Current state of this Activity. |
 | transition_path | {array} | The list of state transitions that will be used for this Activity. |
 | units_of_work | {int} | The number of 'units of work' that the activity is operating on. This will typically be 1 for real-time requests like /eligibility/. |
-| tracking_description | {string} | A value that summarizes the tracking/outcome of long running transactions like claims.  It's currently only supported on claims activities.  Possible values that may be present on claims activities include: submitting, waiting, acknowledged, rejected, denied, adjudicated, paid and paid_in_full. |
+| tracking_description | {string} | A value that summarizes the tracking/outcome of long running transactions like claims.  It's currently only supported on claims activities.  Possible values can be found in the [Tracking Descriptions](#tracking-description) table |
 | payment_id | {string} | A unique identifier used to reference payment details associated with the Platform Activity. This value is supported on claims activities where claim payments, or ERAs, are processed. The payment_id may be used to lookup payment details using the /payments API. |
 
 <!--- end of table -->
@@ -351,6 +351,47 @@ Throughout processing, activities may transition through the following states:
 |failed            | The activity was unable to process successfully.|
 |rejected          | The activity has been rejected by the trading partner for reasons outlined in the response.|
 |rejected_reviewed | The activity has been rejected by the trading partner and reviewed for errors by the PokitDok team.|
+
+<!--- end of table -->
+
+### Tracking Description Table
+<a name="tracking-description"></a>
+
+
+Tracking descriptions summarize the tracking/outcome of claims:
+
+<!--- beginning of table -->
+
+|State             | Description |
+|:------------------|:--------------------------------------------------------------------------------------
+|submitting        |Claim is in the process of beeing submitted to payer |
+|waiting           |Claim is awaiting response from payer |
+|acknowledged      | Payer has acknowledged receipt of claim |
+|paid              | Claim has been at least partially paid by payer |
+|paid_in_full      | Total amount of claim has been paid by the payer |
+|adjudicated       | Payer has indicated that claim has been adjudicated, but the payment amount is $0 |
+|denied            | Payer has indicated that the claim has been denied |
+|paid_forwarded    | Claim has been at least partially paid by payer and forwarded to another entity |
+|paid_in_full_forwarded | Total amount of claim has been paid by payer and forwarded to another entity|
+|adjudicated_forwarded| Payer has indicated that claim has been adjudicated, but the payment amount is $0 and the claims has been forwarded to another entity |
+|reversal_of_previous | Previous claim has been reversed |
+|claim_forwarded   | The patient/subscriber is unknown and the claim is not adjudicated, but other payers are known and claim has been forwarded to them |
+|predetermination_pricing | ERA was only sent for predetermination pricing purposes, and no payment is forthcoming |
+|acknowledged_forwarded | Claim has been acknowledged and forwarded to another entity  |
+|accepted_for_adjudication |claim has been accepted into adjudication system  |
+|rejected         | Claim has been rejected  |
+|claim_not_found  | Claim cannot be found in payer's adjudication system |
+|acknowledged_split| Claim has been split upon acceptance into adjudication system  |
+|claim_pended     | No remittance has been issued, or only part of the claim has been paid  |
+|pending_adjudication |Claim is in payer's system and is pending adjudication  |
+|pending_additional_information |Claim is waiting for additional information from submitter  |
+|finalized        |The claim cycle has been completed and no additional action will be taken  |
+|finalized_revised|Adjudication info has been changed |
+|finalized forwarded|Claim processing is complete. Claim has been forwarded to a different entity  |
+|adjudicated_not_paid|No payment is forthcoming |
+|additional_information_ requested|Additional information has been requested by the payer  |
+|processing_error |Error in the payer's system |
+|response_received|Default tracking description, check result for more detailed information|
 
 <!--- end of table -->
 
