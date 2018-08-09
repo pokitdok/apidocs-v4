@@ -362,7 +362,7 @@ Tracking descriptions summarize the tracking/outcome of claims:
 
 <!--- beginning of table -->
 
-|State             | Description |
+|Tracking Description             | Description |
 |:------------------|:--------------------------------------------------------------------------------------
 |submitting        |Claim is in the process of being submitted to payer |
 |waiting           |Claim is awaiting response from payer |
