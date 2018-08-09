@@ -364,7 +364,7 @@ Tracking descriptions summarize the tracking/outcome of claims:
 
 |State             | Description |
 |:------------------|:--------------------------------------------------------------------------------------
-|submitting        |Claim is in the process of beeing submitted to payer |
+|submitting        |Claim is in the process of being submitted to payer |
 |waiting           |Claim is awaiting response from payer |
 |acknowledged      | Payer has acknowledged receipt of claim |
 |paid              | Claim has been at least partially paid by payer |
@@ -389,9 +389,9 @@ Tracking descriptions summarize the tracking/outcome of claims:
 |finalized_revised|Adjudication info has been changed |
 |finalized forwarded|Claim processing is complete. Claim has been forwarded to a different entity  |
 |adjudicated_not_paid|No payment is forthcoming |
-|additional_information_ requested|Additional information has been requested by the payer  |
+|additional_information_requested|Additional information has been requested by the payer  |
 |processing_error |Error in the payer's system |
-|response_received|Default tracking description, check result for more detailed information|
+|response_received|Default tracking description once response has been received for a claim, check result for more detailed information|
 
 <!--- end of table -->
 
