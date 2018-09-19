@@ -24,6 +24,7 @@ toc_footers:
 
 includes:
   - overview
+  - authentication
   - clientlibraries
   - endpoints
   - activities
@@ -49,7 +50,6 @@ includes:
   - providers
   - scheduling
   - tradingpartners
-  - authentication
   - common
   - apicallbacks
   - apidashboard
