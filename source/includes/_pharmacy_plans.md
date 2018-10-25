@@ -128,6 +128,7 @@ The `/pharmacy/plans` endpoint accepts the following parameters:
 | trading_partner_id | {string} | Unique id for the intended trading partner, as specified by the [Trading Partners](https://platform.pokitdok.com/documentation/v4/#trading-partners) endpoint. | Required |
 | plan_number        | {string} | Member’s plan identification number. Note: If unknown can use X12 270/271 eligibility                                                                          | Either plan_number or plan_name must be present |
 | plan_name          | {string} | Name of prescription drug plan                                                                                                                                 | Either plan_number or plan_name must be present |
+| zipcode            | {string} | Zip code where plan is available                                                                                                                               | Optional |
 
 <!--- end of table -->
 
@@ -145,9 +146,9 @@ The `/pharmacy/plans` response contains the following fields:
 | Field                          | Type     | Description                                                                                    | Presence |
 |:-------------------------------|:---------|:-----------------------------------------------------------------------------------------------|:---------|
 | plan_name                      | {string} | Name of prescription drug plan                                                                 | Required |
-| plan_number                    | {string} | Member’s plan identification number.                                                           | Required |
+| plan_number                    | {string} | Member’s plan identification number                                                            | Required |
 | trading_partner_id             | {string} | Unique id for the intended trading partner, as specified by the Trading Partners Endpoint      | Required |
-| zipcodes                       | {array}  | A list of zipcodes (strings) for the plan                                                      | Optional |
+| zipcodes                       | {array}  | A list of zipcodes (strings) where the plan is available                                       | Optional |
 | premium                        | {string} | Monthly premium - amount member pays per month for coverage                                    | Optional |
 | deductible                     | {string} | The amount the member must pay out of pocket before initial coverage begins                    | Optional |
 | initial_coverage_limit         | {string} | The total drug cost before the member reaches the donut hole (coverage gap)                    | Optional |
