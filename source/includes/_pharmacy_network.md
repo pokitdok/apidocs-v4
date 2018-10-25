@@ -220,6 +220,8 @@ The `/pharmacy/network` endpoint accepts the following parameters:
 | pharmacy_name      | {string} | Name of pharmacy                                                                                                                                               | Optional |
 | state              | {string} | Name of U.S. state in which to search for providers (e.g. “CA” or “SC”)                                                                                        | Optional |
 | sort               | {string} | Accepted values include ‘distance’ (default) or 'rank’. 'distance’ sort requires city & state or zipcode parameters otherwise sort will be 'rank’.             | Optional |
+| retail             | {boolean} | Return retail pharmacies (default=true)                                                                                                                       | Optional |
+| mail               | {boolean} | Return mail order pharmacies (default=false)                                                                                                                  | Optional |
 
 <!--- end of table -->
 
