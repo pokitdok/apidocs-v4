@@ -380,6 +380,7 @@ Tracking descriptions summarize the tracking/outcome of claims:
 |acknowledged_forwarded | Claim has been acknowledged and forwarded to another entity  |
 |accepted_for_adjudication |claim has been accepted into adjudication system  |
 |rejected         | Claim has been rejected  |
+|rejected_reviewed| Claims management app users have the ability to manually update the status of rejected claims in order to indicate that the claims have been reviewed and that no further action is required. This status was formerly used for all claims submitters, but now "rejected" is their terminal status  |
 |claim_not_found  | Claim cannot be found in payer's adjudication system |
 |acknowledged_split| Claim has been split upon acceptance into adjudication system  |
 |claim_pended     | No remittance has been issued, or only part of the claim has been paid  |
