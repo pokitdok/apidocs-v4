@@ -1,11 +1,10 @@
 # Drop-in UI
-The PokitDok Drop-in UI enables anyone to add functionality like eligibility checks, out-of-pocket cost estimation, or pharmacy drug price comparisons to their own website with a fully styled and functional UI.
+The PokitDok Drop-in UI enables anyone to add functionality like eligibility checks or out-of-pocket cost estimations to their own website with a fully styled and functional UI.
 
 * One simple drop-in with full customization
 * All major insurance carriers
 * Detailed eligibility info including deductible status and co-pays
 * Out-of-pocket cost estimation based on location and eligibility information
-* Compare pharmacy drug prices, restrictions, and other comparison points
 
 
 ## 1. Get Drop-in Token
@@ -60,7 +59,7 @@ Using javascript, call the `pokitdok.dropin` function, using your PokitDok Platf
 The drop-in UI form will auto-populate in the HTML container that you specified.
 
 ## Types
-There are three types of drop-in UIs to choose from:
+There are two types of drop-in UIs to choose from:
 
 ### Eligibility
 
@@ -112,91 +111,6 @@ values.procedure        | String/Array (cpt code) | Null     | The procedure tha
 showPriceRange          | Boolean                 | False    | Show insurance price and out-of-pocket estimate results as a range of prices rather than an average
 showCalculatorMessages  | Boolean                 | False    | Show a message below the out-of-pocket results explaining how calculation was made
 eligibilityResultsFirst | Boolean                 | False    | On results page, show eligibility results first and out-of-pocket results below that
-
-### Pharmacy Coverage
-
-<aside class="warning">
-<strong>pharmacy_npi</strong> is required. <strong>prescriber</strong> is required, unless you set <strong>enablePrescriberFields</strong> to <strong>true</strong>
-</aside>
-
-> Pharmacy coverage example with preset prescriber information:
-
-```javascript
-pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
-    container: "dropin-ui",
-    type: "pharmacy-coverage",
-    values: {
-        "pharmacy_npi": "xxxxxxxx",
-        "prescriber": {
-            "npi": "xxxxxxxx",
-            "last_name": "xxxxxxxx"
-        }
-    }
-});
-```
-
-> Pharmacy coverage example with prescriber information editable in the UI:
-
-```javascript
-pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
-    container: "dropin-ui",
-    type: "pharmacy-coverage",
-    enablePrescriberFields: true,
-    values: {
-        "pharmacy_npi": "xxxxxxxx"
-    }
-});
-```
-
-> Pharmacy coverage example with type specific options:
-
-```javascript
-pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
-    container: "dropin-ui",
-    type: "pharmacy-coverage",
-    labels: [
-        {"name": "patient_header", "label": "Custom patient information header"},
-        {"name": "search_header", "label": "Custom search bar header"}
-    ],
-    values: {
-        "drugs": [
-            "11111111111"
-        ]
-        "pharmacy_npi": "xxxxxxxx",
-        "prescriber": {
-            "npi": "xxxxxxxx",
-            "last_name": "xxxxxxxx"
-        },
-        "insurance": {
-            "cardholder_id": "123",
-            "group_id": "456",
-            "bin_number": "123",
-            "pcn": "PCN"
-        }
-    }
-});
-```
-
-Displays a form that requires First & Last Name, Gender, Birth Date, and Insurance (Member ID, RxBIN, RxGroup, and RxPCN) on the first step. Once that's submitted it allows the user to enter multiple
-drug NDCs to search and compare prices, restrictions, and other comparison points in an easy to read table.
-
-#### Pharmacy Coverage Specific Options:
-
-Name                           | Type                    | Default                                 | Description
--------------------------------|-------------------------|-----------------------------------------|--------------------------------------------------------------------------------------
-enablePrescriberFields         | Boolean                 | False                                   | Enable entering prescriber NPI and Last Name in the UI rather than `values.prescriber` object
-labels.patient_header          | String                  | 'Enter patient information'             | Change the form header on patient information form, enter blank string to remove header
-labels.search_header           | String                  | 'Enter drug NDCs to search and compare' | Change the form header on drug search form, enter blank string to remove header
-values.pharmacy_npi            | String                  | Null                                    | Pharmacy NPI that is registered with PokitDok, used when making pharmacy-coverage API calls
-values.prescriber              | Object                  | Null                                    | Prescriber information to use when making pharmacy-coverage API calls; `npi` and `last_name` are required
-values.prescriber.npi          | String                  | Null                                    | Prescriber NPI
-values.prescriber.last_name    | String                  | Null                                    | Prescriber last name
-values.drugs                   | Array                   | Null                                    | An array of drug NDCs to pre-populate the drug NDC search bar with
-values.insurance               | Object                  | Null                                    | Pre-populate the patient insurance information
-values.insurance.cardholder_id | String                  | Null                                    | Pre-populate the patient insurance member id
-values.insurance.group_id      | String                  | Null                                    | Pre-populate the patient insurance RxGroup
-values.insurance.bin_number    | String                  | Null                                    | Pre-populate the patient insurance RxBIN
-values.insurance.pcn           | String                  | Null                                    | Pre-populate the patient insurance RxPCN
 
 ## Options
 
@@ -273,7 +187,7 @@ pokitdok.dropin("INSERT YOUR DROP-IN TOKEN HERE", {
 Name                      | Type                | Default  | Description
 --------------------------|---------------------|----------|--------------------------------------------------------------------------------------
 container                 | String              | Null     | The id of the HTML container that the drop-in UI will be housed in
-type                      | String              | Null     | Set the desired functionality of the drop-in; either `eligibility`, `calculator`, or `pharmacy-coverage`
+type                      | String              | Null     | Set the desired functionality of the drop-in; either `eligibility` or `calculator`
 styles                    | String (url)        | Null     | URL pointing to a css file to overwrite styles
 pieChartColors            | Object              | Null     | Change the colors of the pie chart in the eligibility results
 pieChartColors.fill       | String (hex color)  | Null     | Color of the filled-in section of the pie chart on the eligibility results
