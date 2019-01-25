@@ -25,7 +25,7 @@ provide the base URL of the site that you intend on embedding the widget (i.e.- 
 ```html
 <body>
     ...
-    <script src="https://platform.pokitdok.com/sdk/dropin.min.js"></script>
+    <script src="https://dashboard.pokitdok.com/sdk/dropin.min.js"></script>
     ...
 </body>
 ```
