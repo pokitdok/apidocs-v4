@@ -79,21 +79,6 @@
          "title":"Payers"
       },
       {
-         "slug":"apis/pharmacy_formulary",
-         "content":"includes/_pharmacy_formulary.md",
-         "title":"Pharmacy Formulary"
-      },
-      {
-         "slug":"apis/pharmacy_network",
-         "content":"includes/_pharmacy_network.md",
-         "title":"Pharmacy Network"
-      },
-      {
-         "slug":"apis/pharmacy_plans",
-         "content":"includes/_pharmacy_plans.md",
-         "title":"Pharmacy Plans"
-      },
-      {
          "slug":"apis/plans",
          "content":"includes/_plans.md",
          "title":"Plans"
