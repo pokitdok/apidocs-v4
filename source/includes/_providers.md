@@ -33,37 +33,66 @@ try client.providers(npi: "1467560003")
 ```json
 {
   "provider": {
-    "degree": "MD",
-    "description": "Dr. Jerome Aya-Ay was raised in the small rural town of Grantsville, West Virginia. He graduated from the University of Notre Dame with a bachelor's degree in Biology.  After studying for a Masters in Biomedical Sciences at Marshall University, he continued on to graduate from Marshall University School of Medicine in Huntington, WV with a medical degree. Dr. Aya-Ay completed his residency in Family Medicine at Spartanburg Regional Medical Center where he was awarded the Family Medicine...",
     "fax": "8645625230",
-    "first_name": "Jerome",
+    "first_name": "JEROME",
+    "last_name": "AYA-AY",
+    "middle_name": "BENITEZ",
+    "uuid": "fc44d0e0-ea7f-492e-90f0-0f9148453019",
+    "degree": "MD",
+    "entity_type": "individual",
     "gender": "Male",
-    "last_name": "Aya-Ay",
-    "licenses": [
+    "verified": false,
+    "locations": [
       {
-        "number": "27210",
-        "state": "SC"
+        "city": "Spartanburg",
+        "fax": "8645625230",
+        "address_lines": [
+          "8311 Warren H Abernathy Hwy"
+        ],
+        "country": "US",
+        "zipcode": "293011249",
+        "phone": "8645625100",
+        "state": "SC",
+        "role": [
+          "practice"
+        ]
+      },
+      {
+        "city": "Spartanburg",
+        "fax": "8645604413",
+        "address_lines": [
+          "Po Box 2168"
+        ],
+        "country": "US",
+        "zipcode": "293042168",
+        "phone": "8645604304",
+        "state": "SC",
+        "role": [
+          "mailing"
+        ]
       }
     ],
-    "middle_name": "Benitez",
-    "npi": "1467560003",
+    "specialty_primary": [
+      "Family Practice",
+      "Family Medicine"
+    ],
+    "specialty": [
+      "Family Practice",
+      "Family Medicine",
+      "General & Family Medicine"
+    ],
     "phone": "8645625100",
     "prefix": "DR",
-    "small_image_url": "https://d2sc6ykmuixlzf.cloudfront.net/pda0233f41447f472dab57393b0cbf5bb7-29ef4cc83c4372854a573b302b259b2c-thumbnail.jpeg",
-    "specialty": [
-      "General & Family Medicine",
-      "Family Practice",
-      "Preventive Medicine",
-      "General Practitioner"
+    "licenses": [
+      {
+        "state": "SC",
+        "number": "27210"
+      }
     ],
-    "specialty_primary": [
-      "Family Practice"
-    ],
+    "npi": "1467560003",
     "specialty_secondary": [
-      "Physician"
-    ],
-    "uuid": "fc44d0e0-ea7f-492e-90f0-0f9148453019",
-    "verified": true
+      "General & Family Medicine"
+    ]
   }
 }
 ```
@@ -111,91 +140,71 @@ try client.providers(params: data)
 ```json
 [
   {
-    "distance": 2.0202967583329134,
     "provider": {
-      "entity_type": "organization",
-      "fax": "8645821269",
-      "npi": "1588809198",
-      "organization_name": "Mary Black Physicians Group LLC",
-      "other_organization_name": "Piedmont Rheumatology",
-      "phone": "8645827892",
-      "specialty": [
-        "Rheumatology",
-        "Internal Medicine"
-      ],
-      "specialty_primary": [
-        "Rheumatology"
-      ],
-      "specialty_secondary": [
-        "Allopathic and Osteopathic Physicians (MD/DO)"
-      ],
-      "uuid": "03d41ad4-4744-425c-882f-4136bf5d5d86",
-      "verified": false
-    }
-  },
-  {
-    "distance": 2.0202967583329134,
-    "provider": {
+      "fax": "8645910007",
+      "first_name": "MARGARET",
+      "last_name": "CURRAN",
+      "middle_name": "YAP",
+      "uuid": "94f13987-6430-4962-87a4-6122c70db6f0",
       "degree": "MD",
       "entity_type": "individual",
-      "fax": "8645821582",
-      "first_name": "Muthamma",
       "gender": "Female",
-      "last_name": "Machimada",
-      "licenses": [
+      "verified": false,
+      "locations": [
         {
-          "number": "28487",
-          "state": "SC"
+          "city": "Spartanburg",
+          "fax": "8645910007",
+          "address_lines": [
+            "1455 E Main St Ste 103"
+          ],
+          "country": "US",
+          "zipcode": "293072243",
+          "phone": "8645911700",
+          "state": "SC",
+          "role": [
+            "mailing"
+          ]
+        },
+        {
+          "city": "Spartanburg",
+          "fax": "8645910007",
+          "address_lines": [
+            "1455 E Main St Ste 103"
+          ],
+          "country": "US",
+          "zipcode": "29307",
+          "phone": "8645911700",
+          "state": "SC",
+          "role": [
+            "practice"
+          ]
         }
-      ],
-      "middle_name": "J",
-      "npi": "1699725986",
-      "phone": "8645827892",
-      "specialty": [
-        "Rheumatology",
-        "Internal Medicine"
       ],
       "specialty_primary": [
+        "Specialist",
         "Rheumatology"
       ],
-      "specialty_secondary": [
-        "Physician"
+      "specialty": [
+        "Rheumatology",
+        "Specialist",
+        "Internal Medicine"
       ],
-      "uuid": "e3f3690d-b49b-458f-b83c-f159b7a18b6e",
-      "verified": false
-    }
-  },
-  {
-    "distance": 2.037465294795502,
-    "provider": {
-      "degree": "MD",
-      "entity_type": "individual",
-      "fax": "8645821582",
-      "first_name": "KEVIN",
-      "gender": "Male",
-      "last_name": "TRACY",
-      "licenses": [
-        {
-          "number": "14815",
-          "state": "SC"
-        }
-      ],
-      "middle_name": "PATRICK",
-      "npi": "1215993159",
-      "phone": "8645827892",
+      "phone": "8645911700",
       "prefix": "DR",
-      "specialty": [
-        "Rheumatology",
-        "Internal Medicine"
+      "licenses": [
+        {
+          "state": "SC",
+          "number": "21157"
+        },
+        {
+          "state": "SC",
+          "number": "21157"
+        }
       ],
-      "specialty_primary": [
-        "Rheumatology"
-      ],
+      "npi": "1629149364",
       "specialty_secondary": [
         "Internal Medicine"
-      ],
-      "uuid": "bd67dda2-51c2-4325-999f-73052b372885",
-      "verified": false
+      ]
     }
   }
 ]
@@ -264,6 +273,17 @@ The response from the `/providers/` endpoints contain the following fields:
 | provider.licenses                     | {array}   | CMS-NPI license information                                                                                    | Optional |
 | provider.licenses.number              | {string}  | License number                                                                                                 | Optional |
 | provider.licenses.state               | {string}  | License state                                                                                                  | Optional |
+| provider.locations                    | {array}   | List of locations associated with the provider                                                                 | Optional |
+| provider.locations.address_lines      | {array}   | Address lines                                                                                                  | Optional |
+| provider.locations.city               | {string}  | City                                                                                                           | Required |
+| provider.locations.country            | {string}  | Country                                                                                                        | Optional |
+| provider.locations.fax                | {string}  | Fax number                                                                                                     | Optional |
+| provider.locations.phone              | {string}  | Phone number                                                                                                   | Optional |
+| provider.locations.state              | {string}  | State                                                                                                          | Required |
+| provider.locations.zipcode            | {string}  | Zip code; length is between 5 and 10 alphanumeric characters                                                                                                      | Required |
+| provider.locations.county             | {string}  | County                                                                                                         | Optional |
+| provider.locations.role               | {list}    | Address role(s). One or both of: ('mailing' or 'practice').  When missing the address is the practice address. | Optional |
+| provider.locations.suite              | {string}  | Address suite																								     | Optional |
 | provider.middle_name                  | {string}  | The provider's middle name or initial                                                                          | Optional |
 | provider.npi                          | {string}  | The provider's NPI                                                                                             | Optional |
 | provider.organization_name            | {string}  | The business practice name                                                                                     | Required (when entity_type is 'organization') |
