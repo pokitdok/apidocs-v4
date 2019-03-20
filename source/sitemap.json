@@ -24,11 +24,6 @@
          "title":"Activities"
       },
       {
-         "slug":"apis/cashprices",
-         "content":"includes/_cashprices.md",
-         "title":"Cash Prices"
-      },
-      {
          "slug":"apis/claims",
          "content":"includes/_claims.md",
          "title":"Claims"
@@ -47,16 +42,6 @@
          "slug":"apis/eligibility",
          "content":"includes/_eligibility.md",
          "title":"Eligibility"
-      },
-      {
-         "slug":"apis/icdconvert",
-         "content":"includes/_icdconvert.md",
-         "title":"ICD Convert"
-      },
-      {
-         "slug":"apis/identity",
-         "content":"includes/_identity.md",
-         "title":"Identity Management"
       },
       {
          "slug":"apis/insuranceprices",
