@@ -13,9 +13,7 @@ The PokitDok Drop-in UI enables anyone to add functionality like eligibility che
 <aside class="warning">
 please <a href="https://pokitdok.com/contact/">contact us</a> in order to enable the Drop-in UI on your PokitDok Platform account
 </aside>
-
-First you will need to <a href='https://platform.pokitdok.com/signup' target='\_blank'\>sign up for a PokitDok Platform account</a>
-and generate a `Drop-In Token` from the Platform dashboard <a href='https://platform.pokitdok.com/dashboard#/dropins' target='\_blank'\>Drop-In UI</a> page. You will need
+You will need
 to provide the hostname of the website where you'll be using the drop-in UI, as well as select the type of drop-in UI widget you'll be using. For hostname,
 provide the base URL of the site that you intend on embedding the widget (i.e.- `https://pokitdok.com` not `https://pokitdok.com/page/with/widget`).
 
