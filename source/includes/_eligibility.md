@@ -1317,7 +1317,7 @@ a CPT code:
 
 ```json
 {   
-    "client_id": "<client_id>", 
+    "client_id": "<client_id>",
     "summary": {
          "deductible": {
              "individual": {
@@ -1543,35 +1543,35 @@ a CPT code:
              "address": {
                  "address_lines": [
                      "123 TEST ROAD"
-                 ], 
-                 "city": "LITTLE TOWN", 
-                 "state": "CA", 
+                 ],
+                 "city": "LITTLE TOWN",
+                 "state": "CA",
                  "zipcode": "12345"
-             }, 
+             },
              "contacts": [
                  {
                      "phone": "8001234567"
                  }
-             ], 
-             "entity_identifier_code": "primary_care_provider", 
-             "entity_type": "organization", 
-             "first_name": "JANET", 
-             "middle_name": "E", 
+             ],
+             "entity_identifier_code": "primary_care_provider",
+             "entity_type": "organization",
+             "first_name": "JANET",
+             "middle_name": "E",
              "organization_name": "DOE",
              "provider_code": "admitting"
-           }, 
+           },
            {
              "contacts": [
                  {
-                     "name": "PAYERC BENEFITS HOTLINE", 
+                     "name": "PAYERC BENEFITS HOTLINE",
                      "phone": "8006762583"
                  }
-             ], 
-             "entity_identifier_code": "plan_sponsor", 
-             "entity_type": "organization", 
+             ],
+             "entity_identifier_code": "plan_sponsor",
+             "entity_type": "organization",
              "organization_name": "PAYERC"
            }
-        ], 
+        ],
         "deductibles": [
             {
                 "benefit_amount": {
@@ -2238,6 +2238,7 @@ The `/eligibility/` endpoint accepts the following parameters:
 | Parameter                  | Description                                                                                                                                                                                                     |
 |:---------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | cpt_code                   | The CPT code that should be used to request specific eligibility information. Note: requests based on CPT code are not supported by all trading partners.                                                       |
+| industry_code              | The industry code for the eligibility request                                                                                                                                                                   |
 | payer                      | The payer associated with a request. Uses the payer [object](#eligibility-payer).                                                                                                                               |
 | member.birth_date          | The named insured’s birth date as specified on their policy. May be omitted if member.id is provided. In ISO8601 format (YYYY-MM-DD).                                                                           |
 | member.gender              | The member's gender.                                                                                                                                                                                            |
@@ -2689,7 +2690,7 @@ Benefit Related Entities Object:
                                                             						          |
 | eligibility_or_benefit_information    | The eligibility or benefit information indicator returned by the trading partner.  Possible values include deductible, active_coverage, other_source_of_data, etc.
                                                             						          |
-| coverage_level		        | The coverage level that applies to the eligibility or benefit information returned by the trading partner.  A full list of possible values is included [below](#coverage-level). 
+| coverage_level		        | The coverage level that applies to the eligibility or benefit information returned by the trading partner.  A full list of possible values is included [below](#coverage-level).
                                                             						          |
 | service_types			  	| The service type(s) returned by the trading partner. A full listing of possible service_types values is included [below](#service-type).
                                                             						          |
