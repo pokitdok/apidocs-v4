@@ -37,8 +37,6 @@ includes:
   - mpc
   - oop_insurance
   - payments
-  - plans
-  - providers
   - scheduling
   - tradingpartners
   - common
