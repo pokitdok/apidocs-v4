@@ -64,16 +64,6 @@
          "title":"Payers"
       },
       {
-         "slug":"apis/plans",
-         "content":"includes/_plans.md",
-         "title":"Plans"
-      },
-      {
-         "slug":"apis/providers",
-         "content":"includes/_providers.md",
-         "title":"Providers"
-      },
-      {
          "slug":"apis/scheduling",
          "content":"includes/_scheduling.md",
          "title":"Scheduling"
