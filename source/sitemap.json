@@ -98,12 +98,6 @@
          "order":6
       },
       {
-         "slug":"dropin",
-         "content":"includes/_dropin.md",
-         "title":"Drop In",
-         "order":7
-      },
-      {
          "slug":"raw-x12-support",
          "content":"includes/_raw_x12_support.md",
          "title":"Raw X12 Support",
