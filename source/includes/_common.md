@@ -377,7 +377,6 @@ API requests that route to a specific partner for processing may pass platform v
 but encounter some partner specific error when the partner attempts to process the
 request data.  If errors like these are encountered, the partner's X12 999 or TA1
 response information will be returned to the API client as an error.  API requests
-that encounter problems like these are not billable.  These types of errors will
-generally pop up if a partner requires some data in their implementation
-for specific members or plans that is generally considered to be optional
-in the X12 transaction's specification.
+that encounter problems like these are not billable.  These types of errors will generally
+present if a partner requires data that is generally considered to be optional in the
+X12 transaction's specification.
