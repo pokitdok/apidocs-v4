@@ -249,6 +249,95 @@ See cURL example.
 See cURL example.
 ```
 
+> Trading Partner specific request processing errors
+
+```shell
+curl -i -H "Content-Type: application/json" -H "Authorization: Bearer $ACCESS_TOKEN" -d "{...}"
+https://platform.pokitdok.com/api/v4/eligibility/
+{
+    "meta": {
+        "activity_id": "53d9506356c02c67c1010001",
+        "application_mode": "production",
+        "credits_billed": 0,
+        "credits_remaining": 995,
+        "processing_time": 300,
+        "rate_limit_amount": 2,
+        "rate_limit_cap": 1000,
+        "rate_limit_reset": 1394138991
+    },
+    "data": {
+        "errors": {
+            "parsing": {
+                "application_receiver_code": "000000001",
+                "application_sender_code": "000000002",
+                "functional_group_acknowledge": "Rejected",
+                "functional_group_acknowledge_code": "R",
+                "functional_identifier_code": "HS",
+                "group_control_number": "1",
+                "number_of_accepted_transaction_sets": 0,
+                "number_of_received_transaction_sets": 1,
+                "number_of_transaction_sets_included": 1,
+                "segment_errors": [
+                    {
+                        "loop_id_code": "2100",
+                        "notes": [
+                            {
+                                "data_element_syntax_error": "Required Data Element Missing",
+                                "data_element_syntax_error_code": "1",
+                                "element_reference_number": 1035,
+                                "position_in_segment": "3"
+                            },
+                            {
+                                "data_element_syntax_error": "Implementation Dependent Data Element Missing",
+                                "data_element_syntax_error_code": "I9",
+                                "element_reference_number": 1036,
+                                "position_in_segment": "4"
+                            }
+                        ],
+                        "position_in_transaction_set": 6,
+                        "segment_id_code": "NM1",
+                        "syntax_error": "Segment Has Data Element Errors",
+                        "syntax_error_code": "8"
+                    }
+                ],
+                "trading_partner_id": "MOCKPAYER",
+                "transaction_set_acknowledgment": "Rejected",
+                "transaction_set_acknowledgment_code": "R",
+                "transaction_set_control_number": "0001",
+                "transaction_set_identifier_code": "270",
+                "transaction_set_syntax_error_codes": [
+                    "I5"
+                ],
+                "transaction_set_syntax_errors": [
+                    "Implementation One or More Segments in Error"
+                ]
+            }
+        }
+    }
+}
+```
+
+```python
+See cURL example.
+```
+
+```ruby
+See cURL example.
+```
+
+```csharp
+See cURL example.
+```
+
+```java
+See cURL example.
+```
+
+```swift
+See cURL example.
+```
+
+
 Error information may be returned to an API client. Common error scenarios
 include:
 
@@ -282,4 +371,13 @@ limit period to renew and then make the API call again.
 You may encounter errors like this when required information is omitted from an
 API call. Simply supply the appropriate information on the next API call to resolve.
 
->
+
+### Trading Partner specific request processing errors
+API requests that route to a specific partner for processing may pass platform validation
+but encounter some partner specific error when the partner attempts to process the
+request data.  If errors like these are encountered, the partner's X12 999 or TA1
+response information will be returned to the API client as an error.  API requests
+that encounter problems like these are not billable.  These types of errors will
+generally pop up if a partner requires some data in their implementation
+for specific members or plans that is generally considered to be optional
+in the X12 transaction's specification.

@@ -2167,6 +2167,9 @@ co-insurance, copay, deductible and out of pocket amounts for a member along wit
 Use the [Trading Partners](#trading-partners) endpoint to determine available trading_partner_id values for use with the
 Eligibility API.
 
+See the [errors](#errors) section of the documentation for details on Trading Partner specific request processing errors
+that may occur with this API for some request/partner combinations.
+
 ### Endpoint Description
 
 
