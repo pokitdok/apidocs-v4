@@ -64,11 +64,6 @@
          "title":"Payers"
       },
       {
-         "slug":"apis/scheduling",
-         "content":"includes/_scheduling.md",
-         "title":"Scheduling"
-      },
-      {
          "slug":"apis/tradingpartners",
          "content":"includes/_tradingpartners.md",
          "title":"Trading Partners"

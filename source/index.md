@@ -37,7 +37,6 @@ includes:
   - mpc
   - oop_insurance
   - payments
-  - scheduling
   - tradingpartners
   - common
   - apicallbacks
