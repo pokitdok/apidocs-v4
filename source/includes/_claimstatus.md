@@ -1162,6 +1162,9 @@ The speed at which a claim is adjudicated is dependent on the trading partner. O
 To understand how the [Claims](#claims) and [Claims Status](#claims_status) Endpoints work together,
 see the [claims API workflow](https://pokitdok.com/developers/api/#api-claims-status).
 
+See the [errors](#errors) section of the documentation for details on Trading Partner specific request processing errors
+that may occur with this API for some request/partner combinations.
+
 ### Endpoint Description
 
 
